@@ -1,0 +1,149 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.38.0.0
+Copyright (C) 2022 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: a b, abc, LIC=8VRJ7-ESLWV-UHX8H-W0VTQ-WBZK3-GTEMT
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.38.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.19
+Assembler:       Armasm.exe V6.19
+Linker/Locator:  ArmLink.exe V6.19
+Library Manager: ArmAr.exe V6.19
+Hex Converter:   FromElf.exe V6.19
+CPU DLL:         SARMCM3.DLL V5.38.0.0
+Dialog DLL:      DCM.DLL V1.17.5.0
+Target DLL:      UL2CM3.DLL V1.164.8.0
+Dialog DLL:      TCM.DLL V1.56.4.0
+ 
+<h2>Project:</h2>
+C:\Users\Hugo\Documents\GitHub\prop-arm\uvision_project\Prop arm\BlinkingLED.uvprojx
+Project File Date:  09/14/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.19', folder: 'C:\Keil_v5\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+C:/Users/Hugo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c(215): warning: function 'HAL_NVIC_SystemReset' could be declared with attribute 'noreturn' [-Wmissing-noreturn]
+{
+^
+C:/Users/Hugo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c(81): warning: In file included from...
+C:/Users/Hugo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal.h(29): warning: In file included from...
+./RTE/Device/STM32F407VGTx\stm32f4xx_hal_conf.h(401): warning: In file included from...
+C:/Users/Hugo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc\stm32f4xx_hal_cortex.h(52): warning: padding struct 'MPU_Region_InitTypeDef' with 2 bytes to align 'BaseAddress' [-Wpadded]
+  uint32_t               BaseAddress;           /*!< Specifies the base address of the region to protect.                           */
+                         ^
+2 warnings generated.
+compiling stm32f4xx_hal_cortex.c...
+main.c(3): warning: a function declaration without a prototype is deprecated in all versions of C [-Wstrict-prototypes]
+int main(){
+        ^
+         void
+main.c(24): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                for(i = 0; i < 2000000; i++){}; // Loop repeats 2,000,000 implementing a delay
+                                              ^
+main.c(30): warning: signed shift result (0x80000000) sets the sign bit of the shift expression's type ('int') and becomes negative [-Wshift-sign-overflow]
+                GPIOD->BSRR = 1<<(15+16); // Set the BSRR bit 15 + 16 to 1 to turn respective LED off
+                              ~^ ~~~~~~~
+main.c(30): warning: implicit conversion changes signedness: 'int' to 'uint32_t' (aka 'unsigned int') [-Wsign-conversion]
+                GPIOD->BSRR = 1<<(15+16); // Set the BSRR bit 15 + 16 to 1 to turn respective LED off
+                            ~ ~^~~~~~~~~
+main.c(33): warning: empty expression statement has no effect; remove unnecessary ';' to silence this warning [-Wextra-semi-stmt]
+                for(i = 0; i < 2000000; i++){}; // Loop repeats 2,000,000 implementing a delay
+                                              ^
+main.c(35): warning: no newline at end of file [-Wnewline-eof]
+}
+ ^
+6 warnings generated.
+compiling main.c...
+compiling system_stm32f4xx.c...
+C:/Users/Hugo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c(379): warning: unused parameter 'Regulator' [-Wunused-parameter]
+void HAL_PWR_EnterSLEEPMode(uint32_t Regulator, uint8_t SLEEPEntry)
+                                     ^
+1 warning generated.
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+linking...
+Program Size: Code=564 RO-data=408 RW-data=0 ZI-data=1632  
+".\Objects\BlinkingLED.axf" - 0 Error(s), 9 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.9.0.pack
+                ARM.CMSIS.5.9.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.6.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.2.17.0.pack
+                Keil.STM32F4xx_DFP.2.17.0
+                STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
+   * Component: STM32Cube Framework Version: 1.0.0
+   * Component: Classic Version: 1.8.1
+   * Component: Common Version: 1.8.1
+   * Component: Cortex Version: 1.8.1
+   * Component: GPIO Version: 1.8.1
+   * Component: PWR Version: 1.8.1
+   * Component: RCC Version: 1.8.1
+   * Component: Startup Version: 2.6.3
+
+<h2>Collection of Component include folders:</h2>
+  ./RTE/Device/STM32F407VGTx
+  ./RTE/_Target_1
+  C:/Users/Hugo/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+  C:/Users/Hugo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/CMSIS/Device/ST/STM32F4xx/Include
+  C:/Users/Hugo/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.0/Drivers/STM32F4xx_HAL_Driver/Inc
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ::Device:STM32Cube Framework:1.0.0 (API)
+
+   * Component: ARM::CMSIS:CORE:5.6.0
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.8.1
+      Include file:  CMSIS/Driver/Config/RTE_Device.h
+      Include file:  MDK/Templates/Inc/stm32f4xx_it.h
+      Include file:  MDK/Templates/Inc/main.h
+      Source file:   MDK/Templates/Src/main.c
+      Source file:   MDK/Templates/Src/stm32f4xx_it.c
+      Include file:  MDK/Templates/Inc/stm32f4xx_hal_conf.h
+      Include file:  MDK/Templates_LL/Inc/main.h
+      Source file:   MDK/Templates_LL/Src/main.c
+      Source file:   MDK/Templates/Src/stm32f4xx_hal_msp.c
+
+   * Component: Keil::Device:STM32Cube HAL:Common:1.8.1
+      Include file:  Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c
+
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c
+
+   * Component: Keil::Device:STM32Cube HAL:PWR:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.8.1
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c
+
+   * Component: Keil::Device:Startup:2.6.3
+      Source file:   MDK/Device/Source/ARM/STM32F4xx_OTP.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/arm/startup_stm32f407xx.s
+      Include file:  Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h
+      Source file:   MDK/Device/Source/ARM/STM32F40xxx_41xxx_OPT.s
+      Source file:   Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c
+Build Time Elapsed:  00:00:01
+</pre>
+</body>
+</html>
