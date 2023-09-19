@@ -1,32 +1,32 @@
 /*#######################################################################################*/
-/* !!! THIS IS NOT FREE SOFTWARE !!!  	                                                 */
+/* !!! THIS IS NOT FREE SOFTWARE !!!                                                       */
 /*#######################################################################################*/
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) 2008 Ingo Busker, Holger Buss
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + FOR NON COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
 // + bzgl. der Nutzungsbedingungen aufzunehmen.
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -71,36 +71,36 @@ Buffer_t UART2_tx_buffer;
 void UART2_Init(void)
 {
     UART_InitTypeDef UART_InitStructure;
-	GPIO_InitTypeDef GPIO_InitStructure;
+    GPIO_InitTypeDef GPIO_InitStructure;
 
-	UART1_PutString("\r\n UART2 init...");
+    UART1_PutString("\r\n UART2 init...");
 
-	// initialize txd buffer
-	Buffer_Init(&UART2_tx_buffer, UART2_tbuffer, UART2_TX_BUFFER_LEN);
+    // initialize txd buffer
+    Buffer_Init(&UART2_tx_buffer, UART2_tbuffer, UART2_TX_BUFFER_LEN);
 
-	SCU_APBPeriphClockConfig(__UART2, ENABLE);  // Enable the UART2 Clock
+    SCU_APBPeriphClockConfig(__UART2, ENABLE);  // Enable the UART2 Clock
 
-	SCU_APBPeriphClockConfig(__GPIO5, ENABLE);  // Enable the GPIO5 Clock
+    SCU_APBPeriphClockConfig(__GPIO5, ENABLE);  // Enable the GPIO5 Clock
     /*Configure UART2_Rx pin GPIO5.2*/
-	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Direction = 	GPIO_PinInput;
-    GPIO_InitStructure.GPIO_Pin = 			GPIO_Pin_2;
-    GPIO_InitStructure.GPIO_Type = 			GPIO_Type_PushPull;
-    GPIO_InitStructure.GPIO_IPInputConnected = 	GPIO_IPInputConnected_Enable;
-    GPIO_InitStructure.GPIO_Alternate = 	GPIO_InputAlt1; // UART2_RxD
+    GPIO_StructInit(&GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Direction =     GPIO_PinInput;
+    GPIO_InitStructure.GPIO_Pin =             GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Type =             GPIO_Type_PushPull;
+    GPIO_InitStructure.GPIO_IPInputConnected =     GPIO_IPInputConnected_Enable;
+    GPIO_InitStructure.GPIO_Alternate =     GPIO_InputAlt1; // UART2_RxD
     GPIO_Init(GPIO5, &GPIO_InitStructure);
 
-	SCU_APBPeriphClockConfig(__GPIO3, ENABLE);  // Enable the GPIO3 Clock
+    SCU_APBPeriphClockConfig(__GPIO3, ENABLE);  // Enable the GPIO3 Clock
     /*Configure UART2_Tx pin GPIO3.0*/
-	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Direction = 	GPIO_PinOutput;
-    GPIO_InitStructure.GPIO_Pin = 			GPIO_Pin_0;
-    GPIO_InitStructure.GPIO_Type = 			GPIO_Type_PushPull;
-    GPIO_InitStructure.GPIO_Alternate = 	GPIO_OutputAlt2; // UART2_TX
+    GPIO_StructInit(&GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Direction =     GPIO_PinOutput;
+    GPIO_InitStructure.GPIO_Pin =             GPIO_Pin_0;
+    GPIO_InitStructure.GPIO_Type =             GPIO_Type_PushPull;
+    GPIO_InitStructure.GPIO_Alternate =     GPIO_OutputAlt2; // UART2_TX
     GPIO_Init(GPIO3, &GPIO_InitStructure);
 
 
-	/* UART2 configured as follow:
+    /* UART2 configured as follow:
           - Word Length = 8 Bits
           - One Stop Bit
           - No parity
@@ -109,65 +109,65 @@ void UART2_Init(void)
           - Receive and transmit enabled
           - Receive and transmit FIFOs are Disabled
     */
-	UART_StructInit(&UART_InitStructure);
-    UART_InitStructure.UART_WordLength = 			UART_WordLength_8D;
-    UART_InitStructure.UART_StopBits = 				UART_StopBits_1;
-    UART_InitStructure.UART_Parity = 				UART_Parity_No ;
-    UART_InitStructure.UART_BaudRate = 				UART2_BAUD_RATE;
-    UART_InitStructure.UART_HardwareFlowControl = 	UART_HardwareFlowControl_None;
-    UART_InitStructure.UART_Mode = 					UART_Mode_Tx_Rx;
-    UART_InitStructure.UART_FIFO = 					UART_FIFO_Enable;
-    UART_InitStructure.UART_TxFIFOLevel = 			UART_FIFOLevel_1_2;
-    UART_InitStructure.UART_RxFIFOLevel = 			UART_FIFOLevel_1_2;
+    UART_StructInit(&UART_InitStructure);
+    UART_InitStructure.UART_WordLength =             UART_WordLength_8D;
+    UART_InitStructure.UART_StopBits =                 UART_StopBits_1;
+    UART_InitStructure.UART_Parity =                 UART_Parity_No ;
+    UART_InitStructure.UART_BaudRate =                 UART2_BAUD_RATE;
+    UART_InitStructure.UART_HardwareFlowControl =     UART_HardwareFlowControl_None;
+    UART_InitStructure.UART_Mode =                     UART_Mode_Tx_Rx;
+    UART_InitStructure.UART_FIFO =                     UART_FIFO_Enable;
+    UART_InitStructure.UART_TxFIFOLevel =             UART_FIFOLevel_1_2;
+    UART_InitStructure.UART_RxFIFOLevel =             UART_FIFOLevel_1_2;
 
-	UART_DeInit(UART2);	// reset uart 2	to default
+    UART_DeInit(UART2);    // reset uart 2    to default
     UART_Init(UART2, &UART_InitStructure);  // initialize uart 2
 
-	// enable uart 2 interrupts selective
+    // enable uart 2 interrupts selective
     UART_ITConfig(UART2, UART_IT_Receive | UART_IT_ReceiveTimeOut, ENABLE);
-	UART_Cmd(UART2, ENABLE); // enable uart 2
-	// configure the uart 2 interupt line
- 	VIC_Config(UART2_ITLine, VIC_IRQ, PRIORITY_UART2);
-	// enable the uart 2 IRQ
-	VIC_ITCmd(UART2_ITLine, ENABLE);
+    UART_Cmd(UART2, ENABLE); // enable uart 2
+    // configure the uart 2 interupt line
+     VIC_Config(UART2_ITLine, VIC_IRQ, PRIORITY_UART2);
+    // enable the uart 2 IRQ
+    VIC_ITCmd(UART2_ITLine, ENABLE);
 
-	UART1_PutString("ok");
+    UART1_PutString("ok");
 }
 
 
 void UART2_Deinit(void)
 {
-	GPIO_InitTypeDef GPIO_InitStructure;
+    GPIO_InitTypeDef GPIO_InitStructure;
 
-	UART1_PutString("\r\n UART2 deinit...");
-	VIC_ITCmd(UART2_ITLine, DISABLE); // disable the uart 2 IRQ
-	UART_Cmd(UART2, DISABLE); // disable uart 2
-	UART_DeInit(UART2);	// reset uart 0	to default
+    UART1_PutString("\r\n UART2 deinit...");
+    VIC_ITCmd(UART2_ITLine, DISABLE); // disable the uart 2 IRQ
+    UART_Cmd(UART2, DISABLE); // disable uart 2
+    UART_DeInit(UART2);    // reset uart 0    to default
 
-	SCU_APBPeriphClockConfig(__UART2, DISABLE);  // disable the UART2 Clock
+    SCU_APBPeriphClockConfig(__UART2, DISABLE);  // disable the UART2 Clock
 
-	SCU_APBPeriphClockConfig(__GPIO5, ENABLE);
-   	// unmap UART2 from FC
-	// set port pin 5.2 (serial data from FC) to input and disconnect from IP
-	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Direction = 	GPIO_PinInput;
-    GPIO_InitStructure.GPIO_Pin = 			GPIO_Pin_2;
-    GPIO_InitStructure.GPIO_Type = 			GPIO_Type_PushPull;
-    GPIO_InitStructure.GPIO_IPInputConnected = 	GPIO_IPInputConnected_Disable;
-    GPIO_InitStructure.GPIO_Alternate = 	GPIO_InputAlt1;
+    SCU_APBPeriphClockConfig(__GPIO5, ENABLE);
+       // unmap UART2 from FC
+    // set port pin 5.2 (serial data from FC) to input and disconnect from IP
+    GPIO_StructInit(&GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Direction =     GPIO_PinInput;
+    GPIO_InitStructure.GPIO_Pin =             GPIO_Pin_2;
+    GPIO_InitStructure.GPIO_Type =             GPIO_Type_PushPull;
+    GPIO_InitStructure.GPIO_IPInputConnected =     GPIO_IPInputConnected_Disable;
+    GPIO_InitStructure.GPIO_Alternate =     GPIO_InputAlt1;
     GPIO_Init(GPIO5, &GPIO_InitStructure);
 
-	SCU_APBPeriphClockConfig(__GPIO3, ENABLE);
-	// set port pin 3.0 (serial data to FC) to input and disconnect from IP
-	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Direction = 	GPIO_PinInput;
-    GPIO_InitStructure.GPIO_Pin = 			GPIO_Pin_0;
-    GPIO_InitStructure.GPIO_Type = 			GPIO_Type_PushPull;
-	GPIO_InitStructure.GPIO_IPInputConnected = 	GPIO_IPInputConnected_Disable;
-    GPIO_InitStructure.GPIO_Alternate = 	GPIO_InputAlt1;
+    SCU_APBPeriphClockConfig(__GPIO3, ENABLE);
+    // set port pin 3.0 (serial data to FC) to input and disconnect from IP
+    GPIO_StructInit(&GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Direction =     GPIO_PinInput;
+    GPIO_InitStructure.GPIO_Pin =             GPIO_Pin_0;
+    GPIO_InitStructure.GPIO_Type =             GPIO_Type_PushPull;
+    GPIO_InitStructure.GPIO_IPInputConnected =     GPIO_IPInputConnected_Disable;
+    GPIO_InitStructure.GPIO_Alternate =     GPIO_InputAlt1;
     GPIO_Init(GPIO3, &GPIO_InitStructure);
 
-	UART1_PutString("ok");
+    UART1_PutString("ok");
 }
 
 /********************************************************/
@@ -175,36 +175,36 @@ void UART2_Deinit(void)
 /********************************************************/
 void UART2_IRQHandler(void)
 {
-	IENABLE;	
+    IENABLE;    
 
-	// if receive irq or receive timeout irq has occured
- 	if((UART_GetITStatus(UART2, UART_IT_Receive) != RESET) || (UART_GetITStatus(UART2, UART_IT_ReceiveTimeOut) != RESET) )
- 	{
-   		UART_ClearITPendingBit(UART2, UART_IT_Receive);			// clear receive interrupt flag
-   		UART_ClearITPendingBit(UART2, UART_IT_ReceiveTimeOut);	// clear receive timeout interrupt flag
+    // if receive irq or receive timeout irq has occured
+     if((UART_GetITStatus(UART2, UART_IT_Receive) != RESET) || (UART_GetITStatus(UART2, UART_IT_ReceiveTimeOut) != RESET) )
+     {
+           UART_ClearITPendingBit(UART2, UART_IT_Receive);            // clear receive interrupt flag
+           UART_ClearITPendingBit(UART2, UART_IT_ReceiveTimeOut);    // clear receive timeout interrupt flag
 
-		// if debug UART is UART2
-		if (DebugUART == UART2)
-		{	// forward received data to the UART1 tx buffer
-		 	while(UART_GetFlagStatus(UART2, UART_FLAG_RxFIFOEmpty) != SET)
-			{
-				// wait for space in the tx buffer of the UART1
-				while(UART_GetFlagStatus(UART1, UART_FLAG_TxFIFOFull) == SET) {};
-				// move the byte from the rx buffer of UART2 to the tx buffer of UART1
-				UART_SendData(UART1, UART_ReceiveData(UART2));
-			}
-		}
-		else
-		{
-		 	// ignore serial data from the FC
-			while(UART_GetFlagStatus(UART2, UART_FLAG_RxFIFOEmpty) != SET)
-			{
-				UART_ReceiveData(UART2);
-			}
-		}
-	} // eof receive irq or receive timeout irq
-	
-	IDISABLE;
+        // if debug UART is UART2
+        if (DebugUART == UART2)
+        {    // forward received data to the UART1 tx buffer
+             while(UART_GetFlagStatus(UART2, UART_FLAG_RxFIFOEmpty) != SET)
+            {
+                // wait for space in the tx buffer of the UART1
+                while(UART_GetFlagStatus(UART1, UART_FLAG_TxFIFOFull) == SET) {};
+                // move the byte from the rx buffer of UART2 to the tx buffer of UART1
+                UART_SendData(UART1, UART_ReceiveData(UART2));
+            }
+        }
+        else
+        {
+             // ignore serial data from the FC
+            while(UART_GetFlagStatus(UART2, UART_FLAG_RxFIFOEmpty) != SET)
+            {
+                UART_ReceiveData(UART2);
+            }
+        }
+    } // eof receive irq or receive timeout irq
+    
+    IDISABLE;
 }
 
 /**************************************************************/
@@ -212,19 +212,19 @@ void UART2_IRQHandler(void)
 /**************************************************************/
 void UART2_Transmit(void)
 {
-	u8 tmp_tx;
-	if(DebugUART == UART2) return; // no data output if debug uart is rederected to UART2
-	// if something has to be send and the txd fifo is not full
-	if((UART2_tx_buffer.Locked == TRUE) && (UART_GetFlagStatus(UART2, UART_FLAG_TxFIFOFull) == RESET))
-	{
-		tmp_tx = UART2_tx_buffer.pData[UART2_tx_buffer.Position++]; // read next byte from txd buffer
-		UART_SendData(UART2, tmp_tx); // put character to txd fifo
-		// if terminating character or end of txd buffer reached
-		if((tmp_tx == '\r') || (UART2_tx_buffer.Position == UART2_tx_buffer.Size))
-		{
-			Buffer_Clear(&UART2_tx_buffer);
-		}
-	}
+    u8 tmp_tx;
+    if(DebugUART == UART2) return; // no data output if debug uart is rederected to UART2
+    // if something has to be send and the txd fifo is not full
+    if((UART2_tx_buffer.Locked == TRUE) && (UART_GetFlagStatus(UART2, UART_FLAG_TxFIFOFull) == RESET))
+    {
+        tmp_tx = UART2_tx_buffer.pData[UART2_tx_buffer.Position++]; // read next byte from txd buffer
+        UART_SendData(UART2, tmp_tx); // put character to txd fifo
+        // if terminating character or end of txd buffer reached
+        if((tmp_tx == '\r') || (UART2_tx_buffer.Position == UART2_tx_buffer.Size))
+        {
+            Buffer_Clear(&UART2_tx_buffer);
+        }
+    }
 }
 
 /**************************************************************/
@@ -232,8 +232,8 @@ void UART2_Transmit(void)
 /**************************************************************/
 void UART2_TransmitTxData(void)
 {
-	if(DebugUART == UART2) return;
-	UART2_Transmit(); // output pending bytes in tx buffer
+    if(DebugUART == UART2) return;
+    UART2_Transmit(); // output pending bytes in tx buffer
 }
 
 

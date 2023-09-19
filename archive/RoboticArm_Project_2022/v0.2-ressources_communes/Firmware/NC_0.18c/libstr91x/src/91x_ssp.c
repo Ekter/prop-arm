@@ -312,7 +312,7 @@ void SSP_SendData(SSP_TypeDef* SSPx, u16 Data)
 *******************************************************************************/
 u16 SSP_ReceiveData(SSP_TypeDef* SSPx)
 {
-  /* Return the data in the DR register */	
+  /* Return the data in the DR register */    
   return SSPx->DR;
 }
 
@@ -374,7 +374,7 @@ FlagStatus SSP_GetFlagStatus(SSP_TypeDef* SSPx, u16 SSP_FLAG)
   if(SSPReg == 1)
   {
     /* The flag to check is in SR register */
-    StatusReg = SSPx->SR;  	
+    StatusReg = SSPx->SR;      
   }
   else if (SSPReg == 2)
   {

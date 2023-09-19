@@ -56,79 +56,79 @@ typedef enum { DOWN = 0, UP  = !DOWN} CountingStatus;
 
 /* MC enable/disable complementary feature */
 #define MC_Complementary_Enable   0x0001          /*MC Complementary Mode Enable*/
-#define MC_Complementary_Disable  0x0002	  /*MC Complementary Mode Disable*/
+#define MC_Complementary_Disable  0x0002      /*MC Complementary Mode Disable*/
 
 /* MC operating modes */
-#define MC_HardwareOperating_Mode 0x0001	  /* Hardware operating Mode*/
-#define MC_SoftwareOperating_Mode 0x0002	  /* Software operating Mode*/
+#define MC_HardwareOperating_Mode 0x0001      /* Hardware operating Mode*/
+#define MC_SoftwareOperating_Mode 0x0002      /* Software operating Mode*/
 
 /* MC PWM modes */
-#define MC_PWMClassical_Mode    0x0001		  /*Classical PWM Mode*/
+#define MC_PWMClassical_Mode    0x0001          /*Classical PWM Mode*/
 #define MC_PWMZeroCentered_Mode 0x0002            /*Zero Centered PWM Mode*/
 
 
 /* MC enable/disable emergency */
-#define MC_Emergency_Enable  0x0001		 /*MC Emergency Enable*/
-#define MC_Emergency_Disable 0x0002		 /*MC Emergency Disable*/
+#define MC_Emergency_Enable  0x0001         /*MC Emergency Enable*/
+#define MC_Emergency_Disable 0x0002         /*MC Emergency Disable*/
 
 
 /* MC forced PWM state */
-#define MC_Polarity_Inverted     0x0001		/*PWM signal polarity inverted*/
-#define MC_Polarity_NonInverted  0x0002		/*PWM signal polarity non-inverted*/
+#define MC_Polarity_Inverted     0x0001        /*PWM signal polarity inverted*/
+#define MC_Polarity_NonInverted  0x0002        /*PWM signal polarity non-inverted*/
 
 
 /* MC tacho modes */
-#define MC_TachoOneShot_Mode     0x0001		/*One Shot Tacho Mode*/
-#define MC_TachoContinuous_Mode  0x0002		/*Continuous Tacho Mode*/
+#define MC_TachoOneShot_Mode     0x0001        /*One Shot Tacho Mode*/
+#define MC_TachoContinuous_Mode  0x0002        /*Continuous Tacho Mode*/
 
  
 /* MC tacho polarity */
-#define MC_TachoEventEdge_None           0x0000		/* Edge None */
-#define MC_TachoEventEdge_Falling        0x0001		/* Falling Edge  */
-#define MC_TachoEventEdge_Rising         0x0002		/* Rising Edge  */
-#define MC_TachoEventEdge_RisingFalling  0x0003		/* Rising and falling Edge  */
+#define MC_TachoEventEdge_None           0x0000        /* Edge None */
+#define MC_TachoEventEdge_Falling        0x0001        /* Falling Edge  */
+#define MC_TachoEventEdge_Rising         0x0002        /* Rising Edge  */
+#define MC_TachoEventEdge_RisingFalling  0x0003        /* Rising and falling Edge  */
 
 /* MC channels */
 #define MC_Channel_U           0x0001          /* Channel U */
-#define MC_Channel_V           0x0002	       /* Channel V */
-#define MC_Channel_W           0x0003	       /* Channel W */
-#define MC_Channel_ALL         0x0004	      /* All Channels */
+#define MC_Channel_V           0x0002           /* Channel V */
+#define MC_Channel_W           0x0003           /* Channel W */
+#define MC_Channel_ALL         0x0004          /* All Channels */
 
 /* MC tacho event mode */
-#define MC_TachoEvent_Hardware_Mode  0x0001	/*Hardware operating Mode*/
+#define MC_TachoEvent_Hardware_Mode  0x0001    /*Hardware operating Mode*/
 #define MC_TachoEvent_Software_Mode  0x0002     /*Software operating Mode*/
 
 /* MC interrupts */
-#define MC_IT_CMPW  0x0001  		/* Compare W interrupt */
-#define MC_IT_CMPV  0x0002		/* Compare V interrupt */
-#define MC_IT_CMPU  0x0004		/* Compare U interrupt */
-#define MC_IT_ZPC   0x0008		/* Zero of PWM counter interrupt */
-#define MC_IT_ADT   0x0010		/* Automatic data transfer interrupt */
-#define MC_IT_OTC   0x0020		/* Overflow of tacho counter interrupt */
-#define MC_IT_CPT   0x0040		/* Capture of tacho counter interrupt */
-#define MC_IT_CM0   0x0080		/* Compare 0 interrupt */
+#define MC_IT_CMPW  0x0001          /* Compare W interrupt */
+#define MC_IT_CMPV  0x0002        /* Compare V interrupt */
+#define MC_IT_CMPU  0x0004        /* Compare U interrupt */
+#define MC_IT_ZPC   0x0008        /* Zero of PWM counter interrupt */
+#define MC_IT_ADT   0x0010        /* Automatic data transfer interrupt */
+#define MC_IT_OTC   0x0020        /* Overflow of tacho counter interrupt */
+#define MC_IT_CPT   0x0040        /* Capture of tacho counter interrupt */
+#define MC_IT_CM0   0x0080        /* Compare 0 interrupt */
 
 /* MC flags */
-#define MC_FLAG_CMPW  0x0001		/* Compare W pending bit */
-#define MC_FLAG_CMPV  0x0002		/* Compare V pending bit */
-#define MC_FLAG_CMPU  0x0004		/* Compare U pending bit */
-#define MC_FLAG_ZPC   0x0008		/* Zero of PWM counter pending bit */
-#define MC_FLAG_ADT   0x0010		/* Automatic data transfer pending bit */
-#define MC_FLAG_OTC   0x0020		/* Overflow of tacho counter pending bit */
-#define MC_FLAG_CPT   0x0040		/* Capture of tacho counter pending bit */
-#define MC_FLAG_CM0   0x0080		/* Compare 0 pending bit */
-#define MC_FLAG_EST   0x0100		/* Emergency stop pending bit */
+#define MC_FLAG_CMPW  0x0001        /* Compare W pending bit */
+#define MC_FLAG_CMPV  0x0002        /* Compare V pending bit */
+#define MC_FLAG_CMPU  0x0004        /* Compare U pending bit */
+#define MC_FLAG_ZPC   0x0008        /* Zero of PWM counter pending bit */
+#define MC_FLAG_ADT   0x0010        /* Automatic data transfer pending bit */
+#define MC_FLAG_OTC   0x0020        /* Overflow of tacho counter pending bit */
+#define MC_FLAG_CPT   0x0040        /* Capture of tacho counter pending bit */
+#define MC_FLAG_CM0   0x0080        /* Compare 0 pending bit */
+#define MC_FLAG_EST   0x0100        /* Emergency stop pending bit */
 
 /* MC lock levels */
-#define MC_LockLevel0   0x0001		/* Level0 */
-#define MC_LockLevel1   0x0002		/* Level1 */
-#define MC_LockLevel2   0x0004		/* Level2 */
-#define MC_LockLevel3   0x0008		/* Level3 */
-#define MC_LockLevel4   0x0010		/* Level4 */
+#define MC_LockLevel0   0x0001        /* Level0 */
+#define MC_LockLevel1   0x0002        /* Level1 */
+#define MC_LockLevel2   0x0004        /* Level2 */
+#define MC_LockLevel3   0x0008        /* Level3 */
+#define MC_LockLevel4   0x0010        /* Level4 */
 
 /* MC counters */
 #define  MC_DT_Counter   0x0010    /*Dead time counter*/
-#define  MC_PWM_Counter  0x0020	   /*PWM counter*/
+#define  MC_PWM_Counter  0x0020       /*PWM counter*/
 
 
 /* MC double update mode feature */
@@ -136,9 +136,9 @@ typedef enum { DOWN = 0, UP  = !DOWN} CountingStatus;
 
 
 /* MC Trigger events to ADC conversion */
-#define  MC_ZPC          0x0004		/*Zero of PWM counter trigger event*/
-#define  MC_CM0          0x0008		/*Compare 0 of PWM trigger event*/
-#define  MC_ADT          0x000C		/*Automatic Data Transfer trigger event */
+#define  MC_ZPC          0x0004        /*Zero of PWM counter trigger event*/
+#define  MC_CM0          0x0008        /*Compare 0 of PWM trigger event*/
+#define  MC_ADT          0x000C        /*Automatic Data Transfer trigger event */
 
 
 

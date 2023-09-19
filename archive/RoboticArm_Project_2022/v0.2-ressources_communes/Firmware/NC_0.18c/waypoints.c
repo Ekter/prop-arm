@@ -1,32 +1,32 @@
 /*#######################################################################################*/
-/* !!! THIS IS NOT FREE SOFTWARE !!!  	                                                 */
+/* !!! THIS IS NOT FREE SOFTWARE !!!                                                       */
 /*#######################################################################################*/
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) 2008 Ingo Busker, Holger Buss
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + FOR NON COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
 // + bzgl. der Nutzungsbedingungen aufzunehmen.
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -54,7 +54,7 @@
 // +  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 // +  POSSIBILITY OF SUCH DAMAGE.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-	 
+     
 #include <string.h>
 #include "91x_lib.h"
 #include "waypoints.h"
@@ -69,97 +69,97 @@ u8 WPNumber = 0;
 
 u8 WPList_Init(void)
 {
- 	return WPList_Clear();
+     return WPList_Clear();
 }
 
 u8 WPList_Clear(void)
 {
-	u8 i;
-	WPIndex = 0;
-	WPNumber = 0;
-	NaviData.WaypointNumber = WPNumber;
-	NaviData.WaypointIndex = WPIndex;
+    u8 i;
+    WPIndex = 0;
+    WPNumber = 0;
+    NaviData.WaypointNumber = WPNumber;
+    NaviData.WaypointIndex = WPIndex;
 
-	for(i = 0; i < WPLISTLEN; i++)
-	{
-		WPList[i].Position.Status = INVALID;
-		WPList[i].Position.Latitude = 0;
-		WPList[i].Position.Longitude = 0;
-		WPList[i].Position.Altitude = 0;
-		WPList[i].Heading = -1;
-		WPList[i].ToleranceRadius = 0;	// in meters, if the MK is within that range around the target, then the next target is triggered
-		WPList[i].HoldTime = 0;			// in seconds, if the was once in the tolerance area around a WP, this time defines the delay before the next WP is triggered
-		WPList[i].Event_Flag = 0;		// future implementation
-	}
-	return TRUE;		
+    for(i = 0; i < WPLISTLEN; i++)
+    {
+        WPList[i].Position.Status = INVALID;
+        WPList[i].Position.Latitude = 0;
+        WPList[i].Position.Longitude = 0;
+        WPList[i].Position.Altitude = 0;
+        WPList[i].Heading = -1;
+        WPList[i].ToleranceRadius = 0;    // in meters, if the MK is within that range around the target, then the next target is triggered
+        WPList[i].HoldTime = 0;            // in seconds, if the was once in the tolerance area around a WP, this time defines the delay before the next WP is triggered
+        WPList[i].Event_Flag = 0;        // future implementation
+    }
+    return TRUE;        
 }
 
 u8 WPList_GetCount(void)
 {
- 	return WPNumber;
+     return WPNumber;
 }
 
 u8 WPList_Append(Waypoint_t* pwp)
 {
- 	if(WPNumber < WPLISTLEN) // id there is still some space in the list
-	{
-		memcpy(&WPList[WPNumber], pwp, sizeof(Waypoint_t)); // copy wp data to list entry
-		WPList[WPNumber].Position.Status = NEWDATA; 		// mark as new data
-	 	WPNumber++; 										// increment list length
-		NaviData.WaypointNumber = WPNumber;
-		return TRUE;
-	}
-	else return FALSE;
+     if(WPNumber < WPLISTLEN) // id there is still some space in the list
+    {
+        memcpy(&WPList[WPNumber], pwp, sizeof(Waypoint_t)); // copy wp data to list entry
+        WPList[WPNumber].Position.Status = NEWDATA;         // mark as new data
+         WPNumber++;                                         // increment list length
+        NaviData.WaypointNumber = WPNumber;
+        return TRUE;
+    }
+    else return FALSE;
 }
 
 // rewind to the begin of the list, and returns the first waypoint
 Waypoint_t* WPList_Begin(void)
 {
- 	WPIndex = 0; // reset list index
-	NaviData.WaypointIndex = WPIndex + 1;
-	if(WPNumber > 0) 
-	{
-		NaviData.WaypointIndex = WPIndex + 1;	
-		return(&(WPList[WPIndex])); // if list is not empty return pointer to first waypoint in the list
-	}
-	else
-	{
-		NaviData.WaypointIndex = 0;
-		return NULL; // else return NULL
-	}
+     WPIndex = 0; // reset list index
+    NaviData.WaypointIndex = WPIndex + 1;
+    if(WPNumber > 0) 
+    {
+        NaviData.WaypointIndex = WPIndex + 1;    
+        return(&(WPList[WPIndex])); // if list is not empty return pointer to first waypoint in the list
+    }
+    else
+    {
+        NaviData.WaypointIndex = 0;
+        return NULL; // else return NULL
+    }
 
 }
 
 // jump to the end of the list, and returns the last waypoint
 Waypoint_t* WPList_End(void)
 {
-	if(WPNumber > 0)
-	{
-		NaviData.WaypointIndex = WPNumber;
-		WPIndex = WPNumber - 1;
-		return(&(WPList[WPIndex])); // if list is not empty return pointer to first waypoint in the list
-	}
-	else
-	{
-		return NULL; // else return NULL
-	}
+    if(WPNumber > 0)
+    {
+        NaviData.WaypointIndex = WPNumber;
+        WPIndex = WPNumber - 1;
+        return(&(WPList[WPIndex])); // if list is not empty return pointer to first waypoint in the list
+    }
+    else
+    {
+        return NULL; // else return NULL
+    }
 
 }
 
 // returns a pointer to the next waypoint or NULL if the end of the list has been reached
 Waypoint_t* WPList_Next(void)
 {
-	if((WPIndex + 1) < WPNumber) // if the next WPIndex exist
-	{
-		WPIndex++; // goto next
-		NaviData.WaypointIndex = WPIndex + 1;
-		return(&(WPList[WPIndex]));	// return pointer to this waypoint
-	}
-	else return(NULL);
-}	
+    if((WPIndex + 1) < WPNumber) // if the next WPIndex exist
+    {
+        WPIndex++; // goto next
+        NaviData.WaypointIndex = WPIndex + 1;
+        return(&(WPList[WPIndex]));    // return pointer to this waypoint
+    }
+    else return(NULL);
+}    
  
 Waypoint_t* WPList_GetAt(u8 index)
 {
-	if(index < WPNumber) return(&(WPList[index]));	// return pointer to this waypoint
-	else return(NULL);
+    if(index < WPNumber) return(&(WPList[index]));    // return pointer to this waypoint
+    else return(NULL);
 }

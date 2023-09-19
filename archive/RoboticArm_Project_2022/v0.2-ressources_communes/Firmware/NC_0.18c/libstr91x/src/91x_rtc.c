@@ -57,19 +57,19 @@ u8 BYTEToBCD2(u8 value)
 *******************************************************************************/
 u16 WORDToBCD3(u16 value)
 {
-	u16 bcdhigh = 0;
-	while (value >= 100)
-	{
-		bcdhigh++;
-		value -= 100;
-	}
-	bcdhigh <<= 4;
-	while (value >= 10)
-	{
-		bcdhigh++;
-		value -= 10;
-	}
-	return  (bcdhigh << 4) | value;
+    u16 bcdhigh = 0;
+    while (value >= 100)
+    {
+        bcdhigh++;
+        value -= 100;
+    }
+    bcdhigh <<= 4;
+    while (value >= 10)
+    {
+        bcdhigh++;
+        value -= 10;
+    }
+    return  (bcdhigh << 4) | value;
 }
 
 /*******************************************************************************
@@ -95,7 +95,7 @@ u8 BCD2ToBYTE(u8 value)
 {
   u32 tmp;
   tmp= ((value&0xF0)>>4)*10;
-  return (u8)(tmp+ (value&0x0F));	
+  return (u8)(tmp+ (value&0x0F));    
 }
 
 /*******************************************************************************
@@ -107,8 +107,8 @@ u8 BCD2ToBYTE(u8 value)
 *******************************************************************************/
 void RTC_DeInit(void)
 {
-	SCU_APBPeriphReset(__RTC,ENABLE);
-	SCU_APBPeriphReset(__RTC,DISABLE);
+    SCU_APBPeriphReset(__RTC,ENABLE);
+    SCU_APBPeriphReset(__RTC,DISABLE);
 }
 
 /*******************************************************************************
@@ -120,22 +120,22 @@ void RTC_DeInit(void)
 *******************************************************************************/
 void RTC_SetDate(RTC_DATE Date)
 {
-	u32 tmp = 0;
-	
-	RTC->CR |=0x80;  /*Enable write operation in DTR register*/
-	RTC->DTR = 0;
-	tmp = BYTEToBCD2(Date.century);
-	RTC->DTR|=tmp<<24;
-	tmp = BYTEToBCD2(Date.year);
-	RTC->DTR|=tmp<<16;
-	tmp = BYTEToBCD2(Date.month);
-	RTC->DTR|=tmp<<8;
-	tmp = BYTEToBCD2(Date.weekday);
-	RTC->DTR|=tmp;
+    u32 tmp = 0;
+    
+    RTC->CR |=0x80;  /*Enable write operation in DTR register*/
+    RTC->DTR = 0;
+    tmp = BYTEToBCD2(Date.century);
+    RTC->DTR|=tmp<<24;
+    tmp = BYTEToBCD2(Date.year);
+    RTC->DTR|=tmp<<16;
+    tmp = BYTEToBCD2(Date.month);
+    RTC->DTR|=tmp<<8;
+    tmp = BYTEToBCD2(Date.weekday);
+    RTC->DTR|=tmp;
         RTC->TR &=0xFFFFFF;
         tmp = BYTEToBCD2(Date.day);
-	RTC->TR|=tmp<<24;
-	RTC->CR &=~0x80; /*Disable write operation in DTR register*/
+    RTC->TR|=tmp<<24;
+    RTC->CR &=~0x80; /*Disable write operation in DTR register*/
 }
 /*******************************************************************************
 * Function Name  : RTC_SetTime
@@ -147,18 +147,18 @@ void RTC_SetDate(RTC_DATE Date)
 void RTC_SetTime(RTC_TIME Time)
 {
         u32 tmp = 0;
-	
-	RTC->CR |=0x80;  /*Enable write operation in TR register*/
-	RTC->TR &= 0xFF000000;
-	tmp = BYTEToBCD2(Time.hours);
-	RTC->TR|=tmp<<16;
-	tmp = BYTEToBCD2(Time.minutes);
-	RTC->TR|=tmp<<8;
-	tmp = BYTEToBCD2(Time.seconds);
-	RTC->TR|=tmp;
+    
+    RTC->CR |=0x80;  /*Enable write operation in TR register*/
+    RTC->TR &= 0xFF000000;
+    tmp = BYTEToBCD2(Time.hours);
+    RTC->TR|=tmp<<16;
+    tmp = BYTEToBCD2(Time.minutes);
+    RTC->TR|=tmp<<8;
+    tmp = BYTEToBCD2(Time.seconds);
+    RTC->TR|=tmp;
         RTC->MILR = 0;
-	RTC->MILR |= WORDToBCD3(Time.milliseconds);
-	RTC->CR &=~0x80; /*Disable write operation in TR register*/
+    RTC->MILR |= WORDToBCD3(Time.milliseconds);
+    RTC->CR &=~0x80; /*Disable write operation in TR register*/
 }
 /*******************************************************************************
 * Function Name  : RTC_SetAlarm
@@ -169,19 +169,19 @@ void RTC_SetTime(RTC_TIME Time)
 *******************************************************************************/
 void RTC_SetAlarm(RTC_ALARM Alarm)
 {
-	u32 tmp = 0;
+    u32 tmp = 0;
 
         RTC->CR |=0x80;  /*Enable write operation in ATR register*/
         RTC->ATR = 0;
-	tmp = BYTEToBCD2(Alarm.day);
-	RTC->ATR|=tmp<<24;
-	tmp = BYTEToBCD2(Alarm.hours);
-	RTC->ATR|=tmp<<16;
-	tmp = BYTEToBCD2(Alarm.minutes);
-	RTC->ATR|=tmp<<8;
-	tmp = BYTEToBCD2(Alarm.seconds);
-	RTC->ATR|=tmp;
-	RTC->CR &=~0x80; /*Disable write operation in ATR register*/
+    tmp = BYTEToBCD2(Alarm.day);
+    RTC->ATR|=tmp<<24;
+    tmp = BYTEToBCD2(Alarm.hours);
+    RTC->ATR|=tmp<<16;
+    tmp = BYTEToBCD2(Alarm.minutes);
+    RTC->ATR|=tmp<<8;
+    tmp = BYTEToBCD2(Alarm.seconds);
+    RTC->ATR|=tmp;
+    RTC->CR &=~0x80; /*Disable write operation in ATR register*/
 }
 
 /*******************************************************************************
@@ -194,19 +194,19 @@ void RTC_SetAlarm(RTC_ALARM Alarm)
 *******************************************************************************/
 void RTC_GetDate(u8 Format, RTC_DATE * Date)
 {
-	Date->century = (u8)((RTC->DTR&0xFF000000)>>24);
-	Date->year = (u8)((RTC->DTR&0x00FF0000)>>16);
-	Date->month = (u8)((RTC->DTR&0x00001F00)>>8);
+    Date->century = (u8)((RTC->DTR&0xFF000000)>>24);
+    Date->year = (u8)((RTC->DTR&0x00FF0000)>>16);
+    Date->month = (u8)((RTC->DTR&0x00001F00)>>8);
         Date->day = (u8)((RTC->TR&0x3F000000)>>24);
-	Date->weekday = (u8)(RTC->DTR&0xF);
-	if (Format == BINARY)
-	{
-		Date->century = BCD2ToBYTE(Date->century);
-		Date->year = BCD2ToBYTE(Date->year);
-		Date->month = BCD2ToBYTE(Date->month);
+    Date->weekday = (u8)(RTC->DTR&0xF);
+    if (Format == BINARY)
+    {
+        Date->century = BCD2ToBYTE(Date->century);
+        Date->year = BCD2ToBYTE(Date->year);
+        Date->month = BCD2ToBYTE(Date->month);
                 Date->day = BCD2ToBYTE(Date->day);
-		Date->weekday = BCD2ToBYTE(Date->weekday);
-	}
+        Date->weekday = BCD2ToBYTE(Date->weekday);
+    }
 }
 
 /*******************************************************************************
@@ -219,18 +219,18 @@ void RTC_GetDate(u8 Format, RTC_DATE * Date)
 *******************************************************************************/
 void RTC_GetTime(u8 Format, RTC_TIME * Time)
 {
-	
-	Time->hours = (u8)((RTC->TR&0x003F0000)>>16);
-	Time->minutes = (u8)((RTC->TR&0x00007F00)>>8);
-	Time->seconds = (u8)(RTC->TR&0x7F);
+    
+    Time->hours = (u8)((RTC->TR&0x003F0000)>>16);
+    Time->minutes = (u8)((RTC->TR&0x00007F00)>>8);
+    Time->seconds = (u8)(RTC->TR&0x7F);
         Time->milliseconds =(u16)(RTC->MILR&0xFFF);
-	if (Format == BINARY)
-	{
-		Time->hours = BCD2ToBYTE(Time->hours);
-		Time->minutes = BCD2ToBYTE(Time->minutes);
+    if (Format == BINARY)
+    {
+        Time->hours = BCD2ToBYTE(Time->hours);
+        Time->minutes = BCD2ToBYTE(Time->minutes);
                 Time->seconds = BCD2ToBYTE(Time->seconds);
                 Time->milliseconds = BCD3ToWORD(Time->milliseconds);
-	}
+    }
 }
 
 
@@ -245,16 +245,16 @@ void RTC_GetTime(u8 Format, RTC_TIME * Time)
 void RTC_GetAlarm(u8 Format,RTC_ALARM * Alarm)
 {
         Alarm->day = (u8)((RTC->ATR&0x3F000000)>>24);
-	Alarm->hours = (u8)((RTC->ATR&0x003F0000)>>16);
-	Alarm->minutes = (u8)((RTC->ATR&0x00007F00)>>8);
-	Alarm->seconds = (u8)((RTC->ATR)&0x7F);
-	if (Format == BINARY)
-	{
-		Alarm->day = BCD2ToBYTE(Alarm->day);
-		Alarm->hours = BCD2ToBYTE(Alarm->hours);
-		Alarm->minutes = BCD2ToBYTE(Alarm->minutes);
-		Alarm->seconds = BCD2ToBYTE(Alarm->seconds);
-	}
+    Alarm->hours = (u8)((RTC->ATR&0x003F0000)>>16);
+    Alarm->minutes = (u8)((RTC->ATR&0x00007F00)>>8);
+    Alarm->seconds = (u8)((RTC->ATR)&0x7F);
+    if (Format == BINARY)
+    {
+        Alarm->day = BCD2ToBYTE(Alarm->day);
+        Alarm->hours = BCD2ToBYTE(Alarm->hours);
+        Alarm->minutes = BCD2ToBYTE(Alarm->minutes);
+        Alarm->seconds = BCD2ToBYTE(Alarm->seconds);
+    }
 }
 
 /*******************************************************************************
@@ -267,13 +267,13 @@ void RTC_GetAlarm(u8 Format,RTC_ALARM * Alarm)
 *******************************************************************************/
 void RTC_TamperConfig(u32 TamperMode, u32 TamperPol)
 {
-	RTC->CR&=RTC_TamperMode_Edge;
-	if (TamperMode!=RTC_TamperMode_Edge)
-	RTC->CR|=RTC_TamperMode_Level;
-	
-	RTC->CR&=RTC_TamperPol_Low;
-	if (TamperPol!=RTC_TamperPol_Low)
-	RTC->CR|=RTC_TamperPol_High;
+    RTC->CR&=RTC_TamperMode_Edge;
+    if (TamperMode!=RTC_TamperMode_Edge)
+    RTC->CR|=RTC_TamperMode_Level;
+    
+    RTC->CR&=RTC_TamperPol_Low;
+    if (TamperPol!=RTC_TamperPol_Low)
+    RTC->CR|=RTC_TamperPol_High;
 }
 
 /*******************************************************************************
@@ -285,9 +285,9 @@ void RTC_TamperConfig(u32 TamperMode, u32 TamperPol)
 *******************************************************************************/
 void RTC_TamperCmd(FunctionalState NewState)
 {
-	RTC->CR&=0xFFFFFFFE;
-	if (NewState==ENABLE)
-	RTC->CR|=0x1;
+    RTC->CR&=0xFFFFFFFE;
+    if (NewState==ENABLE)
+    RTC->CR|=0x1;
 }
 
 /*******************************************************************************
@@ -299,9 +299,9 @@ void RTC_TamperCmd(FunctionalState NewState)
 *******************************************************************************/
 void RTC_AlarmCmd(FunctionalState NewState)
 {
-	RTC->CR&=~0x100000;
-	if (NewState==ENABLE)
-	RTC->CR|=0x100000;
+    RTC->CR&=~0x100000;
+    if (NewState==ENABLE)
+    RTC->CR|=0x100000;
 }
 
 /*******************************************************************************
@@ -313,9 +313,9 @@ void RTC_AlarmCmd(FunctionalState NewState)
 *******************************************************************************/
 void RTC_CalibClockCmd(FunctionalState NewState)
 {
-	RTC->CR&=~0x40;
-	if (NewState ==ENABLE)
-	RTC->CR|=0x40;
+    RTC->CR&=~0x40;
+    if (NewState ==ENABLE)
+    RTC->CR|=0x40;
 }
 
 /*******************************************************************************
@@ -327,9 +327,9 @@ void RTC_CalibClockCmd(FunctionalState NewState)
 *******************************************************************************/
 void RTC_SRAMBattPowerCmd(FunctionalState NewState)
 {
-	RTC->CR&=~0x8;
-	if (NewState ==ENABLE)
-	RTC->CR|=0x8;
+    RTC->CR&=~0x8;
+    if (NewState ==ENABLE)
+    RTC->CR|=0x8;
 }
 
 /*******************************************************************************
@@ -343,8 +343,8 @@ void RTC_SRAMBattPowerCmd(FunctionalState NewState)
 *******************************************************************************/
 void RTC_PeriodicIntConfig(u32 PeriodicClock)
 {
-	RTC->CR &=~0xF0000;
-	RTC->CR|=PeriodicClock;
+    RTC->CR &=~0xF0000;
+    RTC->CR|=PeriodicClock;
 }
 
 /*******************************************************************************
@@ -357,9 +357,9 @@ void RTC_PeriodicIntConfig(u32 PeriodicClock)
 *******************************************************************************/
 void RTC_ITConfig(u32 RTC_IT, FunctionalState NewState)
 {
-	RTC->CR&=~RTC_IT;
-	if (NewState==ENABLE)
-	RTC->CR|=RTC_IT;
+    RTC->CR&=~RTC_IT;
+    if (NewState==ENABLE)
+    RTC->CR|=RTC_IT;
 }
 
 /*******************************************************************************
@@ -371,8 +371,8 @@ void RTC_ITConfig(u32 RTC_IT, FunctionalState NewState)
 *******************************************************************************/
 FlagStatus RTC_GetFlagStatus(u32 RTC_FLAG)
 {
-	if (RTC->SR&RTC_FLAG) return SET;
-	else return RESET;
+    if (RTC->SR&RTC_FLAG) return SET;
+    else return RESET;
 }
 
 /*******************************************************************************

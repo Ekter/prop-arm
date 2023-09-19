@@ -27,28 +27,28 @@
 
 /* DMA Masks "used" only in this module */
 
-#define       DMA_Width_DES_MASK	        0xFF1FFFFF
-#define       DMA_Width_SRC_MASK	        0xFFE3FFFF
-#define       DMA_Bst_DES_MASK           	0xFFFC7FFF
-#define       DMA_Bst_SRC_MASK	                0xFFFF8FFF
-#define       DMA_FlowCntrl_Mask	        0xFFFFC7FF
-#define       DMA_TrsfSisze_Mask	        0xFFFFF000
-#define       SRC_Mask	                        0xFFFFFFE1
-#define       DES_Mask	                        0xFFFFFC3F
-#define       DMA_TCIE	                        0x80000000
-#define       DMA_ChannelDESInc	                0x08000000
-#define       DMA_ChannelSRCInc	                0x04000000
-#define       DMA_BufferChannel	                0x20000000
-#define       DMA_HaltChannel	                0x00040000
-#define       DMA_LockChannel	                0x00010000
-#define       DMA_CacheChannel	                0x40000000
-#define       DMA_ChannelActive	                0x00020000
+#define       DMA_Width_DES_MASK            0xFF1FFFFF
+#define       DMA_Width_SRC_MASK            0xFFE3FFFF
+#define       DMA_Bst_DES_MASK               0xFFFC7FFF
+#define       DMA_Bst_SRC_MASK                    0xFFFF8FFF
+#define       DMA_FlowCntrl_Mask            0xFFFFC7FF
+#define       DMA_TrsfSisze_Mask            0xFFFFF000
+#define       SRC_Mask                            0xFFFFFFE1
+#define       DES_Mask                            0xFFFFFC3F
+#define       DMA_TCIE                            0x80000000
+#define       DMA_ChannelDESInc                    0x08000000
+#define       DMA_ChannelSRCInc                    0x04000000
+#define       DMA_BufferChannel                    0x20000000
+#define       DMA_HaltChannel                    0x00040000
+#define       DMA_LockChannel                    0x00010000
+#define       DMA_CacheChannel                    0x40000000
+#define       DMA_ChannelActive                    0x00020000
 #define       DMA_Enable                        0x00000001
 #define       DMA_ChannelEnable                 0x00000001
 
 /*LLI Masks used for linked list's control word stucture*/
 
-#define   DMA_SrcIncrement_MASK	                0xFBFFFFFF
+#define   DMA_SrcIncrement_MASK                    0xFBFFFFFF
 #define   DMA_DesIncrement_MASK                 0xF7FFFFFF
 #define   DMA_CacheableAccess_MASK              0xEFFFFFFF
 #define   DMA_BufferableAccess_MASK             0xDFFFFFFF
@@ -129,22 +129,22 @@ void DMA_ITConfig(DMA_Channel_TypeDef * DMA_Channelx, FunctionalState NewState)
 * Input          :
 *                 -SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 *
 *                  -NewState: new state of the specified DMA_Channelx mask interrupt.
 *                             This parameter can be: ENABLE or DISABLE.
@@ -177,22 +177,22 @@ void DMA_SyncConfig(u16 SRCReq, FunctionalState NewState)
 * Input          :
 *                 -SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 *
 * Output         : None.
 * Return         : None.
@@ -214,22 +214,22 @@ void DMA_SetSReq(u16 SRCReq)
 * Input          :
 *                 -SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 * Output         : None.
 * Return         : None.
 *******************************************************************************/
@@ -246,22 +246,22 @@ void DMA_SetLSReq(u16 SRCReq )
 * Input          :
 *                 -SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 * Output         : None.
 * Return         : None.
 *******************************************************************************/
@@ -281,22 +281,22 @@ void DMA_SetBReq(u16 SRCReq)
 * Input          :
 *                 -SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 * Output         : None.
 * Return         : None.
 *******************************************************************************/
@@ -316,22 +316,22 @@ void DMA_SetLBReq(u16 SRCReq)
 * Input          :
 *                 -SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 * Output         : None.
 * Return         : SET or RESET.
 *******************************************************************************/
@@ -358,22 +358,22 @@ FlagStatus DMA_GetSReq(u16 SRCReq)
 * Input          :
 *                 -SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 * Output         : None.
 * Return         : SET or RESET.
 *******************************************************************************/
@@ -399,22 +399,22 @@ FlagStatus DMA_GetLSReq(u16 SRCReq)
 * Input          :
 *                 -SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 * Output         : None.
 * Return         : SET or RESET.
 *******************************************************************************/
@@ -441,22 +441,22 @@ FlagStatus DMA_GetBReq(u16 SRCReq)
 * Input          :
 *                 - SRCReq:specifies the DMA Request Source.
 *                  This parameter can be:
-*                     -DMA_USB_RX_Mask	           
-*                     -DMA_USB_TX_Mask	           
-*                     -DMA_TIM0_Mask	               
-*                     -DMA_TIM1_Mask	              
+*                     -DMA_USB_RX_Mask               
+*                     -DMA_USB_TX_Mask               
+*                     -DMA_TIM0_Mask                   
+*                     -DMA_TIM1_Mask                  
 *                     -DMA_UART0_RX_Mask             
 *                     -DMA_UART0_TX_Mask             
 *                     -DMA_UART1_RX_Mask           
 *                     -DMA_UART1_TX_Mask            
 *                     -DMA_External_Req0_Mask        
-*                     -DMA_External_Req1_Mask	    
-*                     -DMA_I2C0_Mask	                
-*                     -DMA_I2C1_Mask	               
-*                     -DMA_SSP0_RX_Mask	            
-*                     -DMA_SSP0_TX_Mask	            
-*                     -DMA_SSP1_RX_Mask	            
-*                     -DMA_SSP1_TX_Mask	            
+*                     -DMA_External_Req1_Mask        
+*                     -DMA_I2C0_Mask                    
+*                     -DMA_I2C1_Mask                   
+*                     -DMA_SSP0_RX_Mask                
+*                     -DMA_SSP0_TX_Mask                
+*                     -DMA_SSP1_RX_Mask                
+*                     -DMA_SSP1_TX_Mask                
 * Output         : None.
 * Return         : SET or RESET.
 *******************************************************************************/
@@ -688,14 +688,14 @@ void DMA_ChannelDESIncConfig (DMA_Channel_TypeDef * DMA_Channelx, FunctionalStat
 * Description    : Checks the status of DMA channelx ( Enabled or Disabled).
 *                  - ChannelIndx:specifies the DMA Channel to be checked.
 *                   This parameter can be:
-*				      - Channel0
-*					  - Channel1
-*					  - Channel2
-*					  - Channel3
-*					  - Channel4
-*					  - Channel5
-*				      - Channel6
-*					  - Channel7
+*                      - Channel0
+*                      - Channel1
+*                      - Channel2
+*                      - Channel3
+*                      - Channel4
+*                      - Channel5
+*                      - Channel6
+*                      - Channel7
 * Output         : None.
 *
 * Return         : SET or RESET.
@@ -729,23 +729,23 @@ FlagStatus  DMA_GetChannelStatus(u8 ChannelIndx )
 * Input          :
 *                  - ChannelIndx:specifies the DMA Channel to be checked.
 *                   This parameter can be:
-*				      - Channel0
-*					  - Channel1
-*					  - Channel2
-*					  - Channel3
-*					  - Channel4
-*					  - Channel5
-*				      - Channel6
-*					  - Channel7
+*                      - Channel0
+*                      - Channel1
+*                      - Channel2
+*                      - Channel3
+*                      - Channel4
+*                      - Channel5
+*                      - Channel6
+*                      - Channel7
 *
 *.                 - DMA_ITReq: specifies the DMA interrupt request status to be checked.
 *                   This parameter can be:
 *
-*					  - DMA_IS 
-*					  - DMA_TCS 
-*					  - DMA_ES
-*					  - DMA_TCRS
-*					  - DMA_ERS.
+*                      - DMA_IS 
+*                      - DMA_TCS 
+*                      - DMA_ES
+*                      - DMA_TCRS
+*                      - DMA_ERS.
 *
 * Output         : None.
 *
@@ -763,10 +763,10 @@ ITStatus DMA_GetITStatus(u8 ChannelIndx,u8 DMA_ITReq)
  {
 
    case (DMA_IS):  /*The status of the interrupts after masking : logical or of all Interrupts after Masking*/
-    DMAReg = DMA->ISR;	
+    DMAReg = DMA->ISR;    
     break;
 
-  			
+              
 
    case (DMA_TCS):     /* The status of the Terminal count request after masking */
     DMAReg = DMA->TCISR;
@@ -800,7 +800,7 @@ ITStatus DMA_GetITStatus(u8 ChannelIndx,u8 DMA_ITReq)
   {
 
   return RESET;
-				
+                
 
   }
 
@@ -812,18 +812,18 @@ ITStatus DMA_GetITStatus(u8 ChannelIndx,u8 DMA_ITReq)
 * Description    : Clears The Interrupt pending bits for termnal count or Error interrupts for a specified DMA Channel.
 *                  - ChannelIndx:specifies the DMA Channel to be checked.
 *                   This parameter can be:
-*				      - Channel0
-*					  - Channel1
-*					  - Channel2
-*					  - Channel3
-*					  - Channel4
-*					  - Channel5
-*				      - Channel6
-*					  - Channel7
-*				  - DMA_ITClr : Specifies the DMA interrupt pending to be cleared.
+*                      - Channel0
+*                      - Channel1
+*                      - Channel2
+*                      - Channel3
+*                      - Channel4
+*                      - Channel5
+*                      - Channel6
+*                      - Channel7
+*                  - DMA_ITClr : Specifies the DMA interrupt pending to be cleared.
 *.                    This parameter can be:
 *                     - DMA_TCC
-*					  - DMA_EC.
+*                      - DMA_EC.
 *
 * Output         : None.
 
@@ -842,15 +842,15 @@ void DMA_ClearIT(u8 ChannelIndx,u8 DMA_ITClr)
 
   case (DMA_TCC): /* Clear The status of the Terminal count interrupt on the corresponding channel.*/
     DMA->TCICR |=(1 <<  ChannelIndx );
-    break;         	
+    break;             
 
 
 
   case (DMA_EC): /* Clear The status of the error interrupt on the corresponding channel.*/
     DMA->EICR |=(1 <<  ChannelIndx );
-    break;		
+    break;        
 
-				
+                
 
  }
 
@@ -996,7 +996,7 @@ void DMA_StructInit(DMA_InitTypeDef * DMA_InitStruct)
 
 {
 
-	 /* Initialize The current source address */
+     /* Initialize The current source address */
      DMA_InitStruct-> DMA_Channel_SrcAdd =0x0000000;
 
 
@@ -1005,13 +1005,13 @@ void DMA_StructInit(DMA_InitTypeDef * DMA_InitStruct)
 
 
 
-	 /* Initialize The Linked List Items */
+     /* Initialize The Linked List Items */
      DMA_InitStruct->DMA_Channel_LLstItm=0x00000000 ;
 
 
 
      /* Initialize The Destination width */
-	 DMA_InitStruct->DMA_Channel_DesWidth= DMA_DesWidth_Byte;
+     DMA_InitStruct->DMA_Channel_DesWidth= DMA_DesWidth_Byte;
 
 
 
@@ -1034,7 +1034,7 @@ void DMA_StructInit(DMA_InitTypeDef * DMA_InitStruct)
      /* Initialize The Transfer Size */
      DMA_InitStruct->DMA_Channel_TrsfSize =0x00;
 
-	
+    
 
      /* Initialize the DMA source request peripheral :"This field is ignored if the source of the transfer is from memory" */
      DMA_InitStruct->DMA_Channel_Src =0x00;
@@ -1058,8 +1058,8 @@ void DMA_StructInit(DMA_InitTypeDef * DMA_InitStruct)
 *
 * Input          :
 *                  -DMA_Channelx: where x can be 0,1,2,3,4,5,6,or 7 to select the DMA Channel.
-*				  -DMA_InitStruct: pointer to a DMA_InitTypeDef structure
-*				  ( Structure Config to be load in DMA Registers). .
+*                  -DMA_InitStruct: pointer to a DMA_InitTypeDef structure
+*                  ( Structure Config to be load in DMA Registers). .
 *
 * Output         : None.
 *
@@ -1091,7 +1091,7 @@ void DMA_Init(DMA_Channel_TypeDef * DMA_Channelx, DMA_InitTypeDef * DMA_InitStru
     DMA_Channelx->SRC = DMA_InitStruct-> DMA_Channel_SrcAdd ;
 
 
-	 /* Set the destination address */
+     /* Set the destination address */
 
     DMA_Channelx->DES = DMA_InitStruct->DMA_Channel_DesAdd ;
 
@@ -1133,7 +1133,7 @@ void DMA_Init(DMA_Channel_TypeDef * DMA_Channelx, DMA_InitTypeDef * DMA_InitStru
 *                  parameters in the LLI_CCR_InitStruct .
 *
 * Input          : -LLI_CCR_InitStruct: pointer to a LLI_CCR_InitTypeDef structure
-*		 ( Structure Config to be load in DMA Registers). .
+*         ( Structure Config to be load in DMA Registers). .
 *
 * Output         :  None.
 *
@@ -1166,7 +1166,7 @@ u32 DMA_LLI_CCR_Init(LLI_CCR_InitTypeDef * LLI_CCR_InitStruct)
     CC |= LLI_CCR_InitStruct->LLI_TrsfSize;
     
     /* Enable or disable source increment*/
-    CC &= DMA_SrcIncrement_MASK	;
+    CC &= DMA_SrcIncrement_MASK    ;
     CC |= LLI_CCR_InitStruct->LLI_SrcIncrement;
     
     /* Enable or disable destination increment*/

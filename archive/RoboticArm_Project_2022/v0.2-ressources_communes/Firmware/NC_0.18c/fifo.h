@@ -7,11 +7,11 @@
 // the fifo object
 typedef struct
 {
-	u8 *buffer;				 // pointer to start of the ringbuffer
-	u8 count;       		 // number of characters in FIFO
-	u16 size;                // buffer size
-	u8 *pread;               // read pointer
-	u8 *pwrite;              // write pointer
+    u8 *buffer;                 // pointer to start of the ringbuffer
+    u8 count;                // number of characters in FIFO
+    u16 size;                // buffer size
+    u8 *pread;               // read pointer
+    u8 *pwrite;              // write pointer
 } fifo_t;
 
 /*

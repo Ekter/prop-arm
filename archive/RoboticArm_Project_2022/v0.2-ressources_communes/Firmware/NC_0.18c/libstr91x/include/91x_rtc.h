@@ -38,7 +38,7 @@ typedef struct
   u8 seconds;
   u16 milliseconds;
 }RTC_TIME;
-	
+    
 typedef struct
 {
   u8 day;

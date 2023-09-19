@@ -126,8 +126,8 @@ enum
 
 /* Message ID limits*/
 
-#define CAN_LAST_STD_ID	((1<<11) - 1)
-#define CAN_LAST_EXT_ID	((1L<<29) - 1)
+#define CAN_LAST_STD_ID    ((1<<11) - 1)
+#define CAN_LAST_EXT_ID    ((1L<<29) - 1)
 
 /* Exported functions ------------------------------------------------------- */
 void CAN_DeInit (void);

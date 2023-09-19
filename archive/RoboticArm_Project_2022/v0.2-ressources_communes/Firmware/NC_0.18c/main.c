@@ -1,32 +1,32 @@
 /*#######################################################################################*/
-/* !!! THIS IS NOT FREE SOFTWARE !!!  	                                                 */
+/* !!! THIS IS NOT FREE SOFTWARE !!!                                                       */
 /*#######################################################################################*/
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) 2008 Ingo Busker, Holger Buss
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + FOR NON COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
 // + bzgl. der Nutzungsbedingungen aufzunehmen.
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Teile, die nicht eindeutig mit unserer Lizenzvereinbarung gekennzeichnet sind, unterliegen u.U. eigenen Vereinbarungen:
 // + z.B. Die Funktion printf_P() unterliegt ihrer eigenen Lizenz
@@ -94,103 +94,103 @@ s8 ErrorMSG[25];
 //----------------------------------------------------------------------------------------------------
 void SCU_Config(void)
 {
-	/* configure PLL and set it as master clock source */
-	SCU_MCLKSourceConfig(SCU_MCLK_OSC);		// set master clock source to external oscillator clock (25MHz) before diabling the PLL
-	SCU_PLLCmd(DISABLE);					// now disable the PLL
-	#ifdef MCLK96MHZ
-	SCU_BRCLKDivisorConfig(SCU_BRCLK_Div2); // set BRCLK to MCLK/2 = 48MHz
-	SCU_PCLKDivisorConfig(SCU_PCLK_Div4); 	// set PCLK	(APB bus clock) divisor to 4 (half Reference Clock)
-	SCU_RCLKDivisorConfig(SCU_RCLK_Div2);	// set RCLK	(Reference Clock) divisor to 1 (full PPL clock)
-	SCU_HCLKDivisorConfig(SCU_HCLK_Div2);	// set HCLK	(AHB bus clock) divisor to 1 (full Reference Clock)
-	SCU_PLLFactorsConfig(192,25,2); 		// PLL = 96 MHz, Feedback Divider N=192, Pre-Divider M=25, Post-Divider P=2
-	#else
-	SCU_BRCLKDivisorConfig(SCU_BRCLK_Div1); // set BRCLK to MCLK = 48MHz
-	SCU_PCLKDivisorConfig(SCU_PCLK_Div2); 	// set PCLK	(APB bus clock) divisor to 2 (half Reference Clock)
-	SCU_RCLKDivisorConfig(SCU_RCLK_Div1);	// set RCLK	(Reference Clock) divisor to 1 (full PPL clock)
-	SCU_HCLKDivisorConfig(SCU_HCLK_Div1);	// set HCLK	(AHB bus clock) divisor to 1 (full Reference Clock)
-	SCU_PLLFactorsConfig(192,25,3); 		// PLL = 48 MHz, Feedback Divider N=192, Pre-Divider M=25, Post-Divider P=3
-	#endif
-	SCU_PLLCmd(ENABLE); 					// Enable PLL (is disabled by SCU_PLLFactorsConfig)
-	SCU_MCLKSourceConfig(SCU_MCLK_PLL); 	// set master clock source to PLL
+    /* configure PLL and set it as master clock source */
+    SCU_MCLKSourceConfig(SCU_MCLK_OSC);        // set master clock source to external oscillator clock (25MHz) before diabling the PLL
+    SCU_PLLCmd(DISABLE);                    // now disable the PLL
+    #ifdef MCLK96MHZ
+    SCU_BRCLKDivisorConfig(SCU_BRCLK_Div2); // set BRCLK to MCLK/2 = 48MHz
+    SCU_PCLKDivisorConfig(SCU_PCLK_Div4);     // set PCLK    (APB bus clock) divisor to 4 (half Reference Clock)
+    SCU_RCLKDivisorConfig(SCU_RCLK_Div2);    // set RCLK    (Reference Clock) divisor to 1 (full PPL clock)
+    SCU_HCLKDivisorConfig(SCU_HCLK_Div2);    // set HCLK    (AHB bus clock) divisor to 1 (full Reference Clock)
+    SCU_PLLFactorsConfig(192,25,2);         // PLL = 96 MHz, Feedback Divider N=192, Pre-Divider M=25, Post-Divider P=2
+    #else
+    SCU_BRCLKDivisorConfig(SCU_BRCLK_Div1); // set BRCLK to MCLK = 48MHz
+    SCU_PCLKDivisorConfig(SCU_PCLK_Div2);     // set PCLK    (APB bus clock) divisor to 2 (half Reference Clock)
+    SCU_RCLKDivisorConfig(SCU_RCLK_Div1);    // set RCLK    (Reference Clock) divisor to 1 (full PPL clock)
+    SCU_HCLKDivisorConfig(SCU_HCLK_Div1);    // set HCLK    (AHB bus clock) divisor to 1 (full Reference Clock)
+    SCU_PLLFactorsConfig(192,25,3);         // PLL = 48 MHz, Feedback Divider N=192, Pre-Divider M=25, Post-Divider P=3
+    #endif
+    SCU_PLLCmd(ENABLE);                     // Enable PLL (is disabled by SCU_PLLFactorsConfig)
+    SCU_MCLKSourceConfig(SCU_MCLK_PLL);     // set master clock source to PLL
 }
 
 //----------------------------------------------------------------------------------------------------
 void GetNaviCtrlVersion(void)
 {
-	u8 msg[25];
+    u8 msg[25];
 
-	sprintf(msg,"\n\r NaviCtrl V%d.%d%c",  VERSION_MAJOR,  VERSION_MINOR, 'a'+ VERSION_PATCH);
-	UART1_PutString(msg);
+    sprintf(msg,"\n\r NaviCtrl V%d.%d%c",  VERSION_MAJOR,  VERSION_MINOR, 'a'+ VERSION_PATCH);
+    UART1_PutString(msg);
 }
 
 //----------------------------------------------------------------------------------------------------
 void CheckErrors(void)
 {
-	if(CheckDelay(SPI0_Timeout))
-	{
-		LED_RED_ON;
-		sprintf(ErrorMSG,"no FC communication ");
-		ErrorCode = 3;
-		StopNavigation = 1;
-	}
-	else if(CheckDelay(I2C1_Timeout))
-	{
-		LED_RED_ON;
-		sprintf(ErrorMSG,"no MK3Mag communication ");
-		//Reset I2CBus
-		I2C1_Deinit();
-		I2C1_Init();
-		ErrorCode = 4;
-		StopNavigation = 1;
-	}
-	else if(FC_Version.Compatible != FC_SPI_COMPATIBLE)
-	{
-		LED_RED_ON;
-		sprintf(ErrorMSG,"FC not compatible ");
-		ErrorCode = 1;
-		StopNavigation = 1;
-	}
-	else if(MK3MAG_Version.Compatible != MK3MAG_I2C_COMPATIBLE)
-	{
-		sprintf(ErrorMSG,"MK3Mag not compatible ");
-		LED_RED_ON;
-		ErrorCode = 2;
-		StopNavigation = 1;
-	}
-	else if(CheckDelay(UBX_Timeout))
-	{
-		LED_RED_ON;
-		sprintf(ErrorMSG,"no GPS communication ");
-		ErrorCode = 5;
-		StopNavigation = 1;
-	}
-	else if(I2C_Heading.Heading < 0)
-	{
-		LED_RED_ON;
-		sprintf(ErrorMSG,"bad compass value ");
-		ErrorCode = 6;
-		StopNavigation = 1;
-	}
-	else if(FC.Flags & FCFLAG_SPI_RX_ERR)
-	{
-	 	LED_RED_ON;
-		sprintf(ErrorMSG,"FC spi rx error ");
-		ErrorCode = 8;
-		StopNavigation = 1;	
-	}
-	else if(FC.RC_Quality < 100)
-	{
-		LED_RED_ON;
-		sprintf(ErrorMSG,"RC Signal lost ");
-		ErrorCode = 7;
-	}
-	else // no error occured
-	{
-		sprintf(ErrorMSG,"No Error               ");
-		ErrorCode = 0;
-		StopNavigation = 0;
-		LED_RED_OFF;
-	}
+    if(CheckDelay(SPI0_Timeout))
+    {
+        LED_RED_ON;
+        sprintf(ErrorMSG,"no FC communication ");
+        ErrorCode = 3;
+        StopNavigation = 1;
+    }
+    else if(CheckDelay(I2C1_Timeout))
+    {
+        LED_RED_ON;
+        sprintf(ErrorMSG,"no MK3Mag communication ");
+        //Reset I2CBus
+        I2C1_Deinit();
+        I2C1_Init();
+        ErrorCode = 4;
+        StopNavigation = 1;
+    }
+    else if(FC_Version.Compatible != FC_SPI_COMPATIBLE)
+    {
+        LED_RED_ON;
+        sprintf(ErrorMSG,"FC not compatible ");
+        ErrorCode = 1;
+        StopNavigation = 1;
+    }
+    else if(MK3MAG_Version.Compatible != MK3MAG_I2C_COMPATIBLE)
+    {
+        sprintf(ErrorMSG,"MK3Mag not compatible ");
+        LED_RED_ON;
+        ErrorCode = 2;
+        StopNavigation = 1;
+    }
+    else if(CheckDelay(UBX_Timeout))
+    {
+        LED_RED_ON;
+        sprintf(ErrorMSG,"no GPS communication ");
+        ErrorCode = 5;
+        StopNavigation = 1;
+    }
+    else if(I2C_Heading.Heading < 0)
+    {
+        LED_RED_ON;
+        sprintf(ErrorMSG,"bad compass value ");
+        ErrorCode = 6;
+        StopNavigation = 1;
+    }
+    else if(FC.Flags & FCFLAG_SPI_RX_ERR)
+    {
+         LED_RED_ON;
+        sprintf(ErrorMSG,"FC spi rx error ");
+        ErrorCode = 8;
+        StopNavigation = 1;    
+    }
+    else if(FC.RC_Quality < 100)
+    {
+        LED_RED_ON;
+        sprintf(ErrorMSG,"RC Signal lost ");
+        ErrorCode = 7;
+    }
+    else // no error occured
+    {
+        sprintf(ErrorMSG,"No Error               ");
+        ErrorCode = 0;
+        StopNavigation = 0;
+        LED_RED_OFF;
+    }
 }
 
 // the handler will be cyclic called by the timer 1 ISR
@@ -198,116 +198,116 @@ void CheckErrors(void)
 // within the main loop that could block longer at logging activities
 void EXTIT3_IRQHandler(void)
 {
-	IENABLE;
+    IENABLE;
 
-	VIC_ITCmd(EXTIT3_ITLine,DISABLE); // disable irq
-	VIC_SWITCmd(EXTIT3_ITLine,DISABLE); // clear pending bit
-	I2C1_UpdateCompass();	// update compass communication	
-	Analog_Update(); 		// get new ADC values
-	VIC_ITCmd(EXTIT3_ITLine, ENABLE); // enable irq
+    VIC_ITCmd(EXTIT3_ITLine,DISABLE); // disable irq
+    VIC_SWITCmd(EXTIT3_ITLine,DISABLE); // clear pending bit
+    I2C1_UpdateCompass();    // update compass communication    
+    Analog_Update();         // get new ADC values
+    VIC_ITCmd(EXTIT3_ITLine, ENABLE); // enable irq
 
-	IDISABLE;
+    IDISABLE;
 }
 
 //----------------------------------------------------------------------------------------------------
 int main(void)
 {
-	/* Configure the system clocks */
-	SCU_Config();
-	/* init VIC (Vectored Interrupt Controller)	*/
-	SCU_AHBPeriphClockConfig(__VIC,ENABLE);	// enable AHB bus clock for VIC
-	SCU_AHBPeriphReset(__VIC, DISABLE);		// disable reset state for VIC
-	VIC_DeInit();							// deinitializes the VIC module registers to their default reset values.
-	VIC_InitDefaultVectors();
+    /* Configure the system clocks */
+    SCU_Config();
+    /* init VIC (Vectored Interrupt Controller)    */
+    SCU_AHBPeriphClockConfig(__VIC,ENABLE);    // enable AHB bus clock for VIC
+    SCU_AHBPeriphReset(__VIC, DISABLE);        // disable reset state for VIC
+    VIC_DeInit();                            // deinitializes the VIC module registers to their default reset values.
+    VIC_InitDefaultVectors();
 
-	// initialize timer 1 for System Clock and delay rountines
-	TIMER1_Init();
-	// initialize the LEDs (needs Timer 1)
-	Led_Init();
-	// initialize the debug UART1
-	UART1_Init();
-	UART1_PutString("\r\n---------------------------------------------");
-	// initialize timer 2 for servo outputs
-	//TIMER2_Init();
-	// initialize UART2 to FLIGHTCTRL
-	UART2_Init();
-	// initialize UART0 (to MKGPS or MK3MAG)
-	UART0_Init();
-	// initialize adc
-	Analog_Init();
-	// initialize usb
-	//USB_ConfigInit();
-	// initialize SPI0 to FC
-	SPI0_Init();
-	// initialize i2c bus to MK3MAG (needs Timer 1)
-	I2C1_Init();
-	// initialize the gps position controller (needs Timer 1)
-	Fat16_Init();
-	// initialize NC params
-	NCParams_Init();
-	// initialize the settings
-	Settings_Init();
-	// initialize logging (needs settings)
-	Logging_Init();
+    // initialize timer 1 for System Clock and delay rountines
+    TIMER1_Init();
+    // initialize the LEDs (needs Timer 1)
+    Led_Init();
+    // initialize the debug UART1
+    UART1_Init();
+    UART1_PutString("\r\n---------------------------------------------");
+    // initialize timer 2 for servo outputs
+    //TIMER2_Init();
+    // initialize UART2 to FLIGHTCTRL
+    UART2_Init();
+    // initialize UART0 (to MKGPS or MK3MAG)
+    UART0_Init();
+    // initialize adc
+    Analog_Init();
+    // initialize usb
+    //USB_ConfigInit();
+    // initialize SPI0 to FC
+    SPI0_Init();
+    // initialize i2c bus to MK3MAG (needs Timer 1)
+    I2C1_Init();
+    // initialize the gps position controller (needs Timer 1)
+    Fat16_Init();
+    // initialize NC params
+    NCParams_Init();
+    // initialize the settings
+    Settings_Init();
+    // initialize logging (needs settings)
+    Logging_Init();
 
-	TimerCheckError = SetDelay(3000);
-	UART1_PutString("\r\n++++++++++++++++++++++++++++++++++++++++++");
-	UART1_PutString("\n\r Version information:");
+    TimerCheckError = SetDelay(3000);
+    UART1_PutString("\r\n++++++++++++++++++++++++++++++++++++++++++");
+    UART1_PutString("\n\r Version information:");
 
-	GetNaviCtrlVersion();
+    GetNaviCtrlVersion();
 
-	I2C1_GetMK3MagVersion();
-	if(MK3MAG_Version.Compatible != MK3MAG_I2C_COMPATIBLE)
-	{
-		UART1_PutString("\n\r MK3Mag not compatible");
-		LED_RED_ON;
-	}
+    I2C1_GetMK3MagVersion();
+    if(MK3MAG_Version.Compatible != MK3MAG_I2C_COMPATIBLE)
+    {
+        UART1_PutString("\n\r MK3Mag not compatible");
+        LED_RED_ON;
+    }
 
-	SPI0_GetFlightCtrlVersion();
-	if(FC_Version.Compatible != FC_SPI_COMPATIBLE)
-	{
-		UART1_PutString("\n\r Flight-Ctrl not compatible");
-		LED_RED_ON;
-	}
+    SPI0_GetFlightCtrlVersion();
+    if(FC_Version.Compatible != FC_SPI_COMPATIBLE)
+    {
+        UART1_PutString("\n\r Flight-Ctrl not compatible");
+        LED_RED_ON;
+    }
 
-	UART0_GetMKOSDVersion();
+    UART0_GetMKOSDVersion();
 
-	GPS_Init();
-	// initialize fat16 partition on sd card (needs Timer 1)
+    GPS_Init();
+    // initialize fat16 partition on sd card (needs Timer 1)
     
-	// ---------- Prepare the isr driven 
-	// set to absolute lowest priority
+    // ---------- Prepare the isr driven 
+    // set to absolute lowest priority
     VIC_Config(EXTIT3_ITLine, VIC_IRQ, PRIORITY_SW);
-	// enable interrupts
+    // enable interrupts
     VIC_ITCmd(EXTIT3_ITLine, ENABLE);
 
-	for (;;) // the endless main loop
-	{
-		UART0_ProcessRxData(); 	// process request
-		UART1_ProcessRxData(); 	// process request
-		USB_ProcessRxData(); 	// process request
-		UART0_TransmitTxData(); // send answer
-		UART1_TransmitTxData(); // send answer
-		UART2_TransmitTxData(); // send answer
-		USB_TransmitTxData(); 	// send answer
+    for (;;) // the endless main loop
+    {
+        UART0_ProcessRxData();     // process request
+        UART1_ProcessRxData();     // process request
+        USB_ProcessRxData();     // process request
+        UART0_TransmitTxData(); // send answer
+        UART1_TransmitTxData(); // send answer
+        UART2_TransmitTxData(); // send answer
+        USB_TransmitTxData();     // send answer
 
-		SPI0_UpdateBuffer();    // handle new SPI Data
-		// ---------------- Error Check Timing ----------------------------
-		if(CheckDelay(TimerCheckError))
-		{
-			TimerCheckError = SetDelay(1000);
-			if(CheckDelay(SPI0_Timeout)) GPS_Navigation(); // process the GPS data even if the FC is not connected
-			CheckErrors();
-			if(FC.Flags & FCFLAG_FLY) NaviData.FlyingTime++; // we want to count the battery-time
-//			else NaviData.FlyingTime = 0; // not the time per flight
-			UART1_Request_SendFollowMe = TRUE;
-			if(SerialLinkOkay) SerialLinkOkay--;
-			if(SerialLinkOkay < 250 - 5) NCFlags |= NC_FLAG_NOSERIALLINK; // 5 seconds timeout for serial communication
-			else NCFlags &= ~NC_FLAG_NOSERIALLINK;
-		}
- 		// ---------------- Logging  ---------------------------------------
-		Logging_Update();  // could be block some time for at max. 2 seconds, therefore move time critical part of the mainloop into the ISR of timer 1
-	}
+        SPI0_UpdateBuffer();    // handle new SPI Data
+        // ---------------- Error Check Timing ----------------------------
+        if(CheckDelay(TimerCheckError))
+        {
+            TimerCheckError = SetDelay(1000);
+            if(CheckDelay(SPI0_Timeout)) GPS_Navigation(); // process the GPS data even if the FC is not connected
+            CheckErrors();
+            if(FC.Flags & FCFLAG_FLY) NaviData.FlyingTime++; // we want to count the battery-time
+//            else NaviData.FlyingTime = 0; // not the time per flight
+            UART1_Request_SendFollowMe = TRUE;
+            if(SerialLinkOkay) SerialLinkOkay--;
+            if(SerialLinkOkay < 250 - 5) NCFlags |= NC_FLAG_NOSERIALLINK; // 5 seconds timeout for serial communication
+            else NCFlags &= ~NC_FLAG_NOSERIALLINK;
+        }
+         // ---------------- Logging  ---------------------------------------
+        Logging_Update();  // could be block some time for at max. 2 seconds, therefore move time critical part of the mainloop into the ISR of timer 1
+    }
 }
 
 

@@ -1,32 +1,32 @@
 /*#######################################################################################*/
-/* !!! THIS IS NOT FREE SOFTWARE !!!  	                                                 */
+/* !!! THIS IS NOT FREE SOFTWARE !!!                                                       */
 /*#######################################################################################*/
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) 2008 Ingo Busker, Holger Buss
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + FOR NON COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
 // + bzgl. der Nutzungsbedingungen aufzunehmen.
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -65,20 +65,20 @@ DateTime_t SystemTime;
 //----------------------------------------------------------------------------------------------------
 void TIM1_IRQHandler(void)
 {
-	IENABLE;
+    IENABLE;
 
-	if(TIM_GetFlagStatus(TIM1, TIM_FLAG_OC1) == SET)
-	{
-		TIM_ClearFlag(TIM1, TIM_FLAG_OC1); // clear irq pending bit
-		TIM1->OC1R += 200;    // Timerfreq is 200kHz, generate an interrupt every 1ms
-		CountMilliseconds++;
-		
-		// generate SW Interrupt to make a regular timing 
-		// independent from the mainloop at the lowest IRQ priority
-		VIC_SWITCmd(EXTIT3_ITLine, ENABLE);	
-	}
+    if(TIM_GetFlagStatus(TIM1, TIM_FLAG_OC1) == SET)
+    {
+        TIM_ClearFlag(TIM1, TIM_FLAG_OC1); // clear irq pending bit
+        TIM1->OC1R += 200;    // Timerfreq is 200kHz, generate an interrupt every 1ms
+        CountMilliseconds++;
+        
+        // generate SW Interrupt to make a regular timing 
+        // independent from the mainloop at the lowest IRQ priority
+        VIC_SWITCmd(EXTIT3_ITLine, ENABLE);    
+    }
 
-	IDISABLE;
+    IDISABLE;
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -86,54 +86,54 @@ void TIM1_IRQHandler(void)
 //----------------------------------------------------------------------------------------------------
 void TIMER1_Init(void)
 {
-	TIM_InitTypeDef   TIM_InitStructure;
+    TIM_InitTypeDef   TIM_InitStructure;
 
-	UART1_PutString("\r\n Timer1 init...");
+    UART1_PutString("\r\n Timer1 init...");
 
-	#define TIM1_FREQ 200000 // 200kHz
-	// TimerOCR set in IntHandler
+    #define TIM1_FREQ 200000 // 200kHz
+    // TimerOCR set in IntHandler
 
-	SCU_APBPeriphClockConfig(__TIM01, ENABLE);
+    SCU_APBPeriphClockConfig(__TIM01, ENABLE);
 
-	TIM_DeInit(TIM1); 
-	TIM_StructInit(&TIM_InitStructure);
-	TIM_InitStructure.TIM_Mode = TIM_OCM_CHANNEL_1;
-	TIM_InitStructure.TIM_OC1_Modes = TIM_TIMING;
-	TIM_InitStructure.TIM_Clock_Source = TIM_CLK_APB;
-	TIM_InitStructure.TIM_Prescaler = (SCU_GetPCLKFreqValue() * 1000) / TIM1_FREQ;	// is only valid up to 48 MHz !
-	TIM_Init (TIM1, &TIM_InitStructure);
+    TIM_DeInit(TIM1); 
+    TIM_StructInit(&TIM_InitStructure);
+    TIM_InitStructure.TIM_Mode = TIM_OCM_CHANNEL_1;
+    TIM_InitStructure.TIM_OC1_Modes = TIM_TIMING;
+    TIM_InitStructure.TIM_Clock_Source = TIM_CLK_APB;
+    TIM_InitStructure.TIM_Prescaler = (SCU_GetPCLKFreqValue() * 1000) / TIM1_FREQ;    // is only valid up to 48 MHz !
+    TIM_Init (TIM1, &TIM_InitStructure);
 
-	TIM_ITConfig(TIM1, TIM_IT_OC1, ENABLE);
-	TIM_CounterCmd(TIM1, TIM_START);
+    TIM_ITConfig(TIM1, TIM_IT_OC1, ENABLE);
+    TIM_CounterCmd(TIM1, TIM_START);
 
-	VIC_Config(TIM1_ITLine, VIC_IRQ, PRIORITY_TIMER1);
-	VIC_ITCmd(TIM1_ITLine, ENABLE);
+    VIC_Config(TIM1_ITLine, VIC_IRQ, PRIORITY_TIMER1);
+    VIC_ITCmd(TIM1_ITLine, ENABLE);
 
-	SystemTime.Year = 0;
-	SystemTime.Month = 0;
-	SystemTime.Day = 0;
-	SystemTime.Hour = 0;
-	SystemTime.Min = 0;
-	SystemTime.Sec = 0;
-	SystemTime.mSec = 0;
-	SystemTime.Valid = 0;
+    SystemTime.Year = 0;
+    SystemTime.Month = 0;
+    SystemTime.Day = 0;
+    SystemTime.Hour = 0;
+    SystemTime.Min = 0;
+    SystemTime.Sec = 0;
+    SystemTime.mSec = 0;
+    SystemTime.Valid = 0;
 
-	CountMilliseconds = 0;
+    CountMilliseconds = 0;
 
-	UART1_PutString("ok");
+    UART1_PutString("ok");
 
 }
 
 // -----------------------------------------------------------------------
 u32 SetDelay (u32 t)
 {
-	return(CountMilliseconds + t -1);
+    return(CountMilliseconds + t -1);
 }
 
 // -----------------------------------------------------------------------
 u8 CheckDelay(u32 t)
 {
-	return(((t - CountMilliseconds)& 0x80000000) >> 27);
+    return(((t - CountMilliseconds)& 0x80000000) >> 27);
 }
 
 // -----------------------------------------------------------------------
@@ -141,16 +141,16 @@ u8 CheckDelay(u32 t)
 // if t < current time the delay is reportet as zero
 u32 GetDelay(u32 t)
 {
-	u32 delay = 0;
-	delay =  t - CountMilliseconds;
-	if(delay & 0x80000000) delay = 0; // avoid negative delay values
-	return(delay);
+    u32 delay = 0;
+    delay =  t - CountMilliseconds;
+    if(delay & 0x80000000) delay = 0; // avoid negative delay values
+    return(delay);
 }
 
 // -----------------------------------------------------------------------
 void Delay_ms(u32 w)
 {
-	static u32 akt;
-	akt = SetDelay(w);
-	while (!CheckDelay(akt));
+    static u32 akt;
+    akt = SetDelay(w);
+    while (!CheckDelay(akt));
 }

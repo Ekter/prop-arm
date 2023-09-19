@@ -26,40 +26,40 @@
 /*                  a range of identifiers or a fixed identifier, for standard*/
 /*                  and extended IDs                                          */
 /*----------------------------------------------------------------------------*/
-#define RANGE_ID_MSK(range_start, range_end)	(~((range_end) - (range_start)))
-#define RANGE_ID_ARB(range_start, range_end)	((range_start) & (range_end))
+#define RANGE_ID_MSK(range_start, range_end)    (~((range_end) - (range_start)))
+#define RANGE_ID_ARB(range_start, range_end)    ((range_start) & (range_end))
 
-#define FIXED_ID_MSK(id)	RANGE_ID_MSK((id), (id))
-#define FIXED_ID_ARB(id)	RANGE_ID_ARB((id), (id))
+#define FIXED_ID_MSK(id)    RANGE_ID_MSK((id), (id))
+#define FIXED_ID_ARB(id)    RANGE_ID_ARB((id), (id))
 
-#define STD_RANGE_ID_MSK(range_start, range_end)	((u16)((RANGE_ID_MSK((range_start), (range_end)) & 0x7FF) << 2))
-#define STD_RANGE_ID_ARB(range_start, range_end)	((u16)(RANGE_ID_ARB((range_start), (range_end)) << 2))
+#define STD_RANGE_ID_MSK(range_start, range_end)    ((u16)((RANGE_ID_MSK((range_start), (range_end)) & 0x7FF) << 2))
+#define STD_RANGE_ID_ARB(range_start, range_end)    ((u16)(RANGE_ID_ARB((range_start), (range_end)) << 2))
 
-#define STD_FIXED_ID_MSK(id)	((u16)((FIXED_ID_MSK(id) & 0x7FF) << 2))
-#define STD_FIXED_ID_ARB(id)	((u16)(FIXED_ID_ARB(id) << 2))
+#define STD_FIXED_ID_MSK(id)    ((u16)((FIXED_ID_MSK(id) & 0x7FF) << 2))
+#define STD_FIXED_ID_ARB(id)    ((u16)(FIXED_ID_ARB(id) << 2))
 
 #define EXT_RANGE_ID_MSK_L(range_start, range_end)     \
   ((u16)(RANGE_ID_MSK((range_start), (range_end))))
 
-#define EXT_RANGE_ID_MSK_H(range_start, range_end)	\
+#define EXT_RANGE_ID_MSK_H(range_start, range_end)    \
   ((u16)(RANGE_ID_MSK((range_start), (range_end)) >> 16) & 0x1FFF) 
 
-#define EXT_RANGE_ID_ARB_L(range_start, range_end)	\
+#define EXT_RANGE_ID_ARB_L(range_start, range_end)    \
   ((u16)(RANGE_ID_ARB((range_start), (range_end))))
 
 #define EXT_RANGE_ID_ARB_H(range_start, range_end)       \
   ((u16)(RANGE_ID_ARB((range_start), (range_end)) >> 16) & 0x1FFF)
 
-#define EXT_FIXED_ID_MSK_L(id)	((u16)(FIXED_ID_MSK(id)))
+#define EXT_FIXED_ID_MSK_L(id)    ((u16)(FIXED_ID_MSK(id)))
 
-#define EXT_FIXED_ID_MSK_H(id)	((u16)(FIXED_ID_MSK(id) >> 16 ) & 0x1FFF)
+#define EXT_FIXED_ID_MSK_H(id)    ((u16)(FIXED_ID_MSK(id) >> 16 ) & 0x1FFF)
 
-#define EXT_FIXED_ID_ARB_L(id)	((u16)(FIXED_ID_ARB(id)))
+#define EXT_FIXED_ID_ARB_L(id)    ((u16)(FIXED_ID_ARB(id)))
 
-#define EXT_FIXED_ID_ARB_H(id)	((u16)(FIXED_ID_ARB(id) >> 16) & 0x1FFF)
+#define EXT_FIXED_ID_ARB_H(id)    ((u16)(FIXED_ID_ARB(id) >> 16) & 0x1FFF)
 
 /* macro to format the timing register value from the timing parameters*/
-#define CAN_TIMING(tseg1, tseg2, sjw, brp)	((((tseg2-1) & 0x07) << 12) | (((tseg1-1) & 0x0F) << 8) | (((sjw-1) & 0x03) << 6) | ((brp-1) & 0x3F))
+#define CAN_TIMING(tseg1, tseg2, sjw, brp)    ((((tseg2-1) & 0x07) << 12) | (((tseg1-1) & 0x0F) << 8) | (((sjw-1) & 0x03) << 6) | ((brp-1) & 0x3F))
 
 /* Private variables ---------------------------------------------------------*/
 /* array of pre-defined timing parameters for standard bitrates*/
@@ -110,12 +110,12 @@ void CAN_Init(CAN_InitTypeDef* CAN_InitStruct)
 }
 
 /*******************************************************************************
-* Function Name  : CAN_StructInit		                        
-* Description    : Fills each CAN_InitStruct member with its reset value.	      
+* Function Name  : CAN_StructInit                                
+* Description    : Fills each CAN_InitStruct member with its reset value.          
 * Input          : CAN_InitStruct : pointer to a CAN_InitTypeDef structure which       
 *                  will be initialized. 
 * Output         : None                  
-* Return         : None.						      
+* Return         : None.                              
 *******************************************************************************/
 void CAN_StructInit(CAN_InitTypeDef* CAN_InitStruct)
 {
@@ -134,7 +134,7 @@ void CAN_StructInit(CAN_InitTypeDef* CAN_InitStruct)
 void CAN_SetBitrate(u32 bitrate)
 {
   CAN->BTR = CanTimings[bitrate];  /* write the predefined timing value */
-  CAN->BRPR = 0; 		     /* clear the Extended Baud Rate Prescaler */
+  CAN->BRPR = 0;              /* clear the Extended Baud Rate Prescaler */
 }
 
 /*******************************************************************************
@@ -349,7 +349,7 @@ ErrorStatus CAN_SetRxMsgObj(u32 msgobj, u32 idType, u32 idLow, u32 idHigh, bool 
 }
 
 /*******************************************************************************
-* Function Name  : CAN_SetUnusedAllMsgObj				      
+* Function Name  : CAN_SetUnusedAllMsgObj                      
 * Description    : Configures all the message objects as unused.               
 * Input          : None                                                      
 * Output         : None                                                      
@@ -369,7 +369,7 @@ ErrorStatus CAN_SetUnusedAllMsgObj(void)
 }
 
 /*******************************************************************************
-* Function Name  : CAN_ReleaseMessage					      
+* Function Name  : CAN_ReleaseMessage                          
 * Description    : Releases the message object                                
 * Input          : - msgobj: specifies the Message object number, from 0 to 31.                     
 * Output         : None                                                      
@@ -482,7 +482,7 @@ ErrorStatus CAN_SendMessage(u32 msgobj, canmsg* pCanMsg)
 
 /*******************************************************************************
 * Function Name  : CAN_TransmitRequest                                            
-* Description    : This function requests the transmission of a message object 			                
+* Description    : This function requests the transmission of a message object                             
 * Input          : msgobj: number of the message object that should be 
 *                  transmitted  
 * Output         : None                                                      
@@ -708,7 +708,7 @@ ErrorStatus CAN_BasicReceiveMessage(canmsg* pCanMsg)
 void CAN_EnterInitMode(u8 InitMask)
 {
   CAN->CR = InitMask | CAN_CR_INIT;
-  CAN->SR = 0;					/* reset the status*/
+  CAN->SR = 0;                    /* reset the status*/
 }
 
 /*******************************************************************************

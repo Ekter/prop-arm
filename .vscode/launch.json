@@ -7,9 +7,9 @@
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
-      "externalConsole": true,
-      "cwd": "c:/Users/Admin-17875/Documents/prop-arm",
-      "program": "c:/Users/Admin-17875/Documents/prop-arm/build/Debug/outDebug",
+      "externalConsole": false,
+      "cwd": "/home/ekter/Documents/codaj/prop-arm/clean_interface/QT_prop_arm",
+      "program": "/home/ekter/Documents/codaj/prop-arm/clean_interface/QT_prop_arm/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [

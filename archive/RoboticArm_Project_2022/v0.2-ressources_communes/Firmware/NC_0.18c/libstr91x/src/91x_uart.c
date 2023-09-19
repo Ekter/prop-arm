@@ -20,18 +20,18 @@
 /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 /* UART IrDA Mask */
-#define UART_IrDA_Disable_Mask	        0xFFFD	/* IrDA Disable Mask */
-#define UART_IrDA_Enable_Mask           0x0002	/* IrDA Enable Mask */
+#define UART_IrDA_Disable_Mask            0xFFFD    /* IrDA Disable Mask */
+#define UART_IrDA_Enable_Mask           0x0002    /* IrDA Enable Mask */
 #define IrDA_LowPower_Enable_Mask       0x0004 /*IrDA lower power mode enable*/
 #define IrDA_LowPower_Disable_Mask      0xFFFB /*IrDA lower power mode enable*/
 
 /* UART Mask */
-#define UART_Enable_Mask	        0x0001	/* UART Enable Mask */
-#define UART_Disable_Mask	        0xFFFE	/* UART Disable Mask */
+#define UART_Enable_Mask            0x0001    /* UART Enable Mask */
+#define UART_Disable_Mask            0xFFFE    /* UART Disable Mask */
 
 /* UART LoopBack */
-#define UART_LoopBack_Disable_Mask      0xFF7F	/* LoopBack Disable Mask */
-#define UART_LoopBack_Enable_Mask       0x0080	/* LoopBack Enable Mask */
+#define UART_LoopBack_Disable_Mask      0xFF7F    /* LoopBack Disable Mask */
+#define UART_LoopBack_Enable_Mask       0x0080    /* LoopBack Enable Mask */
 
 #define UART_WordLength_Mask            0xFF9F  /* UART Word Length Mask */
 #define UART_Parity_Mask                0xFF79  /* UART Parity Mask */
@@ -253,7 +253,7 @@ void UART_ITConfig(UART_TypeDef* UARTx, u16 UART_IT, FunctionalState NewState)
 
 /*******************************************************************************
 * Function Name  : UART_DMAConfig
-* Description    : Configures the UARTx’s DMA interface.
+* Description    : Configures the UARTxï¿½s DMA interface.
 * Input          : - UARTx: where x can be 1 or 2 to select the UART peripheral
 *                  - UART_DMAOnError: specifies the DMA on error request.
 *                    This parameter can be:
@@ -278,7 +278,7 @@ void UART_DMAConfig(UART_TypeDef* UARTx, u16 UART_DMAOnError)
 
 /*******************************************************************************
 * Function Name  : UART_DMACmd
-* Description    : Enables or disables the UARTx’s DMA interface.
+* Description    : Enables or disables the UARTxï¿½s DMA interface.
 * Input          : - UARTx: where x can be 1 or 2 to select the UART peripheral
 *                  - UART_DMAReq: enables or disables the request of DMA from UART.
 *                    This parameter can be:
@@ -409,7 +409,7 @@ FlagStatus UART_GetFlagStatus(UART_TypeDef* UARTx, u16 UART_FLAG)
 
 /*******************************************************************************
 * Function Name  : UART_ClearFlag
-* Description    : Clears the UARTx’s flags(Frame, Parity, Break, Overrun error).
+* Description    : Clears the UARTxï¿½s flags(Frame, Parity, Break, Overrun error).
 * Input          : - UARTx: where x can be 0,1or 2 to select the UART peripheral.
 * Output         : None
 * Return         : None
@@ -454,10 +454,10 @@ ITStatus UART_GetITStatus(UART_TypeDef* UARTx, u16 UART_IT)
 
 /*******************************************************************************
 * Function Name  : UART_ClearITPendingBit
-* Description    : Clears the UARTx’s interrupt pending bits.
+* Description    : Clears the UARTxï¿½s interrupt pending bits.
 * Input          : - UARTx: where x can be 0,1or 2 to select the UART peripheral.
 *                  - UART_IT: specifies the interrupt pending bit to clear.
-*                    More than one interrupt can be cleared using the “|” operator.
+*                    More than one interrupt can be cleared using the ï¿½|ï¿½ operator.
 *                    This parameter can be:
 *                       - UART_IT_OverrunError: Overrun Error interrupt
 *                       - UART_IT_BreakError: Break Error interrupt
@@ -500,7 +500,7 @@ void UART_IrDALowPowerConfig(u8 IrDAx, FunctionalState NewState)
     break;
     case IrDA2: UARTx = UART2;
     break;
-	default : break;
+    default : break;
   }
 
   if (NewState == ENABLE)
@@ -533,7 +533,7 @@ void UART_IrDASetCounter(u8 IrDAx, u32 IrDA_Counter)
     break;
     case IrDA2: UARTx = UART2;
     break;
-	default : break;
+    default : break;
   }
    /* Get the APB frequency */
   APBClock = (SCU_GetPCLKFreqValue())*1000;
@@ -543,7 +543,7 @@ void UART_IrDASetCounter(u8 IrDAx, u32 IrDA_Counter)
 
 /*******************************************************************************
 * Function Name  : UART_IrDACmd
-* Description    : Enables or disables the UARTx’s IrDA interface.
+* Description    : Enables or disables the UARTxï¿½s IrDA interface.
 * Input          : - IrDAx: where x can be 0,1 or 2 to select the UART/IrDA peripheral
 *                  - NewState: new state of the UARTx peripheral.
 *                    This parameter can be: ENABLE or DISABLE.
@@ -562,7 +562,7 @@ void UART_IrDACmd(u8 IrDAx, FunctionalState NewState)
     break;
     case IrDA2: UARTx = UART2;
     break;
-	default : break;
+    default : break;
   }
   if(NewState == ENABLE)
   {

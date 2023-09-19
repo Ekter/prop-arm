@@ -33,13 +33,13 @@ u16 WDG_Preload;
 /* Exported constants --------------------------------------------------------*/
 
 /* WDG_Mode */
-#define WDG_Mode_Wdg	0x0001	/*WDG configured to run in watchdog mode.*/
-#define WDG_Mode_Timer	0xFFFE	/*WDG configured to be in Free-running Timer mode.*/
+#define WDG_Mode_Wdg    0x0001    /*WDG configured to run in watchdog mode.*/
+#define WDG_Mode_Timer    0xFFFE    /*WDG configured to be in Free-running Timer mode.*/
 
 
 /* WDG_ClockSource */
-#define WDG_ClockSource_Rtc 	0x0004	/* External clock ( 32 khz RTC clock ) will be used as counting clock.*/
-#define WDG_ClockSource_Apb	0xFFFB	/*The APB clock signal will be used as counting clock.*/
+#define WDG_ClockSource_Rtc     0x0004    /* External clock ( 32 khz RTC clock ) will be used as counting clock.*/
+#define WDG_ClockSource_Apb    0xFFFB    /*The APB clock signal will be used as counting clock.*/
 
 /* WDG_Prescaler */
 /*This member must be  a number between 0x00 and 0xFF.

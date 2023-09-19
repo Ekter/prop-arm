@@ -24,15 +24,15 @@
 /* Exported types ------------------------------------------------------------*/
 /* Exported constants --------------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
-#define IENABLE 	asm("MRS lr, spsr");       /* Copy SPSR_irq to LR */ \
-					asm("STMFD sp!, {lr} ");   /* Save SPSR_irq */ \
-					asm("MSR cpsr_c, #0x1F "); /* Switch to SYS mode with IRQ enabled*/ \
-					asm("STMFD sp!, {lr} ");   /* Save SYS mode LR */
+#define IENABLE     asm("MRS lr, spsr");       /* Copy SPSR_irq to LR */ \
+                    asm("STMFD sp!, {lr} ");   /* Save SPSR_irq */ \
+                    asm("MSR cpsr_c, #0x1F "); /* Switch to SYS mode with IRQ enabled*/ \
+                    asm("STMFD sp!, {lr} ");   /* Save SYS mode LR */
 
-#define IDISABLE 	asm("LDMFD sp!, {lr}");  /* Restore SYS mode LR */ \
-					asm("MSR cpsr_c, #0x92"); /* Switch to IRQ mode with IRQ disabled*/ \
-					asm("LDMFD sp!, {r0}");   /* Restore SPSR_irq to R0 */ \
-					asm("MSR spsr_cxsf, r0"); /* Copy R0 to SPSR_irq */
+#define IDISABLE     asm("LDMFD sp!, {lr}");  /* Restore SYS mode LR */ \
+                    asm("MSR cpsr_c, #0x92"); /* Switch to IRQ mode with IRQ disabled*/ \
+                    asm("LDMFD sp!, {r0}");   /* Restore SPSR_irq to R0 */ \
+                    asm("MSR spsr_cxsf, r0"); /* Copy R0 to SPSR_irq */
 
 /* Exported functions ------------------------------------------------------- */
 

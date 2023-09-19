@@ -22,15 +22,15 @@
 /* These constant variables are used as masks to handle the EMI registers.  */
 
 
-#define   EMI_Burst_and_PageModeRead_TL_Mask	     0xFFFFF3FF
-#define   EMI_Burst_and_PageModeRead_Sel_Mask	     0xFFFFFEFF
-#define   EMI_MemWidth_Mask     	             0xFFFFFFCF
-#define   EMI_WriteProtect_Mask	                     0xFFFFFFF7  
-#define   EMI_ByteLane_Mask	                     0xFFFFFFFE  
-#define   EMI_AccessRead_Dev_Mask	             0xFFFFFDFF  
-#define   EMI_BurstModeWrite_Sel_Mask	             0xFFFEFFFF
-#define   EMI_AccessWrite_Dev_Mask	             0xFFFDFFFF
-#define   EMI_BurstModeWrite_TL_Mask	             0xFFF3FFFF
+#define   EMI_Burst_and_PageModeRead_TL_Mask         0xFFFFF3FF
+#define   EMI_Burst_and_PageModeRead_Sel_Mask         0xFFFFFEFF
+#define   EMI_MemWidth_Mask                      0xFFFFFFCF
+#define   EMI_WriteProtect_Mask                         0xFFFFFFF7  
+#define   EMI_ByteLane_Mask                         0xFFFFFFFE  
+#define   EMI_AccessRead_Dev_Mask                 0xFFFFFDFF  
+#define   EMI_BurstModeWrite_Sel_Mask                 0xFFFEFFFF
+#define   EMI_AccessWrite_Dev_Mask                 0xFFFDFFFF
+#define   EMI_BurstModeWrite_TL_Mask                 0xFFF3FFFF
 
 
 /* Private macro -------------------------------------------------------------*/
@@ -162,7 +162,7 @@ void EMI_StructInit( EMI_InitTypeDef *EMI_InitStruct)
 
 * Input          : EMI_Bankx:where x can be 0,1,2 or 3 to select the EMI Bank.
                    EMI_InitStruct: pointer to a EMI_InitTypeDef structure
-				  ( Structure Config to be loaded in EMI Registers). .
+                  ( Structure Config to be loaded in EMI Registers). .
 
 * Output         : None
 * Return         : None
@@ -206,10 +206,10 @@ void EMI_Init( EMI_Bank_TypeDef* EMI_Bankx, EMI_InitTypeDef* EMI_InitStruct)
   EMI_Bankx->BCR &=  EMI_ByteLane_Mask;
   EMI_Bankx->BCR |=  EMI_InitStruct->EMI_ByteLane_Selection;
   
-  EMI_Bankx->BCR &=  EMI_AccessRead_Dev_Mask;	
+  EMI_Bankx->BCR &=  EMI_AccessRead_Dev_Mask;    
   EMI_Bankx->BCR |=  EMI_InitStruct->EMI_AccessRead_Support;
   
-  EMI_Bankx->BCR &=   EMI_AccessWrite_Dev_Mask;	
+  EMI_Bankx->BCR &=   EMI_AccessWrite_Dev_Mask;    
   EMI_Bankx->BCR |=  EMI_InitStruct->EMI_AccessWrite_Support;
 
 

@@ -62,22 +62,22 @@
 
 
 /*Transfer length  valid for both burst and page mode*/
-#define EMI_Read_4Data	                 0x00000000   /*4 transfers burst*/
-#define EMI_Read_8Data	                 0x00000400   /*8 transfers burst*/
+#define EMI_Read_4Data                     0x00000000   /*4 transfers burst*/
+#define EMI_Read_8Data                     0x00000400   /*8 transfers burst*/
 
 /*Transfer length  valid only for burst mode*/
-#define EMI_Read_16Data	                 0x00000800   /*16 transfers burst*/
+#define EMI_Read_16Data                     0x00000800   /*16 transfers burst*/
 #define EMI_Read_Continuous              0x00000C00   /* Continuous (synchron-*/
                                                       /*ous only)*/
 
 /*Select or deselect the page mode read*/
-#define EMI_NormalMode	                 0x00000000   /*Normal Mode*/
+#define EMI_NormalMode                     0x00000000   /*Normal Mode*/
 #define EMI_Burst_and_PageModeRead       0x00000100   /*Page and burst Mode Read*/
 
 
 /* Write transfer length for Burst  mode Write */
-#define EMI_Write_4Data	                 0x00000000   /*4 transfers burst*/
-#define EMI_Write_8Data	                 0x00040000   /*8 transfers burst*/
+#define EMI_Write_4Data                     0x00000000   /*4 transfers burst*/
+#define EMI_Write_8Data                     0x00040000   /*8 transfers burst*/
 #define EMI_Write_Continuous             0x000C0000   /* Continuous (synchron-*/
                                                       /*ous only)*/
 
@@ -86,26 +86,26 @@
 #define EMI_BurstModeWrite               0x00010000   /*Burst Mode Write*/
 
 /*Byte Lane feature */
-#define EMI_Byte_Select_disabled	 0x00000000   /*Byte select disabled*/
-#define EMI_Byte_Select_enabled		 0x00000001   /*Byte select enabled*/
+#define EMI_Byte_Select_disabled     0x00000000   /*Byte select disabled*/
+#define EMI_Byte_Select_enabled         0x00000001   /*Byte select enabled*/
 
 /*Read access feature*/
-#define EMI_Read_Asyn	                 0x00000000   /*Asynch access for read default)*/
-#define EMI_Read_Syn	                 0x00000200   /*Synch access for read*/
+#define EMI_Read_Asyn                     0x00000000   /*Asynch access for read default)*/
+#define EMI_Read_Syn                     0x00000200   /*Synch access for read*/
                                      
 
 /*Write access feature*/
-#define EMI_Write_Asyn	                 0x00000000   /*Asynch access for Write(default)*/
-#define EMI_Write_Syn	                 0x00020000   /*Synch access for Write*/
+#define EMI_Write_Asyn                     0x00000000   /*Asynch access for Write(default)*/
+#define EMI_Write_Syn                     0x00020000   /*Synch access for Write*/
                                       
 
 /*Memory width*/
-#define EMI_Width_Byte	                 0x00000000   /*8 bits width*/
-#define EMI_Width_HalfWord	         0x00000010   /*16 bits width*/
+#define EMI_Width_Byte                     0x00000000   /*8 bits width*/
+#define EMI_Width_HalfWord             0x00000010   /*16 bits width*/
 
 /*Write protection feature */
-#define EMI_Bank_NonWriteProtect	 0x00000000    /*No write protection*/
-#define EMI_Bank_WriteProtect	         0x00000008    /*bank is write protected*/
+#define EMI_Bank_NonWriteProtect     0x00000000    /*No write protection*/
+#define EMI_Bank_WriteProtect             0x00000008    /*bank is write protected*/
 
 
 /* Exported macro ------------------------------------------------------------*/

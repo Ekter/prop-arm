@@ -173,7 +173,7 @@ void TIM_Init(TIM_TypeDef *TIMx, TIM_InitTypeDef *TIM_InitStruct)
       }
       else
       {
-      	TIMx->CR1 |= TIM_ICAP2_EDGE_RISING;
+          TIMx->CR1 |= TIM_ICAP2_EDGE_RISING;
       }
 
       break;
@@ -195,7 +195,7 @@ void TIM_Init(TIM_TypeDef *TIMx, TIM_InitTypeDef *TIM_InitStruct)
 
       if (TIM_InitStruct->TIM_OC1_Modes == TIM_TIMING)
       {
-      	TIMx->CR1 &= TIM_OC1_DISABLE_MASK;
+          TIMx->CR1 &= TIM_OC1_DISABLE_MASK;
       }
       else
       {
@@ -210,7 +210,7 @@ void TIM_Init(TIM_TypeDef *TIMx, TIM_InitTypeDef *TIM_InitStruct)
 
       if (TIM_InitStruct->TIM_Pulse_Level_2 == TIM_HIGH)
       {
-      	TIMx->CR1 |= TIM_OLVL2_SET_MASK;
+          TIMx->CR1 |= TIM_OLVL2_SET_MASK;
       }
       else
       {

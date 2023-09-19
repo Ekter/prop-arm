@@ -50,7 +50,7 @@
 #define    FMI_B0S0     0x00000000 + FMI_BANK_0     /* Bank 0 sector 0*/
 #define    FMI_B0S1     0x00010000 + FMI_BANK_0     /* Bank 0 sector 1*/
 #define    FMI_B0S2     0x00020000 + FMI_BANK_0     /* Bank 0 sector 2*/
-#define    FMI_B0S3	0x00030000 + FMI_BANK_0     /* Bank 0 sector 3*/
+#define    FMI_B0S3    0x00030000 + FMI_BANK_0     /* Bank 0 sector 3*/
 #define    FMI_B0S4     0x00040000 + FMI_BANK_0     /* Bank 0 sector 4*/
 #define    FMI_B0S5     0x00050000 + FMI_BANK_0     /* Bank 0 sector 5*/
 #define    FMI_B0S6     0x00060000 + FMI_BANK_0     /* Bank 0 sector 6*/
@@ -58,7 +58,7 @@
 #define    FMI_B0S8     0x00080000 + FMI_BANK_0     /* Bank 0 sector 8*/
 #define    FMI_B0S9     0x00090000 + FMI_BANK_0     /* Bank 0 sector 9*/
 #define    FMI_B0S10    0x000A0000 + FMI_BANK_0     /* Bank 0 sector 10*/
-#define    FMI_B0S11	0x000B0000 + FMI_BANK_0     /* Bank 0 sector 11*/
+#define    FMI_B0S11    0x000B0000 + FMI_BANK_0     /* Bank 0 sector 11*/
 #define    FMI_B0S12    0x000C0000 + FMI_BANK_0     /* Bank 0 sector 12*/
 #define    FMI_B0S13    0x000D0000 + FMI_BANK_0     /* Bank 0 sector 13*/
 #define    FMI_B0S14    0x000E0000 + FMI_BANK_0     /* Bank 0 sector 14*/
@@ -74,7 +74,7 @@
 #define    FMI_B0S24    0x00180000 + FMI_BANK_0     /* Bank 0 sector 24*/
 #define    FMI_B0S25    0x00190000 + FMI_BANK_0     /* Bank 0 sector 25*/
 #define    FMI_B0S26    0x001A0000 + FMI_BANK_0     /* Bank 0 sector 26*/
-#define    FMI_B0S27	0x001B0000 + FMI_BANK_0     /* Bank 0 sector 27*/
+#define    FMI_B0S27    0x001B0000 + FMI_BANK_0     /* Bank 0 sector 27*/
 #define    FMI_B0S28    0x001C0000 + FMI_BANK_0     /* Bank 0 sector 28*/
 #define    FMI_B0S29    0x001D0000 + FMI_BANK_0     /* Bank 0 sector 29*/
 #define    FMI_B0S30    0x001E0000 + FMI_BANK_0     /* Bank 0 sector 30*/

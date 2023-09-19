@@ -26,11 +26,11 @@
 typedef struct
 {
   u16 SSP_FrameFormat ;
-  u16 SSP_Mode ;	
+  u16 SSP_Mode ;    
   u16 SSP_CPOL ;
   u16 SSP_CPHA ;
   u16 SSP_DataSize ;
-  u16 SSP_SlaveOutput ;	
+  u16 SSP_SlaveOutput ;    
   u8 SSP_ClockRate ;
   u8 SSP_ClockPrescaler ;
 }SSP_InitTypeDef;
@@ -61,33 +61,33 @@ typedef struct
 #define SSP_DataSize_12b   0x000B
 #define SSP_DataSize_11b   0x000A
 #define SSP_DataSize_10b   0x0009
-#define SSP_DataSize_9b	   0x0008
-#define SSP_DataSize_8b	   0x0007
+#define SSP_DataSize_9b       0x0008
+#define SSP_DataSize_8b       0x0007
 #define SSP_DataSize_7b    0x0006
-#define SSP_DataSize_6b	   0x0005
+#define SSP_DataSize_6b       0x0005
 #define SSP_DataSize_5b    0x0004
-#define SSP_DataSize_4b	   0x0003
+#define SSP_DataSize_4b       0x0003
 
 /* SSP Slave output config */
 #define SSP_SlaveOutput_Enable   0xFFF7
 #define SSP_SlaveOutput_Disable  0x0008
 
 /* SSP Interrupts */
-#define SSP_IT_TxFifo	    0x0008
-#define SSP_IT_RxFifo	    0x0004
+#define SSP_IT_TxFifo        0x0008
+#define SSP_IT_RxFifo        0x0004
 #define SSP_IT_RxTimeOut    0x0002
 #define SSP_IT_RxOverrun    0x0001
 
 /* SSP Flags */
-#define SSP_FLAG_Busy	         0x0024
-#define SSP_FLAG_RxFifoFull	 0x0023
-#define SSP_FLAG_RxFifoNotEmpty	 0x0022
-#define SSP_FLAG_TxFifoNotFull	 0x0021
-#define SSP_FLAG_TxFifoEmpty	 0x0020
-#define SSP_FLAG_TxFifo	         0x0043
-#define SSP_FLAG_RxFifo	         0x0042
-#define SSP_FLAG_RxTimeOut	 0x0041
-#define SSP_FLAG_RxOverrun	 0x0040
+#define SSP_FLAG_Busy             0x0024
+#define SSP_FLAG_RxFifoFull     0x0023
+#define SSP_FLAG_RxFifoNotEmpty     0x0022
+#define SSP_FLAG_TxFifoNotFull     0x0021
+#define SSP_FLAG_TxFifoEmpty     0x0020
+#define SSP_FLAG_TxFifo             0x0043
+#define SSP_FLAG_RxFifo             0x0042
+#define SSP_FLAG_RxTimeOut     0x0041
+#define SSP_FLAG_RxOverrun     0x0040
 
 /* SSP DMA Requests */
 #define SSP_DMA_Transmit  0x0002

@@ -54,7 +54,7 @@ typedef enum
 /* Exported constants --------------------------------------------------------*/
 
 /* TIM MODE */
-#define TIM_PWMI      	     0x4000   /* PWM INPUT Mode                     */
+#define TIM_PWMI               0x4000   /* PWM INPUT Mode                     */
 #define TIM_OCM_CHANNEL_1    0x0040   /* OUTPUT COMPARE CHANNEL 1 Mode      */
 #define TIM_OCM_CHANNEL_2    0x0080   /* OUTPUT COMPARE CHANNEL 2 Mode      */
 #define TIM_OCM_CHANNEL_12   0x00C0   /* OUTPUT COMPARE CHANNEL 1 & 2  Mode */

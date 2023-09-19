@@ -9,34 +9,34 @@
 
 /*#######################################################################################*/
 /*#######################################################################################*/
-/* !!! THIS IS NOT FREE SOFTWARE !!!  	                                                 */
+/* !!! THIS IS NOT FREE SOFTWARE !!!                                                       */
 /*#######################################################################################*/
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) 2008 Ingo Busker, Holger Buss
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + FOR NON COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
 // + bzgl. der Nutzungsbedingungen aufzunehmen.
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -77,58 +77,58 @@
 #include "i2c.h"
 
 
-#define M_PI_180 	(M_PI / 180.0f)
-#define GPS_UPDATETIME_MS 200 		// 200ms is 5 Hz
+#define M_PI_180     (M_PI / 180.0f)
+#define GPS_UPDATETIME_MS 200         // 200ms is 5 Hz
 typedef enum
 {
-	GPS_FLIGHT_MODE_UNDEF,
-	GPS_FLIGHT_MODE_FREE,
-	GPS_FLIGHT_MODE_AID,
-	GPS_FLIGHT_MODE_WAYPOINT
+    GPS_FLIGHT_MODE_UNDEF,
+    GPS_FLIGHT_MODE_FREE,
+    GPS_FLIGHT_MODE_AID,
+    GPS_FLIGHT_MODE_WAYPOINT
 } GPS_FlightMode_t;
 
 typedef struct
 {
-	float Gain;
-	float P;
-	float I;
-	float D;
-	float A;
-	float ACC;
-	s32 P_Limit;
-	s32 I_Limit;
-	s32 D_Limit;
-	s32 PID_Limit;
-	u32 BrakingDuration;
-	u8 MinSat;
-	s8 StickThreshold;
-	float WindCorrection;
-	float SpeedCompensation;
-	s32 OperatingRadius;
-	GPS_FlightMode_t  FlightMode;
+    float Gain;
+    float P;
+    float I;
+    float D;
+    float A;
+    float ACC;
+    s32 P_Limit;
+    s32 I_Limit;
+    s32 D_Limit;
+    s32 PID_Limit;
+    u32 BrakingDuration;
+    u8 MinSat;
+    s8 StickThreshold;
+    float WindCorrection;
+    float SpeedCompensation;
+    s32 OperatingRadius;
+    GPS_FlightMode_t  FlightMode;
 } __attribute__((packed)) GPS_Parameter_t;
 
 typedef struct
 {
-	u8  Status;		// invalid, newdata, processed
-	s32 North;		// in cm
-	s32 East;		// in cm
-	s32 Bearing;	// in deg
-	s32 Distance;	// in cm
+    u8  Status;        // invalid, newdata, processed
+    s32 North;        // in cm
+    s32 East;        // in cm
+    s32 Bearing;    // in deg
+    s32 Distance;    // in cm
 } __attribute__((packed)) GPS_Deviation_t;
-GPS_Deviation_t CurrentTargetDeviation;		// Deviation from Target
-GPS_Deviation_t CurrentHomeDeviation;		// Deviation from Home
-GPS_Deviation_t TargetHomeDeviation;		// Deviation from Target to Home
+GPS_Deviation_t CurrentTargetDeviation;        // Deviation from Target
+GPS_Deviation_t CurrentHomeDeviation;        // Deviation from Home
+GPS_Deviation_t TargetHomeDeviation;        // Deviation from Target to Home
 
-GPS_Stick_t		GPS_Stick;
-GPS_Parameter_t	GPS_Parameter;
+GPS_Stick_t        GPS_Stick;
+GPS_Parameter_t    GPS_Parameter;
 
 // the gps reference positions
-GPS_Pos_t GPS_HoldPosition 	= {0,0,0, INVALID};			// the hold position
-GPS_Pos_t GPS_HomePosition 	= {0,0,0, INVALID};			// the home position
-GPS_Pos_t * GPS_pTargetPosition = NULL;				    // pointer to the actual target position
-u32 GPS_TargetRadius = 0;								// catch radius for target area
-Waypoint_t* GPS_pWaypoint = NULL;						// pointer to the actual waypoint
+GPS_Pos_t GPS_HoldPosition     = {0,0,0, INVALID};            // the hold position
+GPS_Pos_t GPS_HomePosition     = {0,0,0, INVALID};            // the home position
+GPS_Pos_t * GPS_pTargetPosition = NULL;                    // pointer to the actual target position
+u32 GPS_TargetRadius = 0;                                // catch radius for target area
+Waypoint_t* GPS_pWaypoint = NULL;                        // pointer to the actual waypoint
 
 //-------------------------------------------------------------
 // Update GPSParamter
@@ -140,28 +140,28 @@ void GPS_UpdateParameter(void)
 // This function defines a good GPS signal condition
 u8 GPS_IsSignalOK(void)
 {
-	return 0;
+    return 0;
 }
 
 //------------------------------------------------------------
 // Checks for manual control action
 u8 GPS_IsManuallyControlled(void)
 {
-	return 0;
+    return 0;
 }
 
 //------------------------------------------------------------
 // copy GPS position from source position to target position
 u8 GPS_CopyPosition(GPS_Pos_t * pGPSPosSrc, GPS_Pos_t* pGPSPosTgt)
 {
-	return 0;
+    return 0;
 }
 
 //------------------------------------------------------------
 // clear position data
 u8 GPS_ClearPosition(GPS_Pos_t * pGPSPos)
 {
-	return 0;
+    return 0;
 }
 
 
@@ -179,7 +179,7 @@ void GPS_Init(void)
 // calculate the bearing to target position from its deviation
 s32 DirectionToTarget_N_E(float northdev, float eastdev)
 {
-	return 0;
+    return 0;
 }
 
 
@@ -188,31 +188,31 @@ s32 DirectionToTarget_N_E(float northdev, float eastdev)
 // returns vector len after scaling
 s32 GPS_LimitXY(s32 *x, s32 *y, s32 limit)
 {
-	return 0;
+    return 0;
 }
 
 //------------------------------------------------------------
 // transform the integer deg into float radians
 inline double RadiansFromGPS(s32 deg)
 {
-	return 0.0;
+    return 0.0;
 }
 
 //------------------------------------------------------------
 // transform the integer deg into float deg
 inline double DegFromGPS(s32 deg)
 {
-	return 0.0;
+    return 0.0;
 }
 
 //------------------------------------------------------------
 // calculate the deviation from the current position to the target position
 u8 GPS_CalculateDeviation(GPS_Pos_t * pCurrentPos, GPS_Pos_t * pTargetPos, GPS_Deviation_t* pDeviationFromTarget)
 {
-	return 0;
+    return 0;
 }
 
 void GPS_Navigation(void)
 {
- 	return;
+     return;
 }

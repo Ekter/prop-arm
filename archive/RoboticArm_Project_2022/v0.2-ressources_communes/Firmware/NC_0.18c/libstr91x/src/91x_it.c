@@ -45,11 +45,11 @@ extern void USB_Istr(void);
 *******************************************************************************/
 void Undefined_Handler(void)
 {
-	UART1_PutString("\r\nUndefined Handler");
-	while(1)
-	{
-  	// infinite loop
-	}
+    UART1_PutString("\r\nUndefined Handler");
+    while(1)
+    {
+      // infinite loop
+    }
  }
 /*******************************************************************************
 * Function Name  : SWI_Handler
@@ -70,11 +70,11 @@ void SWI_Handler(void)
 *******************************************************************************/
 void Prefetch_Handler(void)
 {
-	UART1_PutString("\r\nPrefetch Handler");
-	while(1)
-	{
-  	// infinite loop
-	}
+    UART1_PutString("\r\nPrefetch Handler");
+    while(1)
+    {
+      // infinite loop
+    }
 }
 /*******************************************************************************
 * Function Name  : Abort_Handler
@@ -85,11 +85,11 @@ void Prefetch_Handler(void)
 *******************************************************************************/
 void Abort_Handler(void)
 {
-	UART1_PutString("\r\nAbort Handler");
-	while(1)
-	{
-  	// infinite loop
-	}
+    UART1_PutString("\r\nAbort Handler");
+    while(1)
+    {
+      // infinite loop
+    }
 }
 /*******************************************************************************
 * Function Name  : FIQ_Handler
@@ -194,11 +194,11 @@ void TIM3_IRQHandler(void)
 *******************************************************************************/
 void USBHP_IRQHandler(void)
 {
-	IENABLE;
+    IENABLE;
 
-	CTR_HP();
+    CTR_HP();
 
-	IDISABLE;
+    IDISABLE;
 }
 /*******************************************************************************
 * Function Name  : USBLP_IRQHandler
@@ -209,11 +209,11 @@ void USBHP_IRQHandler(void)
 *******************************************************************************/
 void USBLP_IRQHandler(void)
 {
-	IENABLE;
+    IENABLE;
 
-	USB_Istr();
+    USB_Istr();
 
-	IDISABLE;
+    IDISABLE;
 }
 /*******************************************************************************
 * Function Name  : SCU_IRQHandler
@@ -406,18 +406,18 @@ void EXTIT0_IRQHandler(void)
 *******************************************************************************/
 void EXTIT1_IRQHandler(void)
 {
-	IENABLE;
+    IENABLE;
 
-	if(WIU_GetITStatus(WIU_Line11) != RESET)
-	{
-		BeepTime = 100;
-		Fat16_Init(); // initialize sd-card file system.
+    if(WIU_GetITStatus(WIU_Line11) != RESET)
+    {
+        BeepTime = 100;
+        Fat16_Init(); // initialize sd-card file system.
 
-		WIU_ClearFlag(WIU_Line1);
-		WIU_ClearITPendingBit(WIU_Line11);
-	}
+        WIU_ClearFlag(WIU_Line1);
+        WIU_ClearITPendingBit(WIU_Line11);
+    }
 
-	IDISABLE;
+    IDISABLE;
 }
 /*******************************************************************************
 * Function Name  : EXTIT2_IRQHandler
@@ -471,7 +471,7 @@ void PFQBC_IRQHandler(void)
 *******************************************************************************/
 void DefaultVector_Handler(void)
 {
-    /* Write any value to VICs	*/
+    /* Write any value to VICs    */
     VIC0->VAR = 0xFF;
     VIC1->VAR = 0xFF;
 }

@@ -247,7 +247,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
 
        if(MC_InitStruct->MC_PolarityUL == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PUL_Set;
+            MC->PSR |= MC_PUL_Set;
        }
        else
        {
@@ -255,7 +255,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
        }
        if(MC_InitStruct->MC_PolarityUH == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PUH_Set;
+            MC->PSR |= MC_PUH_Set;
        }
        else
        {
@@ -271,7 +271,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
 
        if(MC_InitStruct->MC_PolarityVL == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PVL_Set;
+            MC->PSR |= MC_PVL_Set;
        }
        else
        {
@@ -279,7 +279,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
        }
        if(MC_InitStruct->MC_PolarityVH == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PVH_Set;
+            MC->PSR |= MC_PVH_Set;
        }
        else
        {
@@ -295,7 +295,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
        
        if(MC_InitStruct->MC_PolarityWL == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PWL_Set;
+            MC->PSR |= MC_PWL_Set;
        }
        else
        {
@@ -303,7 +303,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
        }
        if(MC_InitStruct->MC_PolarityWH == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PWH_Set;
+            MC->PSR |= MC_PWH_Set;
        }
        else
        {
@@ -320,7 +320,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
        
        if(MC_InitStruct->MC_PolarityUL == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PUL_Set;
+            MC->PSR |= MC_PUL_Set;
        }
        else
        {
@@ -328,7 +328,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
        }
        if(MC_InitStruct->MC_PolarityUH == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PUH_Set;
+            MC->PSR |= MC_PUH_Set;
        }
        else
        {
@@ -337,7 +337,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
 
        if(MC_InitStruct->MC_PolarityVL == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PVL_Set;
+            MC->PSR |= MC_PVL_Set;
        }
        else
        {
@@ -345,7 +345,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
        }
        if(MC_InitStruct->MC_PolarityVH == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PVH_Set;
+            MC->PSR |= MC_PVH_Set;
        }
        else
        {
@@ -354,7 +354,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
 
        if(MC_InitStruct->MC_PolarityWL == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PWL_Set;
+            MC->PSR |= MC_PWL_Set;
        }
        else
        {
@@ -362,7 +362,7 @@ void MC_Init(MC_InitTypeDef* MC_InitStruct)
        }
        if(MC_InitStruct->MC_PolarityWH == MC_Polarity_Inverted)
        {
-       	 MC->PSR |= MC_PWH_Set;
+            MC->PSR |= MC_PWH_Set;
        }
        else
        {
@@ -868,7 +868,7 @@ FlagStatus MC_GetFlagStatus(u16 MC_FLAG)
 
 /*******************************************************************************
 * Function Name  : MC_ClearFlag
-* Description    : Clears the MC’s pending flags.
+* Description    : Clears the MCï¿½s pending flags.
 * Input          : MC_FLAG: specifies the flag to clear.
 *                  This parameter can be any combination of the following values:
 *                         - MC_FLAG_CMPW: Compare W Flag.
@@ -1047,7 +1047,7 @@ void MC_EnhancedStop(FunctionalState NewState)
 /*******************************************************************************
 * Function Name  : MC_DebugOutputProtection
 * Description    : Allows the output phases to follow the polarity set by PSR if 
-*		   enabled or they remain in their last known state if disabled.
+*           enabled or they remain in their last known state if disabled.
 * Input          : NewState : This pararameter can be ENABLE or DISABLE.
 * Output         : None
 * Return         : None

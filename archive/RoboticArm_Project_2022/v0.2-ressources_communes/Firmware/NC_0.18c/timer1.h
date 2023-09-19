@@ -3,14 +3,14 @@
 
 
 typedef struct{
-	u16	Year;
-	u8	Month;
-	u8	Day;
-	u8	Hour;
-	u8	Min;
-	u8	Sec;
-	u16 mSec;
-	u8  Valid;
+    u16    Year;
+    u8    Month;
+    u8    Day;
+    u8    Hour;
+    u8    Min;
+    u8    Sec;
+    u16 mSec;
+    u8  Valid;
 }  DateTime_t;
 
 extern DateTime_t SystemTime;

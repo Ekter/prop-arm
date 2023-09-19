@@ -87,48 +87,48 @@ typedef struct
 
     /* Interrupts masks */
 
-#define    DMA_ITMask_IE	        0x4000	/* Interrupt error mask. */
-#define    DMA_ITMask_ITC	        0x8000	/* Terminal count interrupt mask.*/
-#define    DMA_ITMask_ALL	        0xC000	/* All DMA_Channelx interrupts enable/disable mask*/
+#define    DMA_ITMask_IE            0x4000    /* Interrupt error mask. */
+#define    DMA_ITMask_ITC            0x8000    /* Terminal count interrupt mask.*/
+#define    DMA_ITMask_ALL            0xC000    /* All DMA_Channelx interrupts enable/disable mask*/
 
   /* Sources Request (used as masks) */
 
-#define   DMA_USB_RX_Mask	            0x0001
-#define   DMA_USB_TX_Mask	            0x0002
-#define   DMA_TIM0_Mask	                0x0004
-#define   DMA_TIM1_Mask	                0x0008
+#define   DMA_USB_RX_Mask                0x0001
+#define   DMA_USB_TX_Mask                0x0002
+#define   DMA_TIM0_Mask                    0x0004
+#define   DMA_TIM1_Mask                    0x0008
 #define   DMA_UART0_RX_Mask             0x0010
 #define   DMA_UART0_TX_Mask             0x0020
 #define   DMA_UART1_RX_Mask             0x0040
 #define   DMA_UART1_TX_Mask             0x0080
 #define   DMA_External_Req0_Mask        0x0100
-#define   DMA_External_Req1_Mask	    0x0200
-#define   DMA_I2C0_Mask	                0x0400
-#define   DMA_I2C1_Mask	                0x0800
-#define   DMA_SSP0_RX_Mask	            0x1000
-#define   DMA_SSP0_TX_Mask	            0x2000
-#define   DMA_SSP1_RX_Mask	            0x4000
-#define   DMA_SSP1_TX_Mask	            0x8000
+#define   DMA_External_Req1_Mask        0x0200
+#define   DMA_I2C0_Mask                    0x0400
+#define   DMA_I2C1_Mask                    0x0800
+#define   DMA_SSP0_RX_Mask                0x1000
+#define   DMA_SSP0_TX_Mask                0x2000
+#define   DMA_SSP1_RX_Mask                0x4000
+#define   DMA_SSP1_TX_Mask                0x8000
 
 
 /* Previleged Mode and user mode */
 
-#define   DMA_PrevilegedMode	        0x10000000
-#define   DMA_UserMode	                0xEFFFFFFF
+#define   DMA_PrevilegedMode            0x10000000
+#define   DMA_UserMode                    0xEFFFFFFF
 
 
 /* Error and Terminal Count interrupts Status, after and before"raw" masking */
-#define   DMA_IS	                0x01
-#define   DMA_TCS	                0x02
-#define   DMA_ES	                0x03
-#define   DMA_TCRS	                0x04
-#define   DMA_ERS	                0x05
+#define   DMA_IS                    0x01
+#define   DMA_TCS                    0x02
+#define   DMA_ES                    0x03
+#define   DMA_TCRS                    0x04
+#define   DMA_ERS                    0x05
 
 
 /* interrupt clear: Terminal Count flag Clear and Error flag clear*/
 
-#define   DMA_TCC	                0x01
-#define   DMA_EC	                0x02
+#define   DMA_TCC                    0x01
+#define   DMA_EC                    0x02
 
 /* channel index "0...7"*/
 
@@ -145,96 +145,96 @@ typedef struct
 
 /* Destination request selection: selects the DMA Destination request peripheral */
 
-#define   DMA_DES_USB_RX	        0x00
-#define   DMA_DES_USB_TX	        0x40
-#define   DMA_DES_TIM0	            0x80
-#define   DMA_DES_TIM1	            0xC0
-#define   DMA_DES_UART0_RX	 	    0x100
-#define   DMA_DES_UART0_TX		    0x140
-#define   DMA_DES_UART1_RX	        0x180
-#define   DMA_DES_UART1_TX	        0x1C0
-#define   DMA_DES_External_Req0	    0x200
-#define   DMA_DES_External_Req1	    0x240
-#define   DMA_DES_I2C0	            0x280
-#define   DMA_DES_I2C1	            0x2C0
-#define   DMA_DES_SSP0_RX	        0x300
-#define   DMA_DES_SSP0_TX	        0x340
-#define   DMA_DES_SSP1_RX	        0x380
-#define   DMA_DES_SSP1_TX	        0x3C0
+#define   DMA_DES_USB_RX            0x00
+#define   DMA_DES_USB_TX            0x40
+#define   DMA_DES_TIM0                0x80
+#define   DMA_DES_TIM1                0xC0
+#define   DMA_DES_UART0_RX             0x100
+#define   DMA_DES_UART0_TX            0x140
+#define   DMA_DES_UART1_RX            0x180
+#define   DMA_DES_UART1_TX            0x1C0
+#define   DMA_DES_External_Req0        0x200
+#define   DMA_DES_External_Req1        0x240
+#define   DMA_DES_I2C0                0x280
+#define   DMA_DES_I2C1                0x2C0
+#define   DMA_DES_SSP0_RX            0x300
+#define   DMA_DES_SSP0_TX            0x340
+#define   DMA_DES_SSP1_RX            0x380
+#define   DMA_DES_SSP1_TX            0x3C0
 
 
 
 
 /* Source request selection: selects the DMA Source request peripheral */
 
-#define   DMA_SRC_USB_RX	        0x00
-#define   DMA_SRC_USB_TX	        0x02
-#define   DMA_SRC_TIM0	            0x04
-#define   DMA_SRC_TIM1	            0x06
-#define   DMA_SRC_UART0_RX	 	    0x08
-#define   DMA_SRC_UART0_TX		    0x0A
-#define   DMA_SRC_UART1_RX	        0x0C
-#define   DMA_SRC_UART1_TX	        0x0E
-#define   DMA_SRC_External_Req0	    0x10
-#define   DMA_SRC_External_Req1	    0x12
-#define   DMA_SRC_I2C0	            0x14
-#define   DMA_SRC_I2C1	            0x16
-#define   DMA_SRC_SSP0_RX	        0x18
-#define   DMA_SRC_SSP0_TX	        0x1A
-#define   DMA_SRC_SSP1_RX	        0x1C
-#define   DMA_SRC_SSP1_TX	        0x1E
+#define   DMA_SRC_USB_RX            0x00
+#define   DMA_SRC_USB_TX            0x02
+#define   DMA_SRC_TIM0                0x04
+#define   DMA_SRC_TIM1                0x06
+#define   DMA_SRC_UART0_RX             0x08
+#define   DMA_SRC_UART0_TX            0x0A
+#define   DMA_SRC_UART1_RX            0x0C
+#define   DMA_SRC_UART1_TX            0x0E
+#define   DMA_SRC_External_Req0        0x10
+#define   DMA_SRC_External_Req1        0x12
+#define   DMA_SRC_I2C0                0x14
+#define   DMA_SRC_I2C1                0x16
+#define   DMA_SRC_SSP0_RX            0x18
+#define   DMA_SRC_SSP0_TX            0x1A
+#define   DMA_SRC_SSP1_RX            0x1C
+#define   DMA_SRC_SSP1_TX            0x1E
 
 
 
 
 
-#define   DMA_FlowCntrlt0_DMA	       0x00000000	   /* transfer type :Memory-to-memory, flow controller:DMA */
-#define   DMA_FlowCntrl1_DMA	       0x00000800	   /* transfer type :Memory-to-peripheral, flow controller:DMA */
-#define   DMA_FlowCntrl2_DMA	       0x00001000	   /* transfer type :Peripheral-to-memory, flow controller:DMA */
-#define   DMA_FlowCntrl3_DMA	       0x00001800	   /* transfer type :Source peripheral-to-destination peripheral, flow controller:DMA */	
-#define   DMA_FlowCntrl_DestPerip	   0x00002000      /* transfer type :Source peripheral-to-destination peripheral, flow controller:Destination peripheral */	
-#define   DMA_FlowCntrl_Perip1	       0x00002800      /* transfer type :Memory-to-peripheral, flow controller:peripheral */		
-#define   DMA_FlowCntrl_Perip2	       0x00003000      /* transfer  type : Peripheral-to-memory, flow controller:peripheral */	
-#define   DMA_FlowCntrl_SrcPerip	   0x00003800      /* transfer  type :Source peripheral-to-destination peripheral, flow controller:Source peripheral */	
+#define   DMA_FlowCntrlt0_DMA           0x00000000       /* transfer type :Memory-to-memory, flow controller:DMA */
+#define   DMA_FlowCntrl1_DMA           0x00000800       /* transfer type :Memory-to-peripheral, flow controller:DMA */
+#define   DMA_FlowCntrl2_DMA           0x00001000       /* transfer type :Peripheral-to-memory, flow controller:DMA */
+#define   DMA_FlowCntrl3_DMA           0x00001800       /* transfer type :Source peripheral-to-destination peripheral, flow controller:DMA */    
+#define   DMA_FlowCntrl_DestPerip       0x00002000      /* transfer type :Source peripheral-to-destination peripheral, flow controller:Destination peripheral */    
+#define   DMA_FlowCntrl_Perip1           0x00002800      /* transfer type :Memory-to-peripheral, flow controller:peripheral */        
+#define   DMA_FlowCntrl_Perip2           0x00003000      /* transfer  type : Peripheral-to-memory, flow controller:peripheral */    
+#define   DMA_FlowCntrl_SrcPerip       0x00003800      /* transfer  type :Source peripheral-to-destination peripheral, flow controller:Source peripheral */    
 
 
 
 
-#define   DMA_SrcBst_1Data	          0x00000000	/* Source Burst transfer request IS 1 Data ( DATA = Source transfer width ) */
-#define   DMA_SrcBst_4Data	          0x00001000	/* Source Burst transfer request IS 4 Data  */
-#define   DMA_SrcBst_8Data	          0x00002000	/* Source Burst transfer request IS 8 Data   */
-#define   DMA_SrcBst_16Data	          0x00003000    /* Source Burst transfer request IS 16 Data  */
-#define   DMA_SrcBst_32Data	          0x00004000	/* Source Burst transfer request IS 32 Data  */
-#define   DMA_SrcBst_64Data	          0x00005000	/* Source Burst transfer request IS 64Data   */
-#define   DMA_SrcBst_128Data	          0x00006000	/* Source Burst transfer request IS 128 Data */
-#define   DMA_SrcBst_256Data 	          0x00007000	/* Source Burst transfer request IS 256 Data */
+#define   DMA_SrcBst_1Data              0x00000000    /* Source Burst transfer request IS 1 Data ( DATA = Source transfer width ) */
+#define   DMA_SrcBst_4Data              0x00001000    /* Source Burst transfer request IS 4 Data  */
+#define   DMA_SrcBst_8Data              0x00002000    /* Source Burst transfer request IS 8 Data   */
+#define   DMA_SrcBst_16Data              0x00003000    /* Source Burst transfer request IS 16 Data  */
+#define   DMA_SrcBst_32Data              0x00004000    /* Source Burst transfer request IS 32 Data  */
+#define   DMA_SrcBst_64Data              0x00005000    /* Source Burst transfer request IS 64Data   */
+#define   DMA_SrcBst_128Data              0x00006000    /* Source Burst transfer request IS 128 Data */
+#define   DMA_SrcBst_256Data               0x00007000    /* Source Burst transfer request IS 256 Data */
 
 
 
 
-#define   DMA_DesBst_1Data	          0x00000000	/*Destination Burst transfer request IS 1Data ( DATA = destination transfer width ) */
-#define   DMA_DesBst_4Data	          0x00008000	/*Destination Burst transfer request IS 1 Data   */
-#define   DMA_DesBst_8Data	          0x00010000	/*Destination Burst transfer request IS 4 Data   */
-#define   DMA_DesBst_16Data	          0x00018000	/*Destination Burst transfer request IS 8 Data   */
-#define   DMA_DesBst_32Data	          0x00020000	/*Destination Burst transfer request IS 16 Data  */
-#define   DMA_DesBst_64Data	          0x00028000	/*Destination Burst transfer request IS 32 Data  */
-#define   DMA_DesBst_128Data	          0x00030000	/*Destination Burst transfer request IS 128 Data */
-#define   DMA_DesBst_256Data	          0x00038000	/*Destination Burst transfer request IS 256 Data */
+#define   DMA_DesBst_1Data              0x00000000    /*Destination Burst transfer request IS 1Data ( DATA = destination transfer width ) */
+#define   DMA_DesBst_4Data              0x00008000    /*Destination Burst transfer request IS 1 Data   */
+#define   DMA_DesBst_8Data              0x00010000    /*Destination Burst transfer request IS 4 Data   */
+#define   DMA_DesBst_16Data              0x00018000    /*Destination Burst transfer request IS 8 Data   */
+#define   DMA_DesBst_32Data              0x00020000    /*Destination Burst transfer request IS 16 Data  */
+#define   DMA_DesBst_64Data              0x00028000    /*Destination Burst transfer request IS 32 Data  */
+#define   DMA_DesBst_128Data              0x00030000    /*Destination Burst transfer request IS 128 Data */
+#define   DMA_DesBst_256Data              0x00038000    /*Destination Burst transfer request IS 256 Data */
 
 
 
 
 
-#define   DMA_SrcWidth_Byte	          0x00000000  /* source Width is one Byte */
-#define   DMA_SrcWidth_HalfWord	          0x00040000  /* source Width is one HalfWord */
-#define   DMA_SrcWidth_Word	          0x00080000  /*  source Width is one Word  */
+#define   DMA_SrcWidth_Byte              0x00000000  /* source Width is one Byte */
+#define   DMA_SrcWidth_HalfWord              0x00040000  /* source Width is one HalfWord */
+#define   DMA_SrcWidth_Word              0x00080000  /*  source Width is one Word  */
 
 
 
 
-#define   DMA_DesWidth_Byte	          0x00000000  /* Destination Width is one Byte */
-#define   DMA_DesWidth_HalfWord	          0x00200000  /* Destination Width is one HalfWord */
-#define   DMA_DesWidth_Word	          0x00400000	/* Destination Width is one Word */
+#define   DMA_DesWidth_Byte              0x00000000  /* Destination Width is one Byte */
+#define   DMA_DesWidth_HalfWord              0x00200000  /* Destination Width is one HalfWord */
+#define   DMA_DesWidth_Word              0x00400000    /* Destination Width is one Word */
 
 /*Defined value used for linked list's control word stucture*/
 

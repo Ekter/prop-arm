@@ -5,9 +5,9 @@
 
 typedef struct
 {
-	s16 Nick;
-	s16 Roll;
-	s16 Yaw;
+    s16 Nick;
+    s16 Roll;
+    s16 Yaw;
 }  __attribute__((packed)) GPS_Stick_t;
 
 extern GPS_Pos_t GPS_HomePosition;

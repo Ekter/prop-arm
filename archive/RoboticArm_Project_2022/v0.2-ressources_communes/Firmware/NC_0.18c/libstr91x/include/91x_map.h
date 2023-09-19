@@ -95,63 +95,63 @@ typedef struct
 
 typedef struct
 {
-  vu16 CRR;			/* IFn Command request Register       */
+  vu16 CRR;            /* IFn Command request Register       */
   vu16 EMPTY1;
-  vu16 CMR;			/* IFn Command Mask Register          */
+  vu16 CMR;            /* IFn Command Mask Register          */
   vu16 EMPTY2;
-  vu16 M1R;			/* IFn Message Mask 1 Register        */
+  vu16 M1R;            /* IFn Message Mask 1 Register        */
   vu16 EMPTY3;
-  vu16 M2R;			/* IFn Message Mask 2 Register        */
+  vu16 M2R;            /* IFn Message Mask 2 Register        */
   vu16 EMPTY4;
-  vu16 A1R;			/* IFn Message Arbitration 1 Register */
+  vu16 A1R;            /* IFn Message Arbitration 1 Register */
   vu16 EMPTY5;
-  vu16 A2R;			/* IFn Message Arbitration 2 Register */
+  vu16 A2R;            /* IFn Message Arbitration 2 Register */
   vu16 EMPTY6;
-  vu16 MCR;			/* IFn Message Control Register       */
+  vu16 MCR;            /* IFn Message Control Register       */
   vu16 EMPTY7;
-  vu16 DA1R;		        /* IFn DATA A 1 Register              */
+  vu16 DA1R;                /* IFn DATA A 1 Register              */
   vu16 EMPTY8;
-  vu16 DA2R;		        /* IFn DATA A 2 Register              */
+  vu16 DA2R;                /* IFn DATA A 2 Register              */
   vu16 EMPTY9;
-  vu16 DB1R;		        /* IFn DATA B 1 Register              */
+  vu16 DB1R;                /* IFn DATA B 1 Register              */
   vu16 EMPTY10;
-  vu16 DB2R;		        /* IFn DATA B 2 Register              */
+  vu16 DB2R;                /* IFn DATA B 2 Register              */
   vu16 EMPTY11[27];
 } CAN_MsgObj_TypeDef;
 
 typedef struct
 {
-  vu16 CR;		/* Control Register                */
+  vu16 CR;        /* Control Register                */
   vu16 EMPTY1;
-  vu16 SR;	        /* Status Register                 */
+  vu16 SR;            /* Status Register                 */
   vu16 EMPTY2;
-  vu16 ERR;		/* Error counter Register          */
+  vu16 ERR;        /* Error counter Register          */
   vu16 EMPTY3;
-  vu16 BTR;		/* Bit Timing Register             */
+  vu16 BTR;        /* Bit Timing Register             */
   vu16 EMPTY4;
-  vu16 IDR;		/* Interrupt Identifier Register   */
+  vu16 IDR;        /* Interrupt Identifier Register   */
   vu16 EMPTY5;
-  vu16 TESTR;		/* Test Register                   */
+  vu16 TESTR;        /* Test Register                   */
   vu16 EMPTY6;
-  vu16 BRPR;		/* BRP Extension Register          */
+  vu16 BRPR;        /* BRP Extension Register          */
   vu16 EMPTY7[3];
   CAN_MsgObj_TypeDef sMsgObj[2];
   vu16 EMPTY8[16];
-  vu16 TXR1R;		/* Transmission request 1 Register */
+  vu16 TXR1R;        /* Transmission request 1 Register */
   vu16 EMPTY9;
-  vu16 TXR2R;		/* Transmission Request 2 Register */
+  vu16 TXR2R;        /* Transmission Request 2 Register */
   vu16 EMPTY10[13];
-  vu16 ND1R;		/* New Data 1 Register             */
+  vu16 ND1R;        /* New Data 1 Register             */
   vu16 EMPTY11;
-  vu16 ND2R;		/* New Data 2 Register             */
+  vu16 ND2R;        /* New Data 2 Register             */
   vu16 EMPTY12[13];
-  vu16 IP1R;		/* Interrupt Pending 1 Register    */
+  vu16 IP1R;        /* Interrupt Pending 1 Register    */
   vu16 EMPTY13;
-  vu16 IP2R;		/* Interrupt Pending 2 Register    */
+  vu16 IP2R;        /* Interrupt Pending 2 Register    */
   vu16 EMPTY14[13];
-  vu16 MV1R;		/* Message Valid 1 Register        */
+  vu16 MV1R;        /* Message Valid 1 Register        */
   vu16 EMPTY15;
-  vu16 MV2R;		/* Message VAlid 2 Register        */
+  vu16 MV2R;        /* Message VAlid 2 Register        */
   vu16 EMPTY16;
 } CAN_TypeDef;
 

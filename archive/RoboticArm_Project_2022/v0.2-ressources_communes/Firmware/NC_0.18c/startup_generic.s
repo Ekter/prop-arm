@@ -21,7 +21,7 @@
         .equ    Mode_ABT,   0x17
         .equ    Mode_UND,   0x1B
         .equ    Mode_SYS,   0x1F
-	    .equ	T_BIT, 0x20	   /* when T bit is set, thumb mode active */
+        .equ    T_BIT, 0x20       /* when T bit is set, thumb mode active */
         .equ    I_BIT, 0x80        /* when I bit is set, IRQ is disabled */
         .equ    F_BIT, 0x40        /* when F bit is set, FIQ is disabled */
 
@@ -35,7 +35,7 @@
             .global \label1
             .lcomm  \label1, 4
 
- 		    ldr     r0, adr_\label1
+             ldr     r0, adr_\label1
             msr     CPSR_c, \mode_bits
             mov     r13, r0
 
@@ -98,11 +98,11 @@ _cplp_\sec_name:
 
             mov     R0, #0
             ldr     R1, =\source
-	        ldr     R2, =\source_end
+            ldr     R2, =\source_end
 _cllp_\sec_name:
             cmp     R1, R2
             strlo   R0, [R1], #4
-	        blo     _cllp_\sec_name
+            blo     _cllp_\sec_name
             .endm
 
 # ---------------------------------------------
