@@ -10,17 +10,17 @@
 #define SLAVE_SELECT_PORT       PORTC
 
 #if defined(__AVR_ATmega1284P__)
-#define DD_SS   			PORTB4
-#define DD_SCK  			PORTB7
-#define DD_MOSI 			PORTB5
-#define DD_MISO 			PORTB6
-#define SPI_SLAVE_SELECT	PORTC5
+#define DD_SS               PORTB4
+#define DD_SCK              PORTB7
+#define DD_MOSI             PORTB5
+#define DD_MISO             PORTB6
+#define SPI_SLAVE_SELECT    PORTC5
 #else
-#define DD_SS   			PB4
-#define DD_SCK  			PB7
-#define DD_MOSI 			PB5
-#define DD_MISO 			PB6
-#define SPI_SLAVE_SELECT	PC5
+#define DD_SS               PB4
+#define DD_SCK              PB7
+#define DD_MOSI             PB5
+#define DD_MISO             PB6
+#define SPI_SLAVE_SELECT    PC5
 #endif
 
 // for compatibility reasons gcc3.x <-> gcc4.x
@@ -53,63 +53,63 @@
 #endif
 // -------------------------
 
-#define SPI_FCCMD_USER			10
-#define SPI_FCCMD_STICK			11
-#define SPI_FCCMD_MISC			12
-#define SPI_FCCMD_PARAMETER1	13
-#define SPI_FCCMD_VERSION		14
-#define SPI_FCCMD_SERVOS		15
-#define SPI_FCCMD_ACCU			16
+#define SPI_FCCMD_USER            10
+#define SPI_FCCMD_STICK            11
+#define SPI_FCCMD_MISC            12
+#define SPI_FCCMD_PARAMETER1    13
+#define SPI_FCCMD_VERSION        14
+#define SPI_FCCMD_SERVOS        15
+#define SPI_FCCMD_ACCU            16
 
 struct str_ToNaviCtrl
 {
-	unsigned char Sync1, Sync2;
-	unsigned char Command;
-	signed int  IntegralNick;
-	signed int  IntegralRoll;
-	signed int  AccNick;
-	signed int  AccRoll;
-	signed int  GyroCompass;
-	signed int  GyroNick;
-	signed int  GyroRoll;
-	signed int  GyroGier;
-	union
-	{
-		unsigned char Byte[12];
-		char sByte[12];
-		unsigned int Int[6];
-		int  sInt[6];
-		unsigned long Long[3];
-		long sLong[3];
-		float Float[3];
-	} Param;
-	unsigned char Chksum;
+    unsigned char Sync1, Sync2;
+    unsigned char Command;
+    signed int  IntegralNick;
+    signed int  IntegralRoll;
+    signed int  AccNick;
+    signed int  AccRoll;
+    signed int  GyroCompass;
+    signed int  GyroNick;
+    signed int  GyroRoll;
+    signed int  GyroGier;
+    union
+    {
+        unsigned char Byte[12];
+        char sByte[12];
+        unsigned int Int[6];
+        int  sInt[6];
+        unsigned long Long[3];
+        long sLong[3];
+        float Float[3];
+    } Param;
+    unsigned char Chksum;
 };
 
-#define SPI_NCCMD_KALMAN		103
-#define SPI_NCCMD_VERSION		104
-#define SPI_NCCMD_GPSINFO		105
+#define SPI_NCCMD_KALMAN        103
+#define SPI_NCCMD_VERSION        104
+#define SPI_NCCMD_GPSINFO        105
 
 struct str_FromNaviCtrl
 {
-	unsigned char Command;
-	signed int  GPS_Nick;
-	signed int  GPS_Roll;
-	signed int  GPS_Gier;
-	signed int  CompassValue;
-	signed int  Status;
-	unsigned int BeepTime;
-	union
-	{
-		unsigned char Byte[12];
-		char sByte[12];
-		unsigned int Int[6];
-		int  sInt[6];
-		unsigned long Long[3];
-		long sLong[3];
-		float Float[3];
-	} Param;
-	unsigned char Chksum;
+    unsigned char Command;
+    signed int  GPS_Nick;
+    signed int  GPS_Roll;
+    signed int  GPS_Gier;
+    signed int  CompassValue;
+    signed int  Status;
+    unsigned int BeepTime;
+    union
+    {
+        unsigned char Byte[12];
+        char sByte[12];
+        unsigned int Int[6];
+        int  sInt[6];
+        unsigned long Long[3];
+        long sLong[3];
+        float Float[3];
+    } Param;
+    unsigned char Chksum;
 };
 
 struct str_FromNaviCtrl_Value
@@ -131,25 +131,25 @@ struct str_SPI_VersionInfo
 };
 
 // Satfix types for GPSData.SatFix
-#define SATFIX_NONE				0x00
-#define SATFIX_DEADRECKOING		0x01
-#define SATFIX_2D				0x02
-#define SATFIX_3D				0x03
-#define SATFIX_GPS_DEADRECKOING	0x04
-#define SATFIX_TIMEONLY			0x05
+#define SATFIX_NONE                0x00
+#define SATFIX_DEADRECKOING        0x01
+#define SATFIX_2D                0x02
+#define SATFIX_3D                0x03
+#define SATFIX_GPS_DEADRECKOING    0x04
+#define SATFIX_TIMEONLY            0x05
 // Flags for interpretation of the GPSData.Flags
-#define FLAG_GPSFIXOK			0x01 // (i.e. within DOP & ACC Masks)
-#define FLAG_DIFFSOLN			0x02 // (is DGPS used)
-#define FLAG_WKNSET				0x04 // (is Week Number valid)
-#define FLAG_TOWSET				0x08 //	(is Time of Week valid)
+#define FLAG_GPSFIXOK            0x01 // (i.e. within DOP & ACC Masks)
+#define FLAG_DIFFSOLN            0x02 // (is DGPS used)
+#define FLAG_WKNSET                0x04 // (is Week Number valid)
+#define FLAG_TOWSET                0x08 //    (is Time of Week valid)
 
 struct str_GPSInfo
 {
-	unsigned char	Flags;			// Status Flags
-	unsigned char	NumOfSats;		// number of satelites
-	unsigned char	SatFix;			// type of satfix
-	unsigned int	HomeDistance;	// distance to Home in dm
-	int				HomeBearing;	// bearing to home in deg
+    unsigned char    Flags;            // Status Flags
+    unsigned char    NumOfSats;        // number of satelites
+    unsigned char    SatFix;            // type of satfix
+    unsigned int    HomeDistance;    // distance to Home in dm
+    int                HomeBearing;    // bearing to home in deg
 };
 
 extern struct IntAnglesPR naviAcc; //from fc.c

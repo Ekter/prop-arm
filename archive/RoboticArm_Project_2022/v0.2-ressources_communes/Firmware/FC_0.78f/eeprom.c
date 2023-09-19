@@ -77,7 +77,7 @@ void DefaultKonstanten1(void){
  EE_Parameter.ServoRollMin = 0;           // Wert : 0-247     // Anschlag
  EE_Parameter.ServoRollMax = 247;         // Wert : 0-247     // Anschlag
  EE_Parameter.LoopGasLimit = 50;
- EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle für Stickausschlag
+ EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle fï¿½r Stickausschlag
  EE_Parameter.LoopHysterese = 50;
  EE_Parameter.BitConfig = 0;              // Bitcodiert: 0x01=oben, 0x02=unten, 0x04=links, 0x08=rechts / wird getrennt behandelt
  EE_Parameter.AchsKopplung1 = 90;
@@ -164,7 +164,7 @@ void DefaultKonstanten2(void){
  EE_Parameter.ServoRollMin = 0;           // Wert : 0-247     // Anschlag
  EE_Parameter.ServoRollMax = 247;         // Wert : 0-247     // Anschlag
  EE_Parameter.LoopGasLimit = 50;
- EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle für Stickausschlag
+ EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle fï¿½r Stickausschlag
  EE_Parameter.LoopHysterese = 50;
  EE_Parameter.BitConfig = 0;              // Bitcodiert: 0x01=oben, 0x02=unten, 0x04=links, 0x08=rechts
  EE_Parameter.AchsKopplung1 = 90;
@@ -209,7 +209,7 @@ void DefaultKonstanten3(void){
  EE_Parameter.Hoehe_P      = 10;          // Wert : 0-32
  EE_Parameter.Luftdruck_D  = 30;          // Wert : 0-247
  EE_Parameter.Hoehe_ACC_Wirkung = 30;     // Wert : 0-247
- EE_Parameter.Hoehe_HoverBand = 5;     	  // Wert : 0-247
+ EE_Parameter.Hoehe_HoverBand = 5;           // Wert : 0-247
  EE_Parameter.Hoehe_GPS_Z = 64;           // Wert : 0-247
  EE_Parameter.Hoehe_StickNeutralPoint = 0;// Wert : 0-247 (0 = Hover-Estimation)
  EE_Parameter.Hoehe_Verstaerkung = 15;    // Wert : 0-50
@@ -251,7 +251,7 @@ void DefaultKonstanten3(void){
  EE_Parameter.ServoRollMin = 0;           // Wert : 0-247     // Anschlag
  EE_Parameter.ServoRollMax = 247;         // Wert : 0-247     // Anschlag
  EE_Parameter.LoopGasLimit = 50;
- EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle für Stickausschlag
+ EE_Parameter.LoopThreshold = 90;         // Wert: 0-247  Schwelle fï¿½r Stickausschlag
  EE_Parameter.LoopHysterese = 50;
  EE_Parameter.BitConfig = 0;               // Bitcodiert: 0x01=oben, 0x02=unten, 0x04=links, 0x08=rechts
  EE_Parameter.AchsKopplung1 = 90;

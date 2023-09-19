@@ -18,21 +18,21 @@
 
 class port_com
 {
-	public:
-		port_com();
-		~port_com();
+    public:
+        port_com();
+        ~port_com();
 
-		bool open_port(int nPort, int nBaud);
-		void close( void );
-		bool is_open(void);
-		unsigned int ReadAvailable(void*, const unsigned int);
-		unsigned int Write(const unsigned char*, const int);
+        bool open_port(int nPort, int nBaud);
+        void close( void );
+        bool is_open(void);
+        unsigned int ReadAvailable(void*, const unsigned int);
+        unsigned int Write(const unsigned char*, const int);
 
-	private:
-		HANDLE m_hIDComDev;
-		OVERLAPPED m_OverlappedRead, m_OverlappedWrite;
-		bool open;
-		bool WriteCommByte(unsigned char);
+    private:
+        HANDLE m_hIDComDev;
+        OVERLAPPED m_OverlappedRead, m_OverlappedWrite;
+        bool open;
+        bool WriteCommByte(unsigned char);
 
 };
 

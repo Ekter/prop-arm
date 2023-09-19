@@ -39,15 +39,15 @@
 //#define DEBUG_DISPLAY_INTERVALL  123 // in ms
 
 
-#define DELAY_US(x)	((unsigned int)( (x) * 1e-6 * F_CPU ))
+#define DELAY_US(x)    ((unsigned int)( (x) * 1e-6 * F_CPU ))
 
 extern char markDebugString[MARK_DEBUG_STRING_LENGTH];
 
 extern struct IntAngles A2DNeutral; //from fc.c
 extern struct MixerStruct Mixer; //from fc.c
 
-extern volatile int16_t	ServoNickValue; //from timer0.h
-extern volatile int16_t	ServoRollValue; //from timer0.h
+extern volatile int16_t    ServoNickValue; //from timer0.h
+extern volatile int16_t    ServoRollValue; //from timer0.h
 
 extern volatile unsigned char SenderOkay;
 extern unsigned char BattLowVoltageWarning;

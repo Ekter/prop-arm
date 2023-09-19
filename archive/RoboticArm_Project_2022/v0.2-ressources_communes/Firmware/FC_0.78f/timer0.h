@@ -19,8 +19,8 @@ extern volatile unsigned int beeptime;
 extern volatile unsigned int cntKompass;
 extern unsigned int BeepMuster;
 extern volatile unsigned char SendSPI, ServoActive;
-//extern volatile int16_t	ServoNickValue;
-//extern volatile int16_t	ServoRollValue;
+//extern volatile int16_t    ServoNickValue;
+//extern volatile int16_t    ServoRollValue;
 
 extern struct LongAngles angleIntegral;
 #endif

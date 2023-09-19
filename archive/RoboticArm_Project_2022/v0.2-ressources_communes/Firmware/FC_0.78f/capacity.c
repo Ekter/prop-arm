@@ -2,30 +2,30 @@
  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  // + Copyright (c) Holger Buss, Ingo Busker
  // + Thanks to Marcel Haller (Lion) for the nice idea and first implementation
- // + Nur für den privaten Gebrauch
+ // + Nur fï¿½r den privaten Gebrauch
  // + www.MikroKopter.com
  // + porting the sources to other systems or using the software on other systems (except hardware from www.mikrokopter.de) is not allowed
  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- // + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
- // + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+ // + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+ // + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
  // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
  // + bzgl. der Nutzungsbedingungen aufzunehmen.
- // + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+ // + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
  // + Verkauf von Luftbildaufnahmen, usw.
  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- // + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
- // + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+ // + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+ // + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
- // + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+ // + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
  // + eindeutig als Ursprung verlinkt werden
  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
- // + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+ // + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
  // + Benutzung auf eigene Gefahr
- // + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+ // + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  // + Die Portierung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
- // + mit unserer Zustimmung zulässig
+ // + mit unserer Zustimmung zulï¿½ssig
  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
  // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
  // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -69,72 +69,72 @@ Capacity_t Capacity;
 // initialize capacity calculation
 void Capacity_Init(void)
 {
-	Capacity.ActualCurrent = 0;
-	Capacity.UsedCapacity = 0;
-	Capacity.ActualPower = 0;
-	update_timer = SetDelay(CAPACITY_UPDATE_INTERVAL);
+    Capacity.ActualCurrent = 0;
+    Capacity.UsedCapacity = 0;
+    Capacity.ActualPower = 0;
+    update_timer = SetDelay(CAPACITY_UPDATE_INTERVAL);
 }
 
 
 // called in main loop at a regular interval
 void Capacity_Update(void)
 {
-	unsigned short Current, SetSum; // max value will be 255 * 12 = 3060
-	static unsigned short SubCounter = 0;
-	static unsigned short CurrentOffset = 0;
-	static unsigned long SumCurrentOffset = 0;
-	unsigned char i, NumOfMotors;
+    unsigned short Current, SetSum; // max value will be 255 * 12 = 3060
+    static unsigned short SubCounter = 0;
+    static unsigned short CurrentOffset = 0;
+    static unsigned long SumCurrentOffset = 0;
+    unsigned char i, NumOfMotors;
 
-	if(CheckDelay(update_timer))
-	{
-		update_timer += CAPACITY_UPDATE_INTERVAL; // do not use SetDelay to avoid timing leaks
-		// determine sum of all present BL currents and setpoints
-		Current = 0;
-		SetSum = 0;
-		NumOfMotors = 0;
-		for(i = 0; i < MAX_MOTORS; i++)
-		{
-			if(Motor[i].State & MOTOR_STATE_PRESENT_MASK)
-			{
-				NumOfMotors++;
-				Current += (unsigned int)(Motor[i].Current);
-				SetSum +=  (unsigned int)(Motor[i].SetPoint);
-			}
-		}
-		if(SetSum == 0) // if all setpoints are 0
-		{ // determine offsets of motor currents
-			#define CURRENT_AVERAGE 8  // 8bit = 256 * 10 ms = 2.56s average time
-			CurrentOffset = (unsigned int)(SumCurrentOffset>>CURRENT_AVERAGE);
-			SumCurrentOffset -= CurrentOffset;
-			SumCurrentOffset += Current;
-			// after averaging set current to static offset
-			Current = FC_OFFSET_CURRENT;
-		}
-		else // some motors are running, includes also motor test condition, where "MotorRunning" is false
-		{   // subtract offset
-			if(Current > CurrentOffset) Current -= CurrentOffset;
-			else Current = 0;
-			// add the FC and BL Offsets
-			Current += FC_OFFSET_CURRENT + NumOfMotors * BL_OFFSET_CURRENT;
-		}
+    if(CheckDelay(update_timer))
+    {
+        update_timer += CAPACITY_UPDATE_INTERVAL; // do not use SetDelay to avoid timing leaks
+        // determine sum of all present BL currents and setpoints
+        Current = 0;
+        SetSum = 0;
+        NumOfMotors = 0;
+        for(i = 0; i < MAX_MOTORS; i++)
+        {
+            if(Motor[i].State & MOTOR_STATE_PRESENT_MASK)
+            {
+                NumOfMotors++;
+                Current += (unsigned int)(Motor[i].Current);
+                SetSum +=  (unsigned int)(Motor[i].SetPoint);
+            }
+        }
+        if(SetSum == 0) // if all setpoints are 0
+        { // determine offsets of motor currents
+            #define CURRENT_AVERAGE 8  // 8bit = 256 * 10 ms = 2.56s average time
+            CurrentOffset = (unsigned int)(SumCurrentOffset>>CURRENT_AVERAGE);
+            SumCurrentOffset -= CurrentOffset;
+            SumCurrentOffset += Current;
+            // after averaging set current to static offset
+            Current = FC_OFFSET_CURRENT;
+        }
+        else // some motors are running, includes also motor test condition, where "MotorRunning" is false
+        {   // subtract offset
+            if(Current > CurrentOffset) Current -= CurrentOffset;
+            else Current = 0;
+            // add the FC and BL Offsets
+            Current += FC_OFFSET_CURRENT + NumOfMotors * BL_OFFSET_CURRENT;
+        }
 
-		// update actual Current
-		Capacity.ActualCurrent = Current;
-		// update actual Power
-		if(Current < 255)	Capacity.ActualPower = (UBat * Current) / 100; // in W higher resolution
-		else				Capacity.ActualPower = (UBat * (Current/4)) / 25; // in W
+        // update actual Current
+        Capacity.ActualCurrent = Current;
+        // update actual Power
+        if(Current < 255)    Capacity.ActualPower = (UBat * Current) / 100; // in W higher resolution
+        else                Capacity.ActualPower = (UBat * (Current/4)) / 25; // in W
 
-		// update used capacity
-		SubCounter += Current;
+        // update used capacity
+        SubCounter += Current;
 
-		// 100mA * 1ms * CAPACITY_UPDATE_INTERVAL = 1 mA * 100 ms * CAPACITY_UPDATE_INTERVAL
-		// = 1mA * 0.1s * CAPACITY_UPDATE_INTERVAL = 1mA * 1min / (600 / CAPACITY_UPDATE_INTERVAL)
-		// = 1mAh / (36000 / CAPACITY_UPDATE_INTERVAL)
-		#define SUB_COUNTER_LIMIT (36000 / CAPACITY_UPDATE_INTERVAL)
-		if(SubCounter > SUB_COUNTER_LIMIT)
-		{
-			Capacity.UsedCapacity++;			// we have one mAh more
-			SubCounter -= SUB_COUNTER_LIMIT;	// keep the remaining sub part
-		}
-	} // EOF check delay update timer
+        // 100mA * 1ms * CAPACITY_UPDATE_INTERVAL = 1 mA * 100 ms * CAPACITY_UPDATE_INTERVAL
+        // = 1mA * 0.1s * CAPACITY_UPDATE_INTERVAL = 1mA * 1min / (600 / CAPACITY_UPDATE_INTERVAL)
+        // = 1mAh / (36000 / CAPACITY_UPDATE_INTERVAL)
+        #define SUB_COUNTER_LIMIT (36000 / CAPACITY_UPDATE_INTERVAL)
+        if(SubCounter > SUB_COUNTER_LIMIT)
+        {
+            Capacity.UsedCapacity++;            // we have one mAh more
+            SubCounter -= SUB_COUNTER_LIMIT;    // keep the remaining sub part
+        }
+    } // EOF check delay update timer
 }

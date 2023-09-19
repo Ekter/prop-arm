@@ -37,7 +37,7 @@ extern unsigned char MotorTest[16];//from uart.c
 extern struct str_DebugOut DebugOut;//from uart.c
 extern volatile int PPM_diff[26];  //from rc.c
 extern volatile unsigned char NewPpmData;//from rc.c
-extern volatile int16_t	ServoNickValue;//from timer0.c
+extern volatile int16_t    ServoNickValue;//from timer0.c
 extern unsigned char BattLowVoltageWarning;//from main.c
 
 extern const long GIER_GRAD_FAKTOR;
@@ -51,14 +51,14 @@ void LipoDetection(unsigned char print);
 
 #define STICK_GAIN 4 //Increase the resolution of the desired values
 
-#define FCFLAG_MOTOR_RUN  	      0x01
-#define FCFLAG_FLY        	      0x02
-#define FCFLAG_CALIBRATE  	      0x04
-#define FCFLAG_START      	      0x08
-#define FCFLAG_EMERGENCY_LANDING 	0x10
-#define FCFLAG_LOWBAT		          0x20
-#define FCFLAG_SPI_RX_ERR	        0x40
-#define FCFLAG_I2CERR		          0x80
+#define FCFLAG_MOTOR_RUN            0x01
+#define FCFLAG_FLY                  0x02
+#define FCFLAG_CALIBRATE            0x04
+#define FCFLAG_START                0x08
+#define FCFLAG_EMERGENCY_LANDING     0x10
+#define FCFLAG_LOWBAT                  0x20
+#define FCFLAG_SPI_RX_ERR            0x40
+#define FCFLAG_I2CERR                  0x80
 
 /*these are never used, and would be (at best) only confusing
 #define Poti1 Poti[0]

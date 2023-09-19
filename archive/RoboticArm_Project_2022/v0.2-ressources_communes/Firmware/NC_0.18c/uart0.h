@@ -3,21 +3,21 @@
 
 typedef enum
 {
-	UART0_UNDEF,
-	UART0_MK3MAG,
-	UART0_MKGPS
+    UART0_UNDEF,
+    UART0_MK3MAG,
+    UART0_MKGPS
 } UART0_MuxerState_t;
 
 extern UART0_MuxerState_t UART0_Muxer;
 
 typedef struct
 {
-	u8 SWMajor;
-	u8 SWMinor;
-	u8 ProtoMajor;
-	u8 ProtoMinor;
-	u8 SWPatch;
-	u8 Reserved[5];
+    u8 SWMajor;
+    u8 SWMinor;
+    u8 ProtoMajor;
+    u8 ProtoMinor;
+    u8 SWPatch;
+    u8 Reserved[5];
 }  __attribute__((packed)) MKOSD_VersionInfo_t;
 
 extern MKOSD_VersionInfo_t MKOSD_VersionInfo;

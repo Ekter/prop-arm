@@ -32,11 +32,11 @@ enum TypeHILS{//different HILS modes
   //HILS_PROPER_HILS = 1,//real HILS, NOT allowing the motors to turn
   //HILS_EQUAL_MOTOR_COMMANDS = 2,//we just send back constant commnads
   //HILS_PROPER_HILS_WITH_MOTORS_ON = 3,//like proper hils, but we allow the motors to turn (might be unsafe)
-	
+    
 // HILS = 0, In this mode, we are not doing Hardware in the loop, the PC simulator runs on its own
 // HILS = 1 if you want to do Hardware in the loop, 
 // In this mode, we want that the PC sends the Board sensor data
-// The board should reply with motor commands, which treated by the PC simulator and displayed in the 3D animation ...	
+// The board should reply with motor commands, which treated by the PC simulator and displayed in the 3D animation ...    
 // HILS = 2: In this mode, the 3D GUI is only used to display the real angle of the balancing arm
 // HILS = 3: In this mode, we want the board to send the true angle values and the PC computes the control law and send to the board the
 // force that should be generated to control the arm.

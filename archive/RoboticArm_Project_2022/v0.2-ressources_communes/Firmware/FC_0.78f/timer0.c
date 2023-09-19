@@ -10,8 +10,8 @@ volatile unsigned char SendSPI = 0, ServoActive = 0;
 
 unsigned int BeepMuster = 0xffff;
 
-volatile int16_t	ServoNickValue = 0;
-volatile int16_t	ServoRollValue = 0;
+volatile int16_t    ServoNickValue = 0;
+volatile int16_t    ServoRollValue = 0;
 
 
 enum {
@@ -149,7 +149,7 @@ void TIMER2_Init(void)
   // disable all interrupts before reconfiguration
   cli();
 
-  PORTD &= ~(1<<PORTD7); 	// set PD7 to low
+  PORTD &= ~(1<<PORTD7);     // set PD7 to low
 
   DDRC  |= (1<<DDC6);     // set PC6 as output (Reset for HEF4017)
   HEF4017R_ON;
@@ -189,14 +189,14 @@ void TIMER2_Init(void)
 //----------------------------
 void Timer_Init(void)
 {
-	tim_main = SetDelay(10);
-	TCCR0B = CK8;
-	TCCR0A = (1<<COM0A1)|(1<<COM0B1)|3;//fast PWM
-	OCR0A =  0;
-	OCR0B = 120;
-	TCNT0 = (unsigned char)-TIMER_RELOAD_VALUE;  // reload
-	//OCR1  = 0x00;
-	TIMSK0 |= _BV(TOIE0);
+    tim_main = SetDelay(10);
+    TCCR0B = CK8;
+    TCCR0A = (1<<COM0A1)|(1<<COM0B1)|3;//fast PWM
+    OCR0A =  0;
+    OCR0B = 120;
+    TCNT0 = (unsigned char)-TIMER_RELOAD_VALUE;  // reload
+    //OCR1  = 0x00;
+    TIMSK0 |= _BV(TOIE0);
 }
 
 
@@ -206,27 +206,27 @@ void Timer_Init(void)
 
 ISR(TIMER2_COMPA_vect)
 {
-	// frame len 22.5 ms = 14063 * 1.6 us
-	// stop pulse: 0.3 ms = 188 * 1.6 us
-	// min servo pulse: 0.6 ms =  375 * 1.6 us
-	// max servo pulse: 2.4 ms = 1500 * 1.6 us
-	// resolution: 1500 - 375 = 1125 steps
+    // frame len 22.5 ms = 14063 * 1.6 us
+    // stop pulse: 0.3 ms = 188 * 1.6 us
+    // min servo pulse: 0.6 ms =  375 * 1.6 us
+    // max servo pulse: 2.4 ms = 1500 * 1.6 us
+    // resolution: 1500 - 375 = 1125 steps
 
-	#define IRS_RUNTIME 127
-	#define PPM_STOPPULSE 188
+    #define IRS_RUNTIME 127
+    #define PPM_STOPPULSE 188
   #define PPM_FRAMELEN (1757 * EE_Parameter.ServoNickRefresh)
-	#define MINSERVOPULSE 375
-	#define MAXSERVOPULSE 1500
-	#define SERVORANGE (MAXSERVOPULSE - MINSERVOPULSE)
+    #define MINSERVOPULSE 375
+    #define MAXSERVOPULSE 1500
+    #define SERVORANGE (MAXSERVOPULSE - MINSERVOPULSE)
 
-	static uint8_t  PulseOutput = 0;
-	static uint16_t RemainingPulse = 0;
-	static uint16_t ServoFrameTime = 0;
-	static uint8_t  ServoIndex = 0;
+    static uint8_t  PulseOutput = 0;
+    static uint16_t RemainingPulse = 0;
+    static uint16_t ServoFrameTime = 0;
+    static uint8_t  ServoIndex = 0;
 
-	#define MULTIPLYER 4
-	static int16_t ServoNickOffset = (255 / 2) * MULTIPLYER; // initial value near center positon
-	static int16_t ServoRollOffset = (255 / 2) * MULTIPLYER; // initial value near center positon
+    #define MULTIPLYER 4
+    static int16_t ServoNickOffset = (255 / 2) * MULTIPLYER; // initial value near center positon
+    static int16_t ServoRollOffset = (255 / 2) * MULTIPLYER; // initial value near center positon
 
   //-----------------------------------------------------
   // PPM state machine, onboard demultiplexed by HEF4017
@@ -252,11 +252,11 @@ ISR(TIMER2_COMPA_vect)
             ServoNickOffset = (ServoNickOffset * 3 + (int16_t)Parameter_ServoNickControl * MULTIPLYER) / 4; // lowpass offset
             ServoNickValue = ServoNickOffset; // offset (Range from 0 to 255 * 3 = 765)
             if(EE_Parameter.ServoCompInvert & 0x01)
-            {	// inverting movement of servo
+            {    // inverting movement of servo
               ServoNickValue += (int16_t)( ( (int32_t)EE_Parameter.ServoNickComp * MULTIPLYER * (angleIntegral.pitch / 128L ) ) / (256L) );
             }
             else
-            {	// non inverting movement of servo
+            {    // non inverting movement of servo
               ServoNickValue -= (int16_t)( ( (int32_t)EE_Parameter.ServoNickComp * MULTIPLYER * (angleIntegral.pitch / 128L ) ) / (256L) );
             }
             // limit servo value to its parameter range definition
@@ -276,11 +276,11 @@ ISR(TIMER2_COMPA_vect)
             ServoRollOffset = (ServoRollOffset * 3 + (int16_t) Parameter_ServoRollControl  * MULTIPLYER) / 4; // lowpass offset
             ServoRollValue = ServoRollOffset; // offset (Range from 0 to 255 * 3 = 765)
             if(EE_Parameter.ServoCompInvert & 0x02)
-            {	// inverting movement of servo
+            {    // inverting movement of servo
               ServoRollValue += (int16_t)( ( (int32_t) EE_Parameter.ServoRollComp * MULTIPLYER * (angleIntegral.roll / 128L ) ) / (256L) );
             }
             else
-            {	// non inverting movement of servo
+            {    // non inverting movement of servo
               ServoRollValue -= (int16_t)( ( (int32_t) EE_Parameter.ServoRollComp * MULTIPLYER * (angleIntegral.roll / 128L ) ) / (256L) );
             }
               // limit servo value to its parameter range definition
@@ -306,12 +306,12 @@ ISR(TIMER2_COMPA_vect)
             RemainingPulse += ((int16_t)Parameter_Servo5 * MULTIPLYER) - (256 / 2) * MULTIPLYER;
             break;
           default: // other servo channels
-            RemainingPulse += 2 * PPM_in[ServoIndex]; // add channel value, factor of 2 because timer 1 increments 3.2µs
+            RemainingPulse += 2 * PPM_in[ServoIndex]; // add channel value, factor of 2 because timer 1 increments 3.2ï¿½s
             break;
         }
         // range servo pulse width
-        if(RemainingPulse > MAXSERVOPULSE )			RemainingPulse = MAXSERVOPULSE; // upper servo pulse limit
-        else if(RemainingPulse < MINSERVOPULSE )	RemainingPulse = MINSERVOPULSE; // lower servo pulse limit
+        if(RemainingPulse > MAXSERVOPULSE )            RemainingPulse = MAXSERVOPULSE; // upper servo pulse limit
+        else if(RemainingPulse < MINSERVOPULSE )    RemainingPulse = MINSERVOPULSE; // lower servo pulse limit
         // substract stop pulse width
         RemainingPulse -= PPM_STOPPULSE;
         // accumulate time for correct sync gap
@@ -334,33 +334,33 @@ ISR(TIMER2_COMPA_vect)
     PulseOutput = 1;
   }
 
-	// General pulse output generator
-	if(RemainingPulse > (255 + IRS_RUNTIME))
-	{
-		OCR2A = 255;
-		RemainingPulse -= 255;
-	}
-	else
-	{
-		if(RemainingPulse > 255) // this is the 2nd last part
-		{
-			if((RemainingPulse - 255) < IRS_RUNTIME)
-			{
-				OCR2A = 255 - IRS_RUNTIME;
-				RemainingPulse -= 255 - IRS_RUNTIME;
+    // General pulse output generator
+    if(RemainingPulse > (255 + IRS_RUNTIME))
+    {
+        OCR2A = 255;
+        RemainingPulse -= 255;
+    }
+    else
+    {
+        if(RemainingPulse > 255) // this is the 2nd last part
+        {
+            if((RemainingPulse - 255) < IRS_RUNTIME)
+            {
+                OCR2A = 255 - IRS_RUNTIME;
+                RemainingPulse -= 255 - IRS_RUNTIME;
 
-			}
-			else // last part > ISR_RUNTIME
-			{
-				OCR2A = 255;
-				RemainingPulse -= 255;
-			}
-		}
-		else // this is the last part
-		{
-			OCR2A = RemainingPulse;
-			RemainingPulse = 0;
-			PulseOutput = 0; // trigger to stop pulse
-		}
-	} // EOF general pulse output generator
+            }
+            else // last part > ISR_RUNTIME
+            {
+                OCR2A = 255;
+                RemainingPulse -= 255;
+            }
+        }
+        else // this is the last part
+        {
+            OCR2A = RemainingPulse;
+            RemainingPulse = 0;
+            PulseOutput = 0; // trigger to stop pulse
+        }
+    } // EOF general pulse output generator
 }

@@ -2,11 +2,11 @@
 #define _LIBFC_H
 
 
-#define CPU_UNKNOWN 	0
-#define CPU_ATMEGA644	1
-#define CPU_ATMEGA644P	2
-#define CPU_ATMEGA1284	3
-#define CPU_ATMEGA1284P	4
+#define CPU_UNKNOWN     0
+#define CPU_ATMEGA644    1
+#define CPU_ATMEGA644P    2
+#define CPU_ATMEGA1284    3
+#define CPU_ATMEGA1284P    4
 
 extern void LIBFC_Init(void);
 extern void LIBFC_Polling(void);

@@ -3,9 +3,9 @@
 
 typedef struct
 {
-	unsigned short ActualCurrent; // in 0.1A Steps
-	unsigned short ActualPower;   // in 0.1W
-	unsigned short UsedCapacity;  // in mAh
+    unsigned short ActualCurrent; // in 0.1A Steps
+    unsigned short ActualPower;   // in 0.1W
+    unsigned short UsedCapacity;  // in mAh
 } __attribute__((packed)) Capacity_t;
 
 extern Capacity_t Capacity;

@@ -9,45 +9,45 @@ unsigned char J17Blinkcount = 0, J17Mask = 1;
 // initializes the LED control outputs J16, J17
 void LED_Init(void)
 {
-	// set PC2 & PC3 as output (control of J16 & J17)
-	DDRC |= (1<<DDC2)|(1<<DDC3);
-	J16_OFF;
-	J17_OFF;
-	J16Blinkcount = 0; J16Mask = 128;
-	J17Blinkcount = 0; J17Mask = 128;
+    // set PC2 & PC3 as output (control of J16 & J17)
+    DDRC |= (1<<DDC2)|(1<<DDC3);
+    J16_OFF;
+    J17_OFF;
+    J16Blinkcount = 0; J16Mask = 128;
+    J17Blinkcount = 0; J17Mask = 128;
 }
 
 // called in UpdateMotors() every 2ms
 void LED_Update(void)
 {
-	static char delay = 0;
-	static unsigned char J16Bitmask = 0;
-	static unsigned char J17Bitmask = 0;
-	static unsigned char J16Warn = 0, J17Warn = 0;
-	if(!delay--)  // 10ms Intervall
-	{
-	delay = 4;
+    static char delay = 0;
+    static unsigned char J16Bitmask = 0;
+    static unsigned char J17Bitmask = 0;
+    static unsigned char J16Warn = 0, J17Warn = 0;
+    if(!delay--)  // 10ms Intervall
+    {
+    delay = 4;
 
-	if(FCFlags & (FCFLAG_LOWBAT | FCFLAG_EMERGENCY_LANDING | FCFLAG_I2CERR))
-	{
-		if(EE_Parameter.WARN_J16_Bitmask) 
-		 {
+    if(FCFlags & (FCFLAG_LOWBAT | FCFLAG_EMERGENCY_LANDING | FCFLAG_I2CERR))
+    {
+        if(EE_Parameter.WARN_J16_Bitmask) 
+         {
           if(!J16Warn) J16Blinkcount = 4;
           J16Warn = 1;
-		 } 
-		if(EE_Parameter.WARN_J17_Bitmask) 
-		 {
+         } 
+        if(EE_Parameter.WARN_J17_Bitmask) 
+         {
           if(!J17Warn) J17Blinkcount = 4;
           J17Warn = 1;
-		 } 
-	}
-	else
-	{
+         } 
+    }
+    else
+    {
         J16Warn = 0;
         J17Warn = 0;
-		J16Bitmask = EE_Parameter.J16Bitmask;
-		J17Bitmask = EE_Parameter.J17Bitmask;
-	}
+        J16Bitmask = EE_Parameter.J16Bitmask;
+        J17Bitmask = EE_Parameter.J17Bitmask;
+    }
 
  if(!J16Warn)
   {

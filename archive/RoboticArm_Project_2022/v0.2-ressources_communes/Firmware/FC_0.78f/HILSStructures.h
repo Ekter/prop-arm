@@ -56,9 +56,9 @@ typedef UINT32 COMMS_LONG_UINT;
 // Structures used in communications:
 PACK(struct MotorCommandSet{
   //COMMS_UNSIGNED_CHAR setpoint;//the motor setpoint
-  //COMMS_UNSIGNED_CHAR sensorDataID; //the ID number of the sensor data used to generate these commands	
-	COMMS_UINT setpoint;//the motor setpoint
-	COMMS_UINT sensorDataID; //the ID number of the sensor data used to generate these commands	
+  //COMMS_UNSIGNED_CHAR sensorDataID; //the ID number of the sensor data used to generate these commands    
+    COMMS_UINT setpoint;//the motor setpoint
+    COMMS_UINT sensorDataID; //the ID number of the sensor data used to generate these commands    
 });
 
 PACK(struct SensorsA2D{//values from the A2D sensors
@@ -74,13 +74,13 @@ PACK(struct SensorsA2D{//values from the A2D sensors
 });
 
 struct SensorsArmProp{//sensors of the Propeller Arm system
-	COMMS_INT theta; 
-	COMMS_INT theta_dot; //angle and angle speed of the arm
-	COMMS_INT ADC_value;
+    COMMS_INT theta; 
+    COMMS_INT theta_dot; //angle and angle speed of the arm
+    COMMS_INT ADC_value;
 };
 
 PACK(struct SensorPack{   
-	struct SensorsArmProp ArmProp;	// 04/05/2013 adapted from mwm for the armprop project
+    struct SensorsArmProp ArmProp;    // 04/05/2013 adapted from mwm for the armprop project
     COMMS_UNSIGNED_CHAR id; //an internal identification number
 });
 
@@ -111,15 +111,15 @@ struct SimulatedSensorData{//used in FC
 //};
 //
 //struct RealSensorData{
-//	COMMS_INT theta; //COMMS_INT is used because this is a 10-bit variable
-//	COMMS_INT theta_dot; //COMMS_INT is used because this is a 10-bit variable
-//	unsigned char haveDataToSend;
+//    COMMS_INT theta; //COMMS_INT is used because this is a 10-bit variable
+//    COMMS_INT theta_dot; //COMMS_INT is used because this is a 10-bit variable
+//    unsigned char haveDataToSend;
 //}
 
 //PACK(struct SensorPackExtended{
 //  
-//	struct SensorsArmProp ArmProp;	// 04/05/2013 adapted from mwm for the armprop project	
-//	//This adds the magnetometer unit vector measurement
+//    struct SensorsArmProp ArmProp;    // 04/05/2013 adapted from mwm for the armprop project    
+//    //This adds the magnetometer unit vector measurement
 //    //struct SensorsA2D A2D;
 //  //struct SensorsNavi navi; 
 //  //struct SensorsMagnetometer mag;
@@ -149,7 +149,7 @@ PACK(struct SensorsMagnetometer{
 
 /*
 PACK(struct QuaternionSet{ // used to send back to PC the estimated quaternion
- COMMS_UNSIGNED_CHAR quat[4]; 	
+ COMMS_UNSIGNED_CHAR quat[4];     
 });*/
 
 #endif

@@ -4,29 +4,29 @@ Flight Control
 //LICENSE:
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) Holger Buss, Ingo Busker
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
 // + bzgl. der Nutzungsbedingungen aufzunehmen.
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -226,7 +226,7 @@ void SetNeutral(void){//Set zero values
   Delay_ms_Mess(100);
   calibrateProcessMeasurement();
 
-  if(EE_Parameter.GlobalConfig & CFG_HOEHENREGELUNG){// Höhenregelung aktiviert?
+  if(EE_Parameter.GlobalConfig & CFG_HOEHENREGELUNG){// Hï¿½henregelung aktiviert?
     if((airPressureMeasurement > 950) || (airPressureMeasurement < 750)){
       findAirpressureOffset();
     }
@@ -286,7 +286,7 @@ void SetNeutral(void){//Set zero values
   FromNaviCtrl_Value.Kalman_MaxFusion = 32;
 
   for(unsigned char i=0;i<8;i++){
-    Poti[i] =	PPM_in[EE_Parameter.Kanalbelegung[CH_POTI1 + i]] + 110;
+    Poti[i] =    PPM_in[EE_Parameter.Kanalbelegung[CH_POTI1 + i]] + 110;
   }
 
   SenderOkay = 100;
@@ -378,7 +378,7 @@ void processMeasurement(void){//Process measurement values (executed once per co
 
   // Kompasswert begrenzen  ++++++++++++++++++++++++++++++++++++++++++++++++
   if(ErsatzKompass >= (360L * GIER_GRAD_FAKTOR)){
-    ErsatzKompass -= 360L * GIER_GRAD_FAKTOR;  // 360° Umschlag
+    ErsatzKompass -= 360L * GIER_GRAD_FAKTOR;  // 360ï¿½ Umschlag
   }
   if(ErsatzKompass < 0){
     ErsatzKompass += 360L * GIER_GRAD_FAKTOR;
@@ -702,7 +702,7 @@ void motorController(void){//Run the controller at ~500Hz
             ReadParameterSet(GetActiveParamSetNumber(), (unsigned char *) &EE_Parameter.Kanalbelegung[0], STRUCT_PARAM_LAENGE);
             LipoDetection(0);
             LIBFC_ReceiverInit();
-            if(EE_Parameter.GlobalConfig & CFG_HOEHENREGELUNG){// Höhenregelung aktiviert?
+            if(EE_Parameter.GlobalConfig & CFG_HOEHENREGELUNG){// Hï¿½henregelung aktiviert?
              if((airPressureMeasurement > 950) || (airPressureMeasurement < 750)){
                findAirpressureOffset();
              }
@@ -718,7 +718,7 @@ void motorController(void){//Run the controller at ~500Hz
       else if(PPM_in[EE_Parameter.Kanalbelegung[CH_YAW]] < -75){// ACC Neutralwerte speichern
         if(++delayNeutral > 200){// nicht sofort
           GRN_OFF;
-          eeprom_write_byte(&EEPromArray[EEPROM_ADR_ACC_NICK],0xff); // Werte löschen
+          eeprom_write_byte(&EEPromArray[EEPROM_ADR_ACC_NICK],0xff); // Werte lï¿½schen
           vehicleIsFlying = 0;
           delayNeutral = 0;
           vehicleFlyingCounter = 0;
@@ -795,7 +795,7 @@ void motorController(void){//Run the controller at ~500Hz
 
     stick.yaw = -PPM_in[EE_Parameter.Kanalbelegung[CH_YAW]];
     if(stick.yaw > 2){
-      stick.yaw -= 2; 	
+      stick.yaw -= 2;     
     }
     else if(stick.yaw < -2){
       stick.yaw += 2; 
@@ -865,7 +865,7 @@ void motorController(void){//Run the controller at ~500Hz
 
   //--Balance ACC integrals--------
 
-  meanAngleIntegral.pitch  += angleIntegral.pitch;    // Für die Mittelwertbildung aufsummieren
+  meanAngleIntegral.pitch  += angleIntegral.pitch;    // Fï¿½r die Mittelwertbildung aufsummieren
   meanAngleIntegral.roll   += angleIntegral.roll;
   meanAngleIntegral2.pitch += angleIntegral2.pitch;
   meanAngleIntegral2.roll  += angleIntegral2.roll;
@@ -1118,7 +1118,7 @@ void motorController(void){//Run the controller at ~500Hz
       NeueKompassRichtungMerken = 1;
     }
   }
-  tmp_int  = (long) EE_Parameter.Gier_P * ((long)stick.yaw * abs(stick.yaw)) / 512L; // expo  y = ax + bx²
+  tmp_int  = (long) EE_Parameter.Gier_P * ((long)stick.yaw * abs(stick.yaw)) / 512L; // expo  y = ax + bxï¿½
   tmp_int += (EE_Parameter.Gier_P * stick.yaw) / 4;
   desiredYaw = tmp_int;
   measurementAngleIntegral.yaw -= tmp_int;
@@ -1129,7 +1129,7 @@ void motorController(void){//Run the controller at ~500Hz
     int w,v,r,fehler,korrektur;
     w = abs(angleIntegral.pitch /512); // mit zunehmender Neigung den Einfluss drosseln
     v = abs(angleIntegral.roll /512);
-    LIMIT_MAX(v,w);// grösste Neigung ermitteln
+    LIMIT_MAX(v,w);// grï¿½sste Neigung ermitteln
 
     korrektur = w / 8 + 1;
     fehler = ((540 + KompassValue - (ErsatzKompass/GIER_GRAD_FAKTOR)) % 360) - 180;
@@ -1255,7 +1255,7 @@ void motorController(void){//Run the controller at ~500Hz
   //--Mixer & PI controller--------
   DebugOut.Analog[7] = mixerValues.gas;
   //--Yaw component----------------
-  mixerValues.yaw = measurement.processed.yaw - desiredYaw*STICK_GAIN;// Regler für Gier
+  mixerValues.yaw = measurement.processed.yaw - desiredYaw*STICK_GAIN;// Regler fï¿½r Gier
 
   //If GasMishcanteil is below value this value, we pretend it's higher so that we can still yaw
   const int MIN_GIERGAS = 40*STICK_GAIN;
@@ -1264,7 +1264,7 @@ void motorController(void){//Run the controller at ~500Hz
   LIMIT_SYMMETRIC(mixerValues.yaw,maximumGasValue*STICK_GAIN - mixerValues.gas);
 
   //--Pitch axis-------------------
-  angleDifference.pitch = measurement.processed.pitch - stick.pitch;	// Differenz bestimmen
+  angleDifference.pitch = measurement.processed.pitch - stick.pitch;    // Differenz bestimmen
   if(IntegralFaktor){
     sum.pitch += integralMultiplicationFactor.pitch - stick.pitch; // I-Anteil bei Winkelregelung
   }
@@ -1274,13 +1274,13 @@ void motorController(void){//Run the controller at ~500Hz
 
   LIMIT_SYMMETRIC(sum.pitch,STICK_GAIN*16000L);
 
-  mixerValues.pitch = angleDifference.pitch + sum.pitch / Ki; // PI-Regler für Nick
+  mixerValues.pitch = angleDifference.pitch + sum.pitch / Ki; // PI-Regler fï¿½r Nick
   // Motor Vorn
   tmp_int = (long)((long)Parameter_DynamicStability * (long)(mixerValues.gas + abs(mixerValues.yaw)/2)) / 64;
   LIMIT_SYMMETRIC(mixerValues.pitch,tmp_int);
 
   //--Roll axis--------------------
-  angleDifference.roll = measurement.processed.roll - stick.roll;	// Differenz bestimmen
+  angleDifference.roll = measurement.processed.roll - stick.roll;    // Differenz bestimmen
   if(IntegralFaktor){
     sum.roll += integralMultiplicationFactor.roll - stick.roll;// I-Anteil bei Winkelregelung
   }
@@ -1290,7 +1290,7 @@ void motorController(void){//Run the controller at ~500Hz
 
   LIMIT_SYMMETRIC(sum.roll,STICK_GAIN*16000L);
 
-  mixerValues.roll = angleDifference.roll + sum.roll / Ki;	// PI-Regler für Roll
+  mixerValues.roll = angleDifference.roll + sum.roll / Ki;    // PI-Regler fï¿½r Roll
   tmp_int = (long)((long)Parameter_DynamicStability * (long)(mixerValues.gas + abs(mixerValues.yaw)/2)) / 64;
   LIMIT_SYMMETRIC(mixerValues.roll,tmp_int); 
 

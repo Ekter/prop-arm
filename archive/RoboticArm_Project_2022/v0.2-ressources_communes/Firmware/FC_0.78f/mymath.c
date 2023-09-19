@@ -9,33 +9,33 @@ const uint16_t pgm_sinlookup[91] PROGMEM = {0, 143, 286, 429, 571, 714, 856, 998
 
 int16_t c_sin_8192(int16_t angle)
 {
-	int8_t m,n;
-	int16_t sinus;
+    int8_t m,n;
+    int16_t sinus;
 
-	// avoid negative angles
-	if (angle < 0)
-	{
-		m = -1;
-		angle = abs(angle);
-	}
-	else m = +1;
+    // avoid negative angles
+    if (angle < 0)
+    {
+        m = -1;
+        angle = abs(angle);
+    }
+    else m = +1;
 
-	// fold angle to intervall 0 to 359
-	angle %= 360;
+    // fold angle to intervall 0 to 359
+    angle %= 360;
 
-	// check quadrant
-	if (angle <= 90) n=1; // first quadrant
-	else if ((angle > 90) && (angle <= 180)) {angle = 180 - angle; n = 1;} // second quadrant
-	else if ((angle > 180) && (angle <= 270)) {angle = angle - 180; n = -1;} // third quadrant
-	else {angle = 360 - angle; n = -1;}	//fourth quadrant
-	// get lookup value
-	sinus = pgm_read_word(&pgm_sinlookup[angle]);
-	// calculate sinus value
-	return (sinus * m * n);
+    // check quadrant
+    if (angle <= 90) n=1; // first quadrant
+    else if ((angle > 90) && (angle <= 180)) {angle = 180 - angle; n = 1;} // second quadrant
+    else if ((angle > 180) && (angle <= 270)) {angle = angle - 180; n = -1;} // third quadrant
+    else {angle = 360 - angle; n = -1;}    //fourth quadrant
+    // get lookup value
+    sinus = pgm_read_word(&pgm_sinlookup[angle]);
+    // calculate sinus value
+    return (sinus * m * n);
 }
 
 // Cosinus with argument in degree at an angular resolution of 1 degree and a discretisation of 13 bit.
 int16_t c_cos_8192(int16_t angle)
 {
-	return (c_sin_8192(90 - angle));
+    return (c_sin_8192(90 - angle));
 }

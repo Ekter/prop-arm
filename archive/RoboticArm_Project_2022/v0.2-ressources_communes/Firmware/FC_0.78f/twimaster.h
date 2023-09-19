@@ -23,15 +23,15 @@ extern unsigned char motor,MissingMotor;
 extern unsigned char motorread;
 
 #define MAX_MOTORS 12
-#define MOTOR_STATE_PRESENT_MASK	0x80
-#define MOTOR_STATE_ERROR_MASK		0x7F
+#define MOTOR_STATE_PRESENT_MASK    0x80
+#define MOTOR_STATE_ERROR_MASK        0x7F
 
 typedef struct
 {
-	unsigned char SetPoint; // written by attitude controller
-	unsigned char State;    // 7 bit for I2C error counter, highest bit indicates if motor is present
-	unsigned char Current;  // in 0.1 A steps, read back from BL
-	unsigned char MaxPWM;   // read back from BL is less than 255 if BL is in current limit
+    unsigned char SetPoint; // written by attitude controller
+    unsigned char State;    // 7 bit for I2C error counter, highest bit indicates if motor is present
+    unsigned char Current;  // in 0.1 A steps, read back from BL
+    unsigned char MaxPWM;   // read back from BL is less than 255 if BL is in current limit
 } __attribute__((packed)) MotorData_t;
 
 extern MotorData_t Motor[MAX_MOTORS];
