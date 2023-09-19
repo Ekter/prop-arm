@@ -10,11 +10,11 @@
 
 typedef struct
 {
-	u8* pData;
-	u16 Size;
-	u16 DataBytes;
-	u16 Position;
-	u8  Locked;
+    u8* pData;
+    u16 Size;
+    u16 DataBytes;
+    u16 Position;
+    u8  Locked;
 } __attribute__((packed)) Buffer_t;
 
 extern void Buffer_Init(Buffer_t* pBuffer, u8* pDataBuffer, u16 DataBufferSize);
@@ -23,10 +23,10 @@ extern u8 Buffer_Copy(Buffer_t* pSrcBuffer, Buffer_t* pDstBuffer);
 
 typedef struct
 {
-	u8 Address;
-	u8 CmdID;
- 	u8* pData;
-	u16 DataLen; 
+    u8 Address;
+    u8 CmdID;
+     u8* pData;
+    u16 DataLen; 
 } __attribute__((packed)) SerialMsg_t;
 
 extern u8 MKProtocol_CollectSerialFrame(Buffer_t* pRxBuff, u8 c);

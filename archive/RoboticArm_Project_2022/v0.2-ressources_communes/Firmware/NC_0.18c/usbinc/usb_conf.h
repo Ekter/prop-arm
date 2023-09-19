@@ -20,10 +20,10 @@
 
 /*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*/
 /*-------------------------------------------------------------*/
-/* define the µC and the Bufferd Mode                          */
+/* define the ï¿½C and the Bufferd Mode                          */
 /*-------------------------------------------------------------*/
 //#define STR7xx  /*STR7 family*/ 
-//#define STR71x  /* STR71x µCs*/
+//#define STR71x  /* STR71x ï¿½Cs*/
 #define STR91x   /*STR91x Family*/
 #define STR91x_USB_BUFFERED /* Buffered Mode*/
 //#define STR91x_USB_NON_BUFFERED /*Non buffered mode*/
@@ -31,7 +31,7 @@
 /* EP_NUM */
 /* defines how many endpoints are used by the device */
 /*-------------------------------------------------------------*/
-#define EP_NUM  			(4)
+#define EP_NUM              (4)
 
 /*-------------------------------------------------------------*/
 /* --------------   Buffer Description Table  -----------------*/
@@ -56,13 +56,13 @@
 /* mask defining which events has to be handled */
 /* by the device application software */
 #define IMR_MSK (CNTR_CTRM  | \
-				 CNTR_WKUPM | \
-				 CNTR_SUSPM | \
-				 CNTR_ERRM  | \
-				 CNTR_SOFM  | \
-				 CNTR_ESOFM | \
-		 		 CNTR_RESETM  \
-		 		)
+                 CNTR_WKUPM | \
+                 CNTR_SUSPM | \
+                 CNTR_ERRM  | \
+                 CNTR_SOFM  | \
+                 CNTR_ESOFM | \
+                  CNTR_RESETM  \
+                 )
 
 /* CTR service routines */
 /* associated to defined endpoints */

@@ -17,7 +17,7 @@ V0.54  01.05.2007 H.Buss
         1 x 5
         - - -
     Bedeutet: Nick-Rollhebel Links Mitte = Setting:1 Links Oben = Setting:2  usw.
-  - der Faktor_I f�r den Hauptregler ist hinzugekommen. Im Heading-Hold-Modus sollte er verg�ssert werden, was Stabilit�t     ringt	
+  - der Faktor_I f�r den Hauptregler ist hinzugekommen. Im Heading-Hold-Modus sollte er verg�ssert werden, was Stabilit�t     ringt    
 
 V0.55  14.05.2007 H.Buss
   - es k�nnen nun Servos an J3,J4,J5 mit den Kan�len 5-7 gesteuert werden

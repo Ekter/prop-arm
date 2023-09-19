@@ -40,10 +40,10 @@ u8 *Virtual_Com_Port_SetLineCoding(u16 Length);
 /* Exported define -----------------------------------------------------------*/
 typedef struct
 {
-	u32 bitrate;
-	u8 format;
-	u8 paritytype;
-	u8 datatype;
+    u32 bitrate;
+    u8 format;
+    u8 paritytype;
+    u8 datatype;
 } LINE_CODING;
 
 #define Virtual_Com_Port_GetConfiguration          NOP_Process

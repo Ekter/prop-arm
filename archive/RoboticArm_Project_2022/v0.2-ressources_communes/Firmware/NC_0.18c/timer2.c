@@ -1,32 +1,32 @@
 /*#######################################################################################*/
-/* !!! THIS IS NOT FREE SOFTWARE !!!  	                                                 */
+/* !!! THIS IS NOT FREE SOFTWARE !!!                                                       */
 /*#######################################################################################*/
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) 2008 Ingo Busker, Holger Buss
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + FOR NON COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
 // + bzgl. der Nutzungsbedingungen aufzunehmen.
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -81,101 +81,101 @@ volatile ServoParams_t ServoParams;
 //----------------------------------------------------------------------------------------------------
 void TIM2_IRQHandler(void)
 {
-	#define MULTIPLYER 4
-	static s16 ServoNickOffset = (255 / 2) * MULTIPLYER; // initial value near center position
-	static s16 ServoRollOffset = (255 / 2) * MULTIPLYER; // initial value near center position
-	
-	static u16 LowPulseTime1 = 14063;
-	static u16 LowPulseTime2 = 14063;
+    #define MULTIPLYER 4
+    static s16 ServoNickOffset = (255 / 2) * MULTIPLYER; // initial value near center position
+    static s16 ServoRollOffset = (255 / 2) * MULTIPLYER; // initial value near center position
+    
+    static u16 LowPulseTime1 = 14063;
+    static u16 LowPulseTime2 = 14063;
 
-	s16 ServoNickValue = 0;
-	s16 ServoRollValue = 0;
+    s16 ServoNickValue = 0;
+    s16 ServoRollValue = 0;
 
-	u16 pulselen;
+    u16 pulselen;
 
-	IENABLE;
+    IENABLE;
 
-	if(TIM_GetFlagStatus(TIM2, TIM_FLAG_OC1) == SET)
-	{
-		TIM_ClearFlag(TIM2, TIM_FLAG_OC1); // clear irq pending bit
-		if (TIM2->CR1 & CR1_OLVL1_MASK) // start of high pulse
-		{
-			pulselen = MINSERVOPULSE + SERVORANGE/2;
-			ServoNickOffset = (ServoNickOffset * 3 + (s16)ServoParams.NickControl * MULTIPLYER) / 4; // lowpass offset
-			ServoNickValue = ServoNickOffset; // offset (Range from 0 to 255 * 3 = 765)
-			if(ServoParams.CompInvert & 0x01)
-			{	// inverting movement of servo FromFlightCtrl.AngleNick
-				ServoNickValue += (s16)( ( (s32)ServoParams.NickComp * MULTIPLYER * (FromFlightCtrl.AngleNick) ) / (256L) );
-			}
-			else
-			{	// non inverting movement of servo FromFlightCtrl.AngleNick
-				ServoNickValue -= (s16)( ( (s32)ServoParams.NickComp * MULTIPLYER * (FromFlightCtrl.AngleNick) ) / (256L) );
-			}
-			// limit servo value to its parameter range definition
-			if(ServoNickValue < ((s16)ServoParams.NickMin * MULTIPLYER) )
-			{
-				ServoNickValue = (s16)ServoParams.NickMin * MULTIPLYER;
-			}
-			else
-			if(ServoNickValue > ((s16)ServoParams.NickMax * MULTIPLYER) )
-			{
-				ServoNickValue = (s16)ServoParams.NickMax * MULTIPLYER;
-			}
+    if(TIM_GetFlagStatus(TIM2, TIM_FLAG_OC1) == SET)
+    {
+        TIM_ClearFlag(TIM2, TIM_FLAG_OC1); // clear irq pending bit
+        if (TIM2->CR1 & CR1_OLVL1_MASK) // start of high pulse
+        {
+            pulselen = MINSERVOPULSE + SERVORANGE/2;
+            ServoNickOffset = (ServoNickOffset * 3 + (s16)ServoParams.NickControl * MULTIPLYER) / 4; // lowpass offset
+            ServoNickValue = ServoNickOffset; // offset (Range from 0 to 255 * 3 = 765)
+            if(ServoParams.CompInvert & 0x01)
+            {    // inverting movement of servo FromFlightCtrl.AngleNick
+                ServoNickValue += (s16)( ( (s32)ServoParams.NickComp * MULTIPLYER * (FromFlightCtrl.AngleNick) ) / (256L) );
+            }
+            else
+            {    // non inverting movement of servo FromFlightCtrl.AngleNick
+                ServoNickValue -= (s16)( ( (s32)ServoParams.NickComp * MULTIPLYER * (FromFlightCtrl.AngleNick) ) / (256L) );
+            }
+            // limit servo value to its parameter range definition
+            if(ServoNickValue < ((s16)ServoParams.NickMin * MULTIPLYER) )
+            {
+                ServoNickValue = (s16)ServoParams.NickMin * MULTIPLYER;
+            }
+            else
+            if(ServoNickValue > ((s16)ServoParams.NickMax * MULTIPLYER) )
+            {
+                ServoNickValue = (s16)ServoParams.NickMax * MULTIPLYER;
+            }
 
-			pulselen += ServoNickValue - (256 / 2) * MULTIPLYER; // shift ServoNickValue to center position
-			DebugOut.Analog[7] = ServoNickValue / MULTIPLYER;
-			LowPulseTime1 = PPM_FRAMELEN - pulselen;
-			TIM2->CR1 &= ~CR1_OLVL1_MASK; // make next a low pulse
-		}
-		else // start of low pulse
-		{
-			pulselen = LowPulseTime1;			
-			TIM2->CR1 |= CR1_OLVL1_MASK;  // make next a high pulse
-		}
-		TIM2->OC1R += pulselen;
-	}
+            pulselen += ServoNickValue - (256 / 2) * MULTIPLYER; // shift ServoNickValue to center position
+            DebugOut.Analog[7] = ServoNickValue / MULTIPLYER;
+            LowPulseTime1 = PPM_FRAMELEN - pulselen;
+            TIM2->CR1 &= ~CR1_OLVL1_MASK; // make next a low pulse
+        }
+        else // start of low pulse
+        {
+            pulselen = LowPulseTime1;            
+            TIM2->CR1 |= CR1_OLVL1_MASK;  // make next a high pulse
+        }
+        TIM2->OC1R += pulselen;
+    }
 
-	if(TIM_GetFlagStatus(TIM2, TIM_FLAG_OC2) == SET)
-	{
-		TIM_ClearFlag(TIM2, TIM_FLAG_OC2); // clear irq pending bit
-		if (TIM2->CR1 & CR1_OLVL2_MASK) // was high pulse
-		{
-			pulselen = MINSERVOPULSE + SERVORANGE/2;
-			ServoRollOffset = (ServoRollOffset * 3 + (s16)ServoParams.RollControl * MULTIPLYER) / 4; // lowpass offset
-			ServoRollValue = ServoRollOffset; // offset (Range from 0 to 255 * 3 = 765)
-			if(ServoParams.CompInvert & 0x02)
-			{	// inverting movement of servo FromFlightCtrl.AngleRoll
-				ServoRollValue += (s16)( ( (s32)ServoParams.RollComp * MULTIPLYER * (FromFlightCtrl.AngleRoll) ) / (256L) );
-			}
-			else
-			{	// non inverting movement of servo FromFlightCtrl.AngleRoll
-				ServoRollValue -= (s16)( ( (s32)ServoParams.RollComp * MULTIPLYER * (FromFlightCtrl.AngleRoll) ) / (256L) );
-			}
-			// limit servo value to its parameter range definition
-			if(ServoRollValue < ((s16)ServoParams.RollMin * MULTIPLYER) )
-			{
-				ServoRollValue = (s16)ServoParams.RollMin * MULTIPLYER;
-			}
-			else
-			if(ServoRollValue > ((s16)ServoParams.RollMax * MULTIPLYER) )
-			{
-				ServoRollValue = (s16)ServoParams.RollMax * MULTIPLYER;
-			}
+    if(TIM_GetFlagStatus(TIM2, TIM_FLAG_OC2) == SET)
+    {
+        TIM_ClearFlag(TIM2, TIM_FLAG_OC2); // clear irq pending bit
+        if (TIM2->CR1 & CR1_OLVL2_MASK) // was high pulse
+        {
+            pulselen = MINSERVOPULSE + SERVORANGE/2;
+            ServoRollOffset = (ServoRollOffset * 3 + (s16)ServoParams.RollControl * MULTIPLYER) / 4; // lowpass offset
+            ServoRollValue = ServoRollOffset; // offset (Range from 0 to 255 * 3 = 765)
+            if(ServoParams.CompInvert & 0x02)
+            {    // inverting movement of servo FromFlightCtrl.AngleRoll
+                ServoRollValue += (s16)( ( (s32)ServoParams.RollComp * MULTIPLYER * (FromFlightCtrl.AngleRoll) ) / (256L) );
+            }
+            else
+            {    // non inverting movement of servo FromFlightCtrl.AngleRoll
+                ServoRollValue -= (s16)( ( (s32)ServoParams.RollComp * MULTIPLYER * (FromFlightCtrl.AngleRoll) ) / (256L) );
+            }
+            // limit servo value to its parameter range definition
+            if(ServoRollValue < ((s16)ServoParams.RollMin * MULTIPLYER) )
+            {
+                ServoRollValue = (s16)ServoParams.RollMin * MULTIPLYER;
+            }
+            else
+            if(ServoRollValue > ((s16)ServoParams.RollMax * MULTIPLYER) )
+            {
+                ServoRollValue = (s16)ServoParams.RollMax * MULTIPLYER;
+            }
 
-			pulselen += ServoRollValue - (256 / 2) * MULTIPLYER; // shift ServoNickValue to center position
-			DebugOut.Analog[8] = ServoRollValue / MULTIPLYER;
-			LowPulseTime2 = PPM_FRAMELEN - pulselen;
-			TIM2->CR1 &= ~CR1_OLVL2_MASK; // make next a low pulse
-		}
-		else
-		{
-			pulselen = LowPulseTime2;
-			TIM2->CR1 |= CR1_OLVL2_MASK; // make next a high pulse
-		}
-		TIM2->OC2R += pulselen;
-	}
+            pulselen += ServoRollValue - (256 / 2) * MULTIPLYER; // shift ServoNickValue to center position
+            DebugOut.Analog[8] = ServoRollValue / MULTIPLYER;
+            LowPulseTime2 = PPM_FRAMELEN - pulselen;
+            TIM2->CR1 &= ~CR1_OLVL2_MASK; // make next a low pulse
+        }
+        else
+        {
+            pulselen = LowPulseTime2;
+            TIM2->CR1 |= CR1_OLVL2_MASK; // make next a high pulse
+        }
+        TIM2->OC2R += pulselen;
+    }
 
-	IDISABLE;
+    IDISABLE;
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -183,97 +183,97 @@ void TIM2_IRQHandler(void)
 //----------------------------------------------------------------------------------------------------
 void TIMER2_Init(void)
 {
-	GPIO_InitTypeDef GPIO_InitStructure;
-	TIM_InitTypeDef   TIM_InitStructure;
+    GPIO_InitTypeDef GPIO_InitStructure;
+    TIM_InitTypeDef   TIM_InitStructure;
 
-	UART1_PutString("\r\n Timer2 init...");
+    UART1_PutString("\r\n Timer2 init...");
 
-	SCU_APBPeriphClockConfig(__GPIO6, ENABLE); // Enable the GPIO6 Clock
+    SCU_APBPeriphClockConfig(__GPIO6, ENABLE); // Enable the GPIO6 Clock
 
-	// configure the servo pins
-	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Direction = 	GPIO_PinOutput;
-    GPIO_InitStructure.GPIO_Pin = 			GPIO_Pin_4;
-    GPIO_InitStructure.GPIO_Type = 			GPIO_Type_PushPull ;
-    GPIO_InitStructure.GPIO_IPInputConnected = 	GPIO_IPInputConnected_Enable;
-    GPIO_InitStructure.GPIO_Alternate = 	GPIO_OutputAlt2; //TIM2_OCMP1
+    // configure the servo pins
+    GPIO_StructInit(&GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Direction =     GPIO_PinOutput;
+    GPIO_InitStructure.GPIO_Pin =             GPIO_Pin_4;
+    GPIO_InitStructure.GPIO_Type =             GPIO_Type_PushPull ;
+    GPIO_InitStructure.GPIO_IPInputConnected =     GPIO_IPInputConnected_Enable;
+    GPIO_InitStructure.GPIO_Alternate =     GPIO_OutputAlt2; //TIM2_OCMP1
     GPIO_Init(GPIO6, &GPIO_InitStructure);
 
-	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Direction = 	GPIO_PinOutput;
-    GPIO_InitStructure.GPIO_Pin = 			GPIO_Pin_5;
-    GPIO_InitStructure.GPIO_Type = 			GPIO_Type_PushPull;
-	GPIO_InitStructure.GPIO_IPInputConnected = 	GPIO_IPInputConnected_Enable;
-    GPIO_InitStructure.GPIO_Alternate = 	GPIO_OutputAlt2; //TIM2_OCMP2
+    GPIO_StructInit(&GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Direction =     GPIO_PinOutput;
+    GPIO_InitStructure.GPIO_Pin =             GPIO_Pin_5;
+    GPIO_InitStructure.GPIO_Type =             GPIO_Type_PushPull;
+    GPIO_InitStructure.GPIO_IPInputConnected =     GPIO_IPInputConnected_Enable;
+    GPIO_InitStructure.GPIO_Alternate =     GPIO_OutputAlt2; //TIM2_OCMP2
     GPIO_Init(GPIO6, &GPIO_InitStructure);
 
-	SCU_APBPeriphClockConfig(__TIM23, ENABLE);
+    SCU_APBPeriphClockConfig(__TIM23, ENABLE);
 
-   	TIM_DeInit(TIM2); 
-	TIM_StructInit(&TIM_InitStructure);
-	TIM_InitStructure.TIM_Mode = TIM_OCM_CHANNEL_12; // Output Compare Channels 1 & 2 Mode
-	TIM_InitStructure.TIM_OC1_Modes = TIM_WAVE;	// OCMP1 pin is dedicated to the OC1 capability of the TIM
-	TIM_InitStructure.TIM_OC2_Modes = TIM_WAVE;	// OCMP2 pin is dedicated to the OC2 capability of the TIM
-	TIM_InitStructure.TIM_Clock_Source = TIM_CLK_APB; // APB clock source is used
-	TIM_InitStructure.TIM_Pulse_Level_1 = TIM_LOW; // output low at OCMP1 pin on compare match
-	TIM_InitStructure.TIM_Pulse_Level_2 = TIM_LOW; // output low at OCMP2 pin on compare match
-	TIM_InitStructure.TIM_Prescaler = (SCU_GetPCLKFreqValue() * 1000) / TIM2_FREQ;
+       TIM_DeInit(TIM2); 
+    TIM_StructInit(&TIM_InitStructure);
+    TIM_InitStructure.TIM_Mode = TIM_OCM_CHANNEL_12; // Output Compare Channels 1 & 2 Mode
+    TIM_InitStructure.TIM_OC1_Modes = TIM_WAVE;    // OCMP1 pin is dedicated to the OC1 capability of the TIM
+    TIM_InitStructure.TIM_OC2_Modes = TIM_WAVE;    // OCMP2 pin is dedicated to the OC2 capability of the TIM
+    TIM_InitStructure.TIM_Clock_Source = TIM_CLK_APB; // APB clock source is used
+    TIM_InitStructure.TIM_Pulse_Level_1 = TIM_LOW; // output low at OCMP1 pin on compare match
+    TIM_InitStructure.TIM_Pulse_Level_2 = TIM_LOW; // output low at OCMP2 pin on compare match
+    TIM_InitStructure.TIM_Prescaler = (SCU_GetPCLKFreqValue() * 1000) / TIM2_FREQ;
 
-	TIM_Init(TIM2, &TIM_InitStructure);
+    TIM_Init(TIM2, &TIM_InitStructure);
 
-	TIM_ITConfig(TIM2, TIM_IT_OC1|TIM_IT_OC2, ENABLE);  // enable interrupts for the OC 1 & 2
+    TIM_ITConfig(TIM2, TIM_IT_OC1|TIM_IT_OC2, ENABLE);  // enable interrupts for the OC 1 & 2
 
-	VIC_Config(TIM2_ITLine, VIC_IRQ, PRIORITY_TIMER2);
-	VIC_ITCmd(TIM2_ITLine, ENABLE);
+    VIC_Config(TIM2_ITLine, VIC_IRQ, PRIORITY_TIMER2);
+    VIC_ITCmd(TIM2_ITLine, ENABLE);
 
-	TIM2->OC1R = 10;
-	TIM2->OC2R = 20;
+    TIM2->OC1R = 10;
+    TIM2->OC2R = 20;
 
-	// set servo params to defaults
-	ServoParams.Refresh = 5;
-	ServoParams.CompInvert = 0; 
-	ServoParams.NickControl = 127;
-	ServoParams.NickComp = 40;
-	ServoParams.NickMin = 50; 
-	ServoParams.NickMax = 205;
-	ServoParams.RollControl = 127;
-	ServoParams.RollComp = 40;
-	ServoParams.RollMin = 50; 
-	ServoParams.RollMax = 205; 
-	
-	TIM_CounterCmd(TIM2, TIM_CLEAR); // reset timer
-	TIM_CounterCmd(TIM2, TIM_START); // start the timer
-     	
-	UART1_PutString("ok");
+    // set servo params to defaults
+    ServoParams.Refresh = 5;
+    ServoParams.CompInvert = 0; 
+    ServoParams.NickControl = 127;
+    ServoParams.NickComp = 40;
+    ServoParams.NickMin = 50; 
+    ServoParams.NickMax = 205;
+    ServoParams.RollControl = 127;
+    ServoParams.RollComp = 40;
+    ServoParams.RollMin = 50; 
+    ServoParams.RollMax = 205; 
+    
+    TIM_CounterCmd(TIM2, TIM_CLEAR); // reset timer
+    TIM_CounterCmd(TIM2, TIM_START); // start the timer
+         
+    UART1_PutString("ok");
 }
 
 void TIMER2_Deinit(void)
 {
-	GPIO_InitTypeDef GPIO_InitStructure;	
+    GPIO_InitTypeDef GPIO_InitStructure;    
 
-	UART1_PutString("\r\n Timer2 deinit...");
+    UART1_PutString("\r\n Timer2 deinit...");
 
-	VIC_ITCmd(TIM2_ITLine, DISABLE);
-	TIM_CounterCmd(TIM2, TIM_STOP); // stop the timer
-	TIM_CounterCmd(TIM2, TIM_CLEAR); // stop the timer
-	TIM_ITConfig(TIM2, TIM_IT_OC1|TIM_IT_OC2, DISABLE);  // disable interrupts for the OC 1 & 2
-	TIM_DeInit(TIM2);
-	SCU_APBPeriphClockConfig(__TIM23, DISABLE);
+    VIC_ITCmd(TIM2_ITLine, DISABLE);
+    TIM_CounterCmd(TIM2, TIM_STOP); // stop the timer
+    TIM_CounterCmd(TIM2, TIM_CLEAR); // stop the timer
+    TIM_ITConfig(TIM2, TIM_IT_OC1|TIM_IT_OC2, DISABLE);  // disable interrupts for the OC 1 & 2
+    TIM_DeInit(TIM2);
+    SCU_APBPeriphClockConfig(__TIM23, DISABLE);
 
-	// configure the servo pins as input
-	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Direction = 	GPIO_PinInput;
-    GPIO_InitStructure.GPIO_Pin = 			GPIO_Pin_4;
-    GPIO_InitStructure.GPIO_Type = 			GPIO_Type_OpenCollector;
-    GPIO_InitStructure.GPIO_IPInputConnected = 	GPIO_IPInputConnected_Disable;
-    GPIO_InitStructure.GPIO_Alternate = 	GPIO_InputAlt1;
+    // configure the servo pins as input
+    GPIO_StructInit(&GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Direction =     GPIO_PinInput;
+    GPIO_InitStructure.GPIO_Pin =             GPIO_Pin_4;
+    GPIO_InitStructure.GPIO_Type =             GPIO_Type_OpenCollector;
+    GPIO_InitStructure.GPIO_IPInputConnected =     GPIO_IPInputConnected_Disable;
+    GPIO_InitStructure.GPIO_Alternate =     GPIO_InputAlt1;
     GPIO_Init(GPIO6, &GPIO_InitStructure);
 
-	GPIO_StructInit(&GPIO_InitStructure);
-	GPIO_InitStructure.GPIO_Direction = 	GPIO_PinInput;
-    GPIO_InitStructure.GPIO_Pin = 			GPIO_Pin_5;
-    GPIO_InitStructure.GPIO_Type = 			GPIO_Type_OpenCollector;
-	GPIO_InitStructure.GPIO_IPInputConnected = 	GPIO_IPInputConnected_Disable;
-    GPIO_InitStructure.GPIO_Alternate = 	GPIO_InputAlt1;
+    GPIO_StructInit(&GPIO_InitStructure);
+    GPIO_InitStructure.GPIO_Direction =     GPIO_PinInput;
+    GPIO_InitStructure.GPIO_Pin =             GPIO_Pin_5;
+    GPIO_InitStructure.GPIO_Type =             GPIO_Type_OpenCollector;
+    GPIO_InitStructure.GPIO_IPInputConnected =     GPIO_IPInputConnected_Disable;
+    GPIO_InitStructure.GPIO_Alternate =     GPIO_InputAlt1;
     GPIO_Init(GPIO6, &GPIO_InitStructure);
 }

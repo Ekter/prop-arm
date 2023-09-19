@@ -1,10 +1,10 @@
 #ifndef __I2C_H
 #define __I2C_H
 
-#define I2C_CMD_VERSION   		0x01
-#define I2C_CMD_READ_MAG     	0x02
+#define I2C_CMD_VERSION           0x01
+#define I2C_CMD_READ_MAG         0x02
 #define I2C_CMD_READ_HEADING    0x03
-#define I2C_CMD_WRITE_CAL     	0x04
+#define I2C_CMD_WRITE_CAL         0x04
 
 
 typedef struct
@@ -44,9 +44,9 @@ typedef struct
 
 extern volatile u32 I2C1_Timeout;
 
-extern volatile I2C_Heading_t		I2C_Heading;
-extern volatile I2C_Mag_t			I2C_Mag;
-extern volatile I2C_Version_t		MK3MAG_Version;
+extern volatile I2C_Heading_t        I2C_Heading;
+extern volatile I2C_Mag_t            I2C_Mag;
+extern volatile I2C_Version_t        MK3MAG_Version;
 
 void I2C1_Init(void);
 void I2C1_Deinit(void);

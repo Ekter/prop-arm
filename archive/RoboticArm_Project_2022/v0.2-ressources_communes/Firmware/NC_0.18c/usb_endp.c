@@ -41,17 +41,17 @@ u32 count_in = 0;
 *******************************************************************************/
 void EP3_OUT_Callback(void)
 {
-	u32 i;
-	USB_BufferCount = GetEPRxCount(ENDP3);
-	PMAToUserBufferCopy(USB_Buffer, ENDP3_RXADDR, USB_BufferCount );
-	for(i=0; i<USB_BufferCount; i++)
-	{
-	 	MKProtocol_CollectSerialFrame(&USB_rx_buffer, USB_Buffer[i]);
-	}
-  	SetEPRxValid(ENDP3);
+    u32 i;
+    USB_BufferCount = GetEPRxCount(ENDP3);
+    PMAToUserBufferCopy(USB_Buffer, ENDP3_RXADDR, USB_BufferCount );
+    for(i=0; i<USB_BufferCount; i++)
+    {
+         MKProtocol_CollectSerialFrame(&USB_rx_buffer, USB_Buffer[i]);
+    }
+      SetEPRxValid(ENDP3);
 
-  	//sprintf(text,"USB (%ld): %s\n\r", USB_BufferRxCount, USB_BufferRx);
-  	//UART1_PutString(text);      
+      //sprintf(text,"USB (%ld): %s\n\r", USB_BufferRxCount, USB_BufferRx);
+      //UART1_PutString(text);      
 }
 /*******************************************************************************
 * Function Name  : EP1_IN_Callback

@@ -1,32 +1,32 @@
 /*#######################################################################################*/
-/* !!! THIS IS NOT FREE SOFTWARE !!!  	                                                 */
+/* !!! THIS IS NOT FREE SOFTWARE !!!                                                       */
 /*#######################################################################################*/
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) 2008 Ingo Busker, Holger Buss
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + FOR NON COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation), 
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist. 
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation), 
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist. 
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt 
 // + bzgl. der Nutzungsbedingungen aufzunehmen. 
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht, 
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht, 
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur 
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -60,14 +60,14 @@
 
 __ramfunc void Execute_Bootloader(void)
 {
-  	pFunction Jump_To_Bootloader;
+      pFunction Jump_To_Bootloader;
 
     FMI->NBBSR   = 0x0;
     FMI->BBSR  = 0x6;
     //FMI->NBBADR  = 0x80000 >> 2;
     FMI->BBADR = 0x0 ;
     FMI->CR = 0x008;
-	/* Jump to the user application and execute it */
+    /* Jump to the user application and execute it */
     Jump_To_Bootloader = (pFunction) 0x00;
     Jump_To_Bootloader();
 

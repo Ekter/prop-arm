@@ -5,7 +5,7 @@
 //________________________________________________________________________________________________________________________________________
 // 
 // Functions needed for accessing the sdcard.
-//				
+//                
 //________________________________________________________________________________________________________________________________________
 
 typedef enum
@@ -25,10 +25,10 @@ typedef enum
   SD_ERROR_UNKNOWN
 } SD_Result_t;
 
-SD_Result_t	SDC_Init(void);
+SD_Result_t    SDC_Init(void);
 SD_Result_t SDC_GetSector (u32 ,u8 *);
-SD_Result_t	SDC_PutSector (u32, const u8 *);
-SD_Result_t	SDC_Deinit(void);
+SD_Result_t    SDC_PutSector (u32, const u8 *);
+SD_Result_t    SDC_Deinit(void);
 
 #endif // _SDC_H
 

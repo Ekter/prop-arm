@@ -5199,364 +5199,364 @@ __anon77::NaviPH_LoginTime    .\main.h    /^    u8 NaviPH_LoginTime;$/;"    m   
 __anon77::NaviSpeedCompensation    .\main.h    /^    u8 NaviSpeedCompensation;$/;"    m    struct:__anon77    access:public
 __anon77::NaviStickThreshold    .\main.h    /^    u8 NaviStickThreshold;$/;"    m    struct:__anon77    access:public
 __anon77::NaviWindCorrection    .\main.h    /^    u8 NaviWindCorrection;$/;"    m    struct:__anon77    access:public
-__anon77::User1    .\main.h    /^    u8 User1;$/;"	m	struct:__anon77	access:public
-__anon77::User2	.\main.h	/^	u8 User2;$/;"	m	struct:__anon77	access:public
-__anon77::User3	.\main.h	/^	u8 User3;$/;"	m	struct:__anon77	access:public
-__anon77::User4	.\main.h	/^	u8 User4;$/;"	m	struct:__anon77	access:public
-__anon77::User5	.\main.h	/^	u8 User5;$/;"	m	struct:__anon77	access:public
-__anon77::User6	.\main.h	/^	u8 User6;$/;"	m	struct:__anon77	access:public
-__anon77::User7	.\main.h	/^	u8 User7;$/;"	m	struct:__anon77	access:public
-__anon77::User8	.\main.h	/^	u8 User8;$/;"	m	struct:__anon77	access:public
-__anon78::BAT_Current	.\main.h	/^	u16 BAT_Current;$/;"	m	struct:__anon78	access:public
-__anon78::BAT_UsedCapacity	.\main.h	/^	u16 BAT_UsedCapacity;$/;"	m	struct:__anon78	access:public
-__anon78::BAT_Voltage	.\main.h	/^	u8 BAT_Voltage;$/;"	m	struct:__anon78	access:public
-__anon78::Flags	.\main.h	/^	u8 Flags;$/;"	m	struct:__anon78	access:public
-__anon78::Poti	.\main.h	/^	u8 Poti[8];$/;"	m	struct:__anon78	access:public
-__anon78::Poti5	.\main.h	/^	u8 Poti5;$/;"	m	struct:__anon78	access:public
-__anon78::Poti6	.\main.h	/^	u8 Poti6;$/;"	m	struct:__anon78	access:public
-__anon78::Poti7	.\main.h	/^	u8 Poti7;$/;"	m	struct:__anon78	access:public
-__anon78::Poti8	.\main.h	/^	u8 Poti8;$/;"	m	struct:__anon78	access:public
-__anon78::RC_Quality	.\main.h	/^	u8 RC_Quality;$/;"	m	struct:__anon78	access:public
-__anon78::RC_RSSI	.\main.h	/^	u8 RC_RSSI;$/;"	m	struct:__anon78	access:public
-__anon78::StickGas	.\main.h	/^	s8 StickGas;$/;"	m	struct:__anon78	access:public
-__anon78::StickNick	.\main.h	/^	s8 StickNick;$/;"	m	struct:__anon78	access:public
-__anon78::StickRoll	.\main.h	/^	s8 StickRoll;$/;"	m	struct:__anon78	access:public
-__anon78::StickYaw	.\main.h	/^	s8 StickYaw;$/;"	m	struct:__anon78	access:public
-__anon79::DataBytes	.\mkprotocol.h	/^	u16 DataBytes;$/;"	m	struct:__anon79	access:public
-__anon79::Locked	.\mkprotocol.h	/^	u8  Locked;$/;"	m	struct:__anon79	access:public
-__anon79::Position	.\mkprotocol.h	/^	u16 Position;$/;"	m	struct:__anon79	access:public
-__anon79::Size	.\mkprotocol.h	/^	u16 Size;$/;"	m	struct:__anon79	access:public
-__anon79::pData	.\mkprotocol.h	/^	u8* pData;$/;"	m	struct:__anon79	access:public
-__anon7::FatCopies	.\fat16.c	/^	u8	FatCopies;				\/\/ Numbers of copies of the FAT$/;"	m	struct:__anon7	file:	access:public
-__anon7::FirstDataSector	.\fat16.c	/^	u32 FirstDataSector;		\/\/ sector of the first cluster containing data (cluster2).$/;"	m	struct:__anon7	file:	access:public
-__anon7::FirstFatSector	.\fat16.c	/^	u32 FirstFatSector;			\/\/ sector of the start of the fat$/;"	m	struct:__anon7	file:	access:public
-__anon7::FirstRootDirSector	.\fat16.c	/^	u32 FirstRootDirSector;		\/\/ sector of the rootdirectory$/;"	m	struct:__anon7	file:	access:public
-__anon7::IsValid	.\fat16.c	/^	u8	IsValid;				\/\/ 0 means invalid, else valid$/;"	m	struct:__anon7	file:	access:public
-__anon7::LastDataSector	.\fat16.c	/^	u32 LastDataSector;			\/\/ the last data sector of the partition$/;"	m	struct:__anon7	file:	access:public
-__anon7::MaxRootEntries	.\fat16.c	/^	u16	MaxRootEntries;			\/\/ Possible number of entries in the root directory.$/;"	m	struct:__anon7	file:	access:public
-__anon7::SectorsPerCluster	.\fat16.c	/^	u8	SectorsPerCluster;		\/\/ how many sectors does a cluster contain?$/;"	m	struct:__anon7	file:	access:public
-__anon7::SectorsPerFat	.\fat16.c	/^	u16	SectorsPerFat;			\/\/ how many sectors does a fat16 contain?$/;"	m	struct:__anon7	file:	access:public
-__anon80::Address	.\mkprotocol.h	/^	u8 Address;$/;"	m	struct:__anon80	access:public
-__anon80::CmdID	.\mkprotocol.h	/^	u8 CmdID;$/;"	m	struct:__anon80	access:public
-__anon80::DataLen	.\mkprotocol.h	/^	u16 DataLen; $/;"	m	struct:__anon80	access:public
-__anon80::pData	.\mkprotocol.h	/^ 	u8* pData;$/;"	m	struct:__anon80	access:public
-__anon82::CID	.\sdc.c	/^  u8 CID[16];			\/\/ CID register$/;"	m	struct:__anon82	file:	access:public
-__anon82::CSD	.\sdc.c	/^  u8 CSD[16];			\/\/ CSD register$/;"	m	struct:__anon82	file:	access:public
-__anon82::Capacity	.\sdc.c	/^  u32 Capacity;			\/\/ Memory capacity  in bytes$/;"	m	struct:__anon82	file:	access:public
-__anon82::Valid	.\sdc.c	/^  u8 Valid;$/;"	m	struct:__anon82	file:	access:public
-__anon82::Version	.\sdc.c	/^  SDVersion_t Version;  \/\/ HW-Version $/;"	m	struct:__anon82	file:	access:public
-__anon84::Default	.\settings.c	/^	u16 Default;$/;"	m	struct:__anon84	file:	access:public
-__anon84::Group	.\settings.c	/^	u8  Group;   \/\/ 0 = reserved  1,2,3,4$/;"	m	struct:__anon84	file:	access:public
-__anon84::Max	.\settings.c	/^	u16 Max;$/;"	m	struct:__anon84	file:	access:public
-__anon84::Min	.\settings.c	/^	u16 Min;$/;"	m	struct:__anon84	file:	access:public
-__anon84::Name	.\settings.c	/^	s8  Name[17]; \/\/ 0 terminator is the last byte$/;"	m	struct:__anon84	file:	access:public
-__anon84::ParamId	.\settings.c	/^	ParamId_t ParamId;$/;"	m	struct:__anon84	file:	access:public
-__anon84::Value	.\settings.c	/^	u16 Value;$/;"	m	struct:__anon84	file:	access:public
-__anon86::AccNick	.\spi_slave.h	/^	s16  AccNick;$/;"	m	struct:__anon86	access:public
-__anon86::AccRoll	.\spi_slave.h	/^	s16  AccRoll;$/;"	m	struct:__anon86	access:public
-__anon86::AngleNick	.\spi_slave.h	/^	s16  AngleNick;	 \/\/ NickAngle in 0.1 deg$/;"	m	struct:__anon86	access:public
-__anon86::AngleRoll	.\spi_slave.h	/^	s16  AngleRoll;	 \/\/ RollAngle in 0.1 deg$/;"	m	struct:__anon86	access:public
-__anon86::Chksum	.\spi_slave.h	/^	u8 Chksum;$/;"	m	struct:__anon86	access:public
-__anon86::Command	.\spi_slave.h	/^	u8   Command;$/;"	m	struct:__anon86	access:public
-__anon86::GyroHeading	.\spi_slave.h	/^	s16  GyroHeading;	 \/\/ Heading in 0.1 deg$/;"	m	struct:__anon86	access:public
-__anon86::GyroNick	.\spi_slave.h	/^	s16  GyroNick;$/;"	m	struct:__anon86	access:public
-__anon86::GyroRoll	.\spi_slave.h	/^	s16  GyroRoll;$/;"	m	struct:__anon86	access:public
-__anon86::GyroYaw	.\spi_slave.h	/^	s16  GyroYaw;$/;"	m	struct:__anon86	access:public
-__anon86::Param	.\spi_slave.h	/^	} Param;$/;"	m	struct:__anon86	typeref:union:__anon86::__anon87	access:public
-__anon86::__anon87::Byte	.\spi_slave.h	/^		u8    Byte[12];$/;"	m	union:__anon86::__anon87	access:public
-__anon86::__anon87::Float	.\spi_slave.h	/^		float Float[3];$/;"	m	union:__anon86::__anon87	access:public
-__anon86::__anon87::Int	.\spi_slave.h	/^		u16   Int[6];$/;"	m	union:__anon86::__anon87	access:public
-__anon86::__anon87::Long	.\spi_slave.h	/^		u32   Long[3];$/;"	m	union:__anon86::__anon87	access:public
-__anon86::__anon87::sByte	.\spi_slave.h	/^		s8	  sByte[12];$/;"	m	union:__anon86::__anon87	access:public
-__anon86::__anon87::sInt	.\spi_slave.h	/^		s16   sInt[6];$/;"	m	union:__anon86::__anon87	access:public
-__anon86::__anon87::sLong	.\spi_slave.h	/^		s32   sLong[3];$/;"	m	union:__anon86::__anon87	access:public
-__anon88::BeepTime	.\spi_slave.h	/^	u16 BeepTime;$/;"	m	struct:__anon88	access:public
-__anon88::Chksum	.\spi_slave.h	/^  	u8 Chksum;$/;"	m	struct:__anon88	access:public
-__anon88::Command	.\spi_slave.h	/^	u8 Command;$/;"	m	struct:__anon88	access:public
-__anon88::CompassHeading	.\spi_slave.h	/^	s16 CompassHeading;$/;"	m	struct:__anon88	access:public
-__anon88::GPS_Nick	.\spi_slave.h	/^	s16 GPS_Nick;$/;"	m	struct:__anon88	access:public
-__anon88::GPS_Roll	.\spi_slave.h	/^	s16 GPS_Roll;$/;"	m	struct:__anon88	access:public
-__anon88::GPS_Yaw	.\spi_slave.h	/^	s16 GPS_Yaw;$/;"	m	struct:__anon88	access:public
-__anon88::Param	.\spi_slave.h	/^	}Param;$/;"	m	struct:__anon88	typeref:union:__anon88::__anon89	access:public
-__anon88::Status	.\spi_slave.h	/^	s16 Status;$/;"	m	struct:__anon88	access:public
-__anon88::__anon89::Byte	.\spi_slave.h	/^		u8    Byte[12];$/;"	m	union:__anon88::__anon89	access:public
-__anon88::__anon89::Float	.\spi_slave.h	/^		float Float[3];$/;"	m	union:__anon88::__anon89	access:public
-__anon88::__anon89::Int	.\spi_slave.h	/^		u16	  Int[6];$/;"	m	union:__anon88::__anon89	access:public
-__anon88::__anon89::Long	.\spi_slave.h	/^		u32   Long[3];$/;"	m	union:__anon88::__anon89	access:public
-__anon88::__anon89::sByte	.\spi_slave.h	/^		s8    sByte[12];$/;"	m	union:__anon88::__anon89	access:public
-__anon88::__anon89::sInt	.\spi_slave.h	/^		s16   sInt[6];$/;"	m	union:__anon88::__anon89	access:public
-__anon88::__anon89::sLong	.\spi_slave.h	/^		s32   sLong[3];$/;"	m	union:__anon88::__anon89	access:public
-__anon8::Attribute	.\fat16.h	/^	u8 	Attribute;					\/\/ The attribute of the file opened.$/;"	m	struct:__anon8	access:public
-__anon8::ByteOfCurrSector	.\fat16.h	/^	u16 ByteOfCurrSector;			\/\/ The byte location within the current sector.$/;"	m	struct:__anon8	access:public
-__anon8::Cache	.\fat16.h	/^	u8  Cache[BYTES_PER_SECTOR];	\/\/ Cache for read and write operation from or to the sd-card.$/;"	m	struct:__anon8	access:public
-__anon8::DirectoryIndex	.\fat16.h	/^	u16	DirectoryIndex;				\/\/ The index to the directoryentry within the specified sector.$/;"	m	struct:__anon8	access:public
-__anon8::DirectorySector	.\fat16.h	/^	u32 DirectorySector;			\/\/ the sectorposition where the directoryentry has been made.$/;"	m	struct:__anon8	access:public
-__anon8::FirstSectorOfCurrCluster	.\fat16.h	/^	u32 FirstSectorOfCurrCluster;	\/\/ First sector of the cluster which is edited at the moment.$/;"	m	struct:__anon8	access:public
-__anon8::FirstSectorOfFirstCluster	.\fat16.h	/^	u32 FirstSectorOfFirstCluster;	\/\/ First sector of the first cluster of the file.$/;"	m	struct:__anon8	access:public
-__anon8::Mode	.\fat16.h	/^	u8	Mode;						\/\/ Mode of fileoperation (read,write)$/;"	m	struct:__anon8	access:public
-__anon8::Position	.\fat16.h	/^	u32 Position;					\/\/ Pointer to a character within the file 0 < fileposition < filesize$/;"	m	struct:__anon8	access:public
-__anon8::SectorInCache	.\fat16.h	/^	u32 SectorInCache;				\/\/ The last sector read, which is still in the sector cache.$/;"	m	struct:__anon8	access:public
-__anon8::SectorOfCurrCluster	.\fat16.h	/^	u8	SectorOfCurrCluster;		\/\/ The sector within the current cluster.$/;"	m	struct:__anon8	access:public
-__anon8::Size	.\fat16.h	/^	u32 Size;						\/\/ The size of the opend file in bytes.$/;"	m	struct:__anon8	access:public
-__anon8::State	.\fat16.h	/^	u8	State;						\/\/ State of the filepointer (used\/unused\/...) $/;"	m	struct:__anon8	access:public
-__anon90::Compatible	.\spi_slave.h	/^   u8 Compatible;$/;"	m	struct:__anon90	access:public
-__anon90::Hardware	.\spi_slave.h	/^   u8 Hardware;$/;"	m	struct:__anon90	access:public
-__anon90::Major	.\spi_slave.h	/^   u8 Major;$/;"	m	struct:__anon90	access:public
-__anon90::Minor	.\spi_slave.h	/^   u8 Minor;$/;"	m	struct:__anon90	access:public
-__anon90::Patch	.\spi_slave.h	/^   u8 Patch;$/;"	m	struct:__anon90	access:public
-__anon91::Day	.\timer1.h	/^	u8	Day;$/;"	m	struct:__anon91	access:public
-__anon91::Hour	.\timer1.h	/^	u8	Hour;$/;"	m	struct:__anon91	access:public
-__anon91::Min	.\timer1.h	/^	u8	Min;$/;"	m	struct:__anon91	access:public
-__anon91::Month	.\timer1.h	/^	u8	Month;$/;"	m	struct:__anon91	access:public
-__anon91::Sec	.\timer1.h	/^	u8	Sec;$/;"	m	struct:__anon91	access:public
-__anon91::Valid	.\timer1.h	/^	u8  Valid;$/;"	m	struct:__anon91	access:public
-__anon91::Year	.\timer1.h	/^	u16	Year;$/;"	m	struct:__anon91	access:public
-__anon91::mSec	.\timer1.h	/^	u16 mSec;$/;"	m	struct:__anon91	access:public
-__anon92::CompInvert	.\timer2.h	/^	u8 CompInvert; $/;"	m	struct:__anon92	access:public
-__anon92::NickComp	.\timer2.h	/^	u8 NickComp;$/;"	m	struct:__anon92	access:public
-__anon92::NickControl	.\timer2.h	/^	u8 NickControl;$/;"	m	struct:__anon92	access:public
-__anon92::NickMax	.\timer2.h	/^	u8 NickMax;$/;"	m	struct:__anon92	access:public
-__anon92::NickMin	.\timer2.h	/^	u8 NickMin; $/;"	m	struct:__anon92	access:public
-__anon92::Refresh	.\timer2.h	/^	u8 Refresh;$/;"	m	struct:__anon92	access:public
-__anon92::RollComp	.\timer2.h	/^	u8 RollComp;$/;"	m	struct:__anon92	access:public
-__anon92::RollControl	.\timer2.h	/^	u8 RollControl;$/;"	m	struct:__anon92	access:public
-__anon92::RollMax	.\timer2.h	/^	u8 RollMax;      	$/;"	m	struct:__anon92	access:public
-__anon92::RollMin	.\timer2.h	/^	u8 RollMin; $/;"	m	struct:__anon92	access:public
-__anon94::ProtoMajor	.\uart0.h	/^	u8 ProtoMajor;$/;"	m	struct:__anon94	access:public
-__anon94::ProtoMinor	.\uart0.h	/^	u8 ProtoMinor;$/;"	m	struct:__anon94	access:public
-__anon94::Reserved	.\uart0.h	/^	u8 Reserved[5];$/;"	m	struct:__anon94	access:public
-__anon94::SWMajor	.\uart0.h	/^	u8 SWMajor;$/;"	m	struct:__anon94	access:public
-__anon94::SWMinor	.\uart0.h	/^	u8 SWMinor;$/;"	m	struct:__anon94	access:public
-__anon94::SWPatch	.\uart0.h	/^	u8 SWPatch;$/;"	m	struct:__anon94	access:public
-__anon95::ProtoMajor	.\uart1.h	/^	u8 ProtoMajor;$/;"	m	struct:__anon95	access:public
-__anon95::ProtoMinor	.\uart1.h	/^	u8 ProtoMinor;$/;"	m	struct:__anon95	access:public
-__anon95::Reserved	.\uart1.h	/^	u8 Reserved[5];$/;"	m	struct:__anon95	access:public
-__anon95::SWMajor	.\uart1.h	/^	u8 SWMajor;$/;"	m	struct:__anon95	access:public
-__anon95::SWMinor	.\uart1.h	/^	u8 SWMinor;$/;"	m	struct:__anon95	access:public
-__anon95::SWPatch	.\uart1.h	/^	u8 SWPatch;$/;"	m	struct:__anon95	access:public
-__anon96::AngleNick	.\uart1.h	/^	s16 AngleNick;	\/\/ in 0.1 deg$/;"	m	struct:__anon96	access:public
-__anon96::AngleRoll	.\uart1.h	/^	s16 AngleRoll;   \/\/ in 0.1 deg$/;"	m	struct:__anon96	access:public
-__anon96::Heading	.\uart1.h	/^	s16 Heading; 	\/\/ in 0.1 deg$/;"	m	struct:__anon96	access:public
-__anon96::reserve	.\uart1.h	/^	u8 reserve[8];$/;"	m	struct:__anon96	access:public
-__anon97::Analog	.\uart1.h	/^	u16 Analog[32];    \/\/ Debugwerte$/;"	m	struct:__anon97	access:public
-__anon97::Digital	.\uart1.h	/^	u8 Digital[2];$/;"	m	struct:__anon97	access:public
-__anon98::Config	.\uart1.h	/^	u8	Config;$/;"	m	struct:__anon98	access:public
-__anon98::Digital	.\uart1.h	/^	u8	Digital[2];$/;"	m	struct:__anon98	access:public
-__anon98::Frame	.\uart1.h	/^	u8	Frame;$/;"	m	struct:__anon98	access:public
-__anon98::Gas	.\uart1.h	/^	u8	Gas;$/;"	m	struct:__anon98	access:public
-__anon98::Height	.\uart1.h	/^	s8	Height;$/;"	m	struct:__anon98	access:public
-__anon98::Nick	.\uart1.h	/^	s8	Nick;$/;"	m	struct:__anon98	access:public
-__anon98::RemoteButtons	.\uart1.h	/^	u8	RemoteButtons;$/;"	m	struct:__anon98	access:public
-__anon98::Roll	.\uart1.h	/^	s8	Roll;$/;"	m	struct:__anon98	access:public
-__anon98::Yaw	.\uart1.h	/^	s8	Yaw;$/;"	m	struct:__anon98	access:public
-__anon98::free	.\uart1.h	/^	u8	free;$/;"	m	struct:__anon98	access:public
-__anon99::Compass	.\uart1.h	/^	s16 Compass;					\/\/ angle between north and head of the MK$/;"	m	struct:__anon99	access:public
-__anon99::Nick	.\uart1.h	/^ 	s16 Nick;$/;"	m	struct:__anon99	access:public
-__anon99::Roll	.\uart1.h	/^	s16 Roll;$/;"	m	struct:__anon99	access:public
-__anon9::buffer	.\fifo.h	/^	u8 *buffer;				 \/\/ pointer to start of the ringbuffer$/;"	m	struct:__anon9	access:public
-__anon9::count	.\fifo.h	/^	u8 count;       		 \/\/ number of characters in FIFO$/;"	m	struct:__anon9	access:public
-__anon9::pread	.\fifo.h	/^	u8 *pread;               \/\/ read pointer$/;"	m	struct:__anon9	access:public
-__anon9::pwrite	.\fifo.h	/^	u8 *pwrite;              \/\/ write pointer$/;"	m	struct:__anon9	access:public
-__anon9::size	.\fifo.h	/^	u16 size;                \/\/ buffer size$/;"	m	struct:__anon9	access:public
-__ramfunc	.\ramfunc.h	5;"	d
-_pEPBufAddr	.\usblibrary\inc\usb_regs.h	451;"	d
-_pEPBufCount	.\usblibrary\inc\usb_regs.h	450;"	d
-_pEPRxAddr	.\usblibrary\inc\usb_regs.h	444;"	d
-_pEPRxCount	.\usblibrary\inc\usb_regs.h	445;"	d
-_pEPTxAddr	.\usblibrary\inc\usb_regs.h	442;"	d
-_pEPTxCount	.\usblibrary\inc\usb_regs.h	443;"	d
-_printf_P	.\printf_P.c	/^void _printf_P (pVoidFnctChar pPutchar, char const *fmt0, ...)$/;"	f	signature:(pVoidFnctChar pPutchar, char const *fmt0, ...)
-_printf_P	.\printf_P.h	/^void _printf_P (pVoidFnctChar pPutchar, char const *fmt0, ...);$/;"	p	signature:(pVoidFnctChar pPutchar, char const *fmt0, ...)
-app_entry	.\startup912.s	/^app_entry:$/;"	l
-bDeviceState	.\usb_pwr.c	/^volatile u8 bDeviceState=UNCONNECTED; \/* USB device status *\/$/;"	v
-bESOFcnt	.\usb_pwr.c	/^	volatile u8 bESOFcnt;$/;"	m	struct:__anon121	file:	access:public
-bb0	.\usblibrary\inc\usb_core.h	/^    u8 bb0;$/;"	m	struct:__anon109::BW	access:public
-bb1	.\usblibrary\inc\usb_core.h	/^    u8 bb1;$/;"	m	struct:__anon109::BW	access:public
-bitrate	.\usbinc\usb_prop.h	/^	u32 bitrate;$/;"	m	struct:__anon108	access:public
-bool	.\libstr91x\include\91x_type.h	/^typedef enum { FALSE = 0, TRUE  = !FALSE } bool;$/;"	t	typeref:enum:__anon65
-bool	.\usblibrary\inc\usb_type.h	/^bool;$/;"	t	typeref:enum:__anon117
-bool	.\usblibrary\inc\usb_type.h	/^typedef enum { FALSE = 0, TRUE  = !FALSE } bool;$/;"	t	typeref:enum:__anon113
-bool	.\usblibrary\inc\usb_type.h	/^typedef enum {FALSE = 0, TRUE = !FALSE} bool;$/;"	t	typeref:enum:__anon110
-buffer	.\fifo.h	/^	u8 *buffer;				 \/\/ pointer to start of the ringbuffer$/;"	m	struct:__anon9	access:public
-bw	.\usblibrary\inc\usb_core.h	/^  bw;$/;"	m	union:__anon109	typeref:struct:__anon109::BW	access:public
-canmsg	.\libstr91x\include\91x_can.h	/^} canmsg;$/;"	t	typeref:struct:__anon27
-century	.\libstr91x\include\91x_rtc.h	/^  u8 century;$/;"	m	struct:__anon59	access:public
-count	.\fifo.h	/^	u8 count;       		 \/\/ number of characters in FIFO$/;"	m	struct:__anon9	access:public
-count_in	.\usb_endp.c	/^u32 count_in = 0;$/;"	v
-crc16tab	.\crc16.c	/^static const u16 crc16tab[256]= $/;"	v	file:
-datatype	.\usbinc\usb_prop.h	/^	u8 datatype;$/;"	m	struct:__anon108	access:public
-day	.\libstr91x\include\91x_rtc.h	/^  u8 day;$/;"	m	struct:__anon59	access:public
-day	.\libstr91x\include\91x_rtc.h	/^  u8 day;$/;"	m	struct:__anon61	access:public
-debug	.\libstr91x\include\91x_lib.h	/^ void debug( void );$/;"	p	signature:( void )
-debug	.\libstr91x\src\91x_lib.c	/^void debug(void)$/;"	f	signature:(void)
-eState	.\usb_pwr.c	/^	volatile RESUME_STATE eState;$/;"	m	struct:__anon121	file:	access:public
-fCellSuspended	.\usb_pwr.c	/^volatile bool fCellSuspended;$/;"	v
-fSuspendEnabled	.\usb_pwr.c	/^volatile bool fSuspendEnabled=TRUE;  \/* true when suspend is possible *\/$/;"	v
-fclose_	.\fat16.c	/^s16 fclose_(File_t *file)$/;"	f	signature:(File_t *file)
-fclose_	.\fat16.h	/^s16 	fclose_(File_t *file);$/;"	p	signature:(File_t *file)
-feof_	.\fat16.c	/^u8 feof_(File_t *file)$/;"	f	signature:(File_t *file)
-feof_	.\fat16.h	/^u8 		feof_(File_t * const file);$/;"	p	signature:(File_t * const file)
-fexist_	.\fat16.c	/^u8 fexist_(s8 * const filename)$/;"	f	signature:(s8 * const filename)
-fexist_	.\fat16.h	/^u8		fexist_(s8 * const filename);$/;"	p	signature:(s8 * const filename)
-fflush_	.\fat16.c	/^s16	fflush_(File_t *file)$/;"	f	signature:(File_t *file)
-fflush_	.\fat16.h	/^s16		fflush_(File_t * const file);$/;"	p	signature:(File_t * const file)
-fgetc_	.\fat16.c	/^s16 fgetc_(File_t *file)$/;"	f	signature:(File_t *file)
-fgetc_	.\fat16.h	/^s16		fgetc_(File_t * const file);$/;"	p	signature:(File_t * const file)
-fgets_	.\fat16.c	/^s8 * fgets_(s8 * const string, s16 const length, File_t * const file)$/;"	f	signature:(s8 * const string, s16 const length, File_t * const file)
-fgets_	.\fat16.h	/^s8 *  	fgets_(s8 * const string, s16 length, File_t * const file);$/;"	p	signature:(s8 * const string, s16 length, File_t * const file)
-fifo_get	.\fifo.c	/^u8 fifo_get (fifo_t *f, u8 *pdata)$/;"	f	signature:(fifo_t *f, u8 *pdata)
-fifo_get	.\fifo.h	/^u8 fifo_get (fifo_t* f, u8* pdata);$/;"	p	signature:(fifo_t* f, u8* pdata)
-fifo_get_wait	.\fifo.c	/^u8 fifo_get_wait (fifo_t *f, u8 *pdata)$/;"	f	signature:(fifo_t *f, u8 *pdata)
-fifo_get_wait	.\fifo.h	/^u8 fifo_get_wait (fifo_t* f, u8* pdata);$/;"	p	signature:(fifo_t* f, u8* pdata)
-fifo_init	.\fifo.c	/^u8 fifo_init (fifo_t *f, u8 *buffer, const u16 size)$/;"	f	signature:(fifo_t *f, u8 *buffer, const u16 size)
-fifo_init	.\fifo.h	/^u8 fifo_init (fifo_t* f, u8* buf, const u16 size);$/;"	p	signature:(fifo_t* f, u8* buf, const u16 size)
-fifo_purge	.\fifo.c	/^void fifo_purge(fifo_t* f)$/;"	f	signature:(fifo_t* f)
-fifo_purge	.\fifo.h	/^void fifo_purge (fifo_t* f);$/;"	p	signature:(fifo_t* f)
-fifo_put	.\fifo.c	/^u8 fifo_put (fifo_t *f, const u8 data)$/;"	f	signature:(fifo_t *f, const u8 data)
-fifo_put	.\fifo.h	/^u8 fifo_put (fifo_t* f, const u8 data);$/;"	p	signature:(fifo_t* f, const u8 data)
-fifo_t	.\fifo.h	/^} fifo_t;$/;"	t	typeref:struct:__anon9
-file	.\gpx.h	/^	File_t *file;											\/\/ filepointer to the file where the data should be saved.$/;"	m	struct:gpx_doc	access:public
-file	.\kml.h	/^	File_t *file;											\/\/ filepointer to the file where the data should be saved.$/;"	m	struct:kml_doc	access:public
-fopen_	.\fat16.c	/^File_t * fopen_(s8 * const filename, const s8 mode)$/;"	f	signature:(s8 * const filename, const s8 mode)
-fopen_	.\fat16.h	/^File_t *fopen_(s8 * const filename, const s8 mode);$/;"	p	signature:(s8 * const filename, const s8 mode)
-format	.\usbinc\usb_prop.h	/^	u8 format;$/;"	m	struct:__anon108	access:public
-fputc_	.\fat16.c	/^s16 fputc_(const s8 c, File_t *file)$/;"	f	signature:(const s8 c, File_t *file)
-fputc_	.\fat16.h	/^s16		fputc_(s8 c, File_t * const file);$/;"	p	signature:(s8 c, File_t * const file)
-fputs_	.\fat16.c	/^s16 fputs_(s8 * const string, File_t * const file)$/;"	f	signature:(s8 * const string, File_t * const file)
-fputs_	.\fat16.h	/^s16		fputs_(s8 * const string, File_t * const file);$/;"	p	signature:(s8 * const string, File_t * const file)
-frac	.\ubx.c	/^	s32			frac;		\/\/ ns remainder of rounded ms above$/;"	m	struct:__anon103	file:	access:public
-fread_	.\fat16.c	/^u32 fread_(void *buffer, u32 size, u32 count, File_t *file)$/;"	f	signature:(void *buffer, u32 size, u32 count, File_t *file)
-fread_	.\fat16.h	/^u32 	fread_(void *buffer, u32 size, u32 count, File_t * const file); $/;"	p	signature:(void *buffer, u32 size, u32 count, File_t * const file)
-free	.\uart1.h	/^	u8	free;$/;"	m	struct:__anon98	access:public
-fseek_	.\fat16.c	/^s16 fseek_(File_t *file, s32 offset, s16 origin)$/;"	f	signature:(File_t *file, s32 offset, s16 origin)
-fseek_	.\fat16.h	/^s16  	fseek_(File_t * const file, s32 offset, s16 origin);$/;"	p	signature:(File_t * const file, s32 offset, s16 origin)
-fwrite_	.\fat16.c	/^u32 fwrite_(void *buffer, u32 size, u32 count, File_t *file)$/;"	f	signature:(void *buffer, u32 size, u32 count, File_t *file)
-fwrite_	.\fat16.h	/^u32 	fwrite_(void *buffer, u32 size, u32 count, File_t * const file);$/;"	p	signature:(void *buffer, u32 size, u32 count, File_t * const file)
-gps_data_t	.\ubx.h	/^} __attribute__((packed)) gps_data_t;$/;"	t	typeref:struct:__anon107
-gpx_doc	.\gpx.h	/^typedef struct gpx_doc$/;"	s
-gpx_doc::file	.\gpx.h	/^	File_t *file;											\/\/ filepointer to the file where the data should be saved.$/;"	m	struct:gpx_doc	access:public
-gpx_doc::state	.\gpx.h	/^	GPX_DocState_t state;									\/\/ state of the gpx-document$/;"	m	struct:gpx_doc	access:public
-hours	.\libstr91x\include\91x_rtc.h	/^  u8 hours;$/;"	m	struct:__anon60	access:public
-hours	.\libstr91x\include\91x_rtc.h	/^  u8 hours;$/;"	m	struct:__anon61	access:public
-is_digit	.\printf_P.c	122;"	d	file:
-itow	.\ubx.c	/^	u32			itow;		\/\/ ms GPS Millisecond Time of Week$/;"	m	struct:__anon103	file:	access:public
-itow	.\ubx.c	/^	u32			itow;		\/\/ ms GPS Millisecond Time of Week$/;"	m	struct:__anon105	file:	access:public
-itow	.\ubx.c	/^	u32			itow;  		\/\/ ms  GPS Millisecond Time of Week$/;"	m	struct:__anon104	file:	access:public
-kml_doc	.\kml.h	/^typedef struct kml_doc$/;"	s
-kml_doc::file	.\kml.h	/^	File_t *file;											\/\/ filepointer to the file where the data should be saved.$/;"	m	struct:kml_doc	access:public
-kml_doc::state	.\kml.h	/^	KML_DocState_t state;									\/\/ state of the kml-document$/;"	m	struct:kml_doc	access:public
-linecoding	.\usb_prop.c	/^LINE_CODING linecoding =$/;"	v
-logfilestate_t	.\logging.c	/^} logfilestate_t;$/;"	t	typeref:enum:__anon75	file:
-mSec	.\timer1.h	/^	u16 mSec;$/;"	m	struct:__anon91	access:public
-main	.\main.c	/^int main(void)$/;"	f	signature:(void)
-milliseconds	.\libstr91x\include\91x_rtc.h	/^  u16 milliseconds;$/;"	m	struct:__anon60	access:public
-minutes	.\libstr91x\include\91x_rtc.h	/^  u8 minutes;$/;"	m	struct:__anon60	access:public
-minutes	.\libstr91x\include\91x_rtc.h	/^  u8 minutes;$/;"	m	struct:__anon61	access:public
-month	.\libstr91x\include\91x_rtc.h	/^  u8 month;$/;"	m	struct:__anon59	access:public
-numSV	.\ubx.c	/^	u8			numSV;		\/\/ Number of SVs used in navigation solution$/;"	m	struct:__anon103	file:	access:public
-pData	.\mkprotocol.h	/^	u8* pData;$/;"	m	struct:__anon79	access:public
-pData	.\mkprotocol.h	/^ 	u8* pData;$/;"	m	struct:__anon80	access:public
-pEpInt_IN	.\usb_istr.c	/^void (*pEpInt_IN[15])(void)={$/;"	v
-pEpInt_OUT	.\usb_istr.c	/^void (*pEpInt_OUT[15])(void)={$/;"	v
-pFunction	.\ramfunc.h	/^typedef  void (*pFunction)(void);$/;"	t
-pInformation	.\usblibrary\src\usb_init.c	/^DEVICE_INFO *pInformation;$/;"	v
-pProperty	.\usblibrary\src\usb_init.c	/^DEVICE_PROP *pProperty;$/;"	v
-pUser_Standard_Requests	.\usblibrary\src\usb_init.c	/^USER_STANDARD_REQUESTS *pUser_Standard_Requests;$/;"	v
-pVoidFnctChar	.\printf_P.h	/^typedef void (*pVoidFnctChar) (char );$/;"	t
-paritytype	.\usbinc\usb_prop.h	/^	u8 paritytype;$/;"	m	struct:__anon108	access:public
-pread	.\fifo.h	/^	u8 *pread;               \/\/ read pointer$/;"	m	struct:__anon9	access:public
-pwrite	.\fifo.h	/^	u8 *pwrite;              \/\/ write pointer$/;"	m	struct:__anon9	access:public
-res1	.\ubx.c	/^	u8			res1;		\/\/ reserved$/;"	m	struct:__anon103	file:	access:public
-res2	.\ubx.c	/^	u32			res2;		\/\/ reserved$/;"	m	struct:__anon103	file:	access:public
-reserve	.\uart1.h	/^	u8 reserve[8];$/;"	m	struct:__anon96	access:public
-reserve	.\waypoints.h	/^	u8  reserve[11];		\/\/ reserve$/;"	m	struct:__anon122	access:public
-s16	.\libstr91x\include\91x_type.h	/^  typedef signed short             s16;$/;"	t
-s16	.\usblibrary\inc\usb_type.h	/^typedef signed short              s16;$/;"	t
-s16	.\usblibrary\inc\usb_type.h	/^typedef signed short             s16;$/;"	t
-s16	.\usblibrary\inc\usb_type.h	/^typedef signed short  s16;$/;"	t
-s32	.\libstr91x\include\91x_type.h	/^  typedef signed long              s32;$/;"	t
-s32	.\usblibrary\inc\usb_type.h	/^typedef signed long               s32;$/;"	t
-s32	.\usblibrary\inc\usb_type.h	/^typedef signed long              s32;$/;"	t
-s32	.\usblibrary\inc\usb_type.h	/^typedef signed long   s32;$/;"	t
-s8	.\libstr91x\include\91x_type.h	/^  typedef signed char              s8;$/;"	t
-s8	.\usblibrary\inc\usb_type.h	/^typedef signed char               s8;$/;"	t
-s8	.\usblibrary\inc\usb_type.h	/^typedef signed char              s8;$/;"	t
-s8	.\usblibrary\inc\usb_type.h	/^typedef signed char   s8;$/;"	t
-sByte	.\spi_slave.h	/^		s8	  sByte[12];$/;"	m	union:__anon86::__anon87	access:public
-sByte	.\spi_slave.h	/^		s8    sByte[12];$/;"	m	union:__anon88::__anon89	access:public
-sInt	.\spi_slave.h	/^		s16   sInt[6];$/;"	m	union:__anon86::__anon87	access:public
-sInt	.\spi_slave.h	/^		s16   sInt[6];$/;"	m	union:__anon88::__anon89	access:public
-sLong	.\spi_slave.h	/^		s32   sLong[3];$/;"	m	union:__anon86::__anon87	access:public
-sLong	.\spi_slave.h	/^		s32   sLong[3];$/;"	m	union:__anon88::__anon89	access:public
-sMsgObj	.\libstr91x\include\91x_map.h	/^  CAN_MsgObj_TypeDef sMsgObj[2];$/;"	m	struct:__anon40	access:public
-sc16	.\usblibrary\inc\usb_type.h	/^typedef signed short const sc16;  \/* Read Only *\/$/;"	t
-sc32	.\usblibrary\inc\usb_type.h	/^typedef signed long  const sc32;  \/* Read Only *\/$/;"	t
-sc8	.\usblibrary\inc\usb_type.h	/^typedef signed char  const sc8;   \/* Read Only *\/$/;"	t
-seconds	.\libstr91x\include\91x_rtc.h	/^  u8 seconds;$/;"	m	struct:__anon60	access:public
-seconds	.\libstr91x\include\91x_rtc.h	/^  u8 seconds;$/;"	m	struct:__anon61	access:public
-size	.\fifo.h	/^	u16 size;                \/\/ buffer size$/;"	m	struct:__anon9	access:public
-state	.\gpx.h	/^	GPX_DocState_t state;									\/\/ state of the gpx-document$/;"	m	struct:gpx_doc	access:public
-state	.\kml.h	/^	KML_DocState_t state;									\/\/ state of the kml-document$/;"	m	struct:kml_doc	access:public
-text	.\uart1.c	/^u8 text[200];$/;"	v
-to_char	.\printf_P.c	123;"	d	file:
-to_digit	.\printf_P.c	121;"	d	file:
-u16	.\libstr91x\include\91x_type.h	/^  typedef unsigned short           u16;$/;"	t
-u16	.\usblibrary\inc\usb_type.h	/^typedef unsigned short            u16;$/;"	t
-u16	.\usblibrary\inc\usb_type.h	/^typedef unsigned short           u16;$/;"	t
-u16	.\usblibrary\inc\usb_type.h	/^typedef unsigned short  u16;$/;"	t
-u16_u8	.\usblibrary\inc\usb_core.h	/^} u16_u8;$/;"	t	typeref:union:__anon109
-u32	.\libstr91x\include\91x_type.h	/^  typedef unsigned long            u32;$/;"	t
-u32	.\usblibrary\inc\usb_type.h	/^typedef unsigned long             u32;$/;"	t
-u32	.\usblibrary\inc\usb_type.h	/^typedef unsigned long            u32;$/;"	t
-u32	.\usblibrary\inc\usb_type.h	/^typedef unsigned long   u32;$/;"	t
-u64	.\libstr91x\include\91x_type.h	/^  typedef long long                u64;$/;"	t
-u64	.\usblibrary\inc\usb_type.h	/^typedef long long                u64;$/;"	t
-u8	.\libstr91x\include\91x_type.h	/^  typedef unsigned char            u8;$/;"	t
-u8	.\usblibrary\inc\usb_type.h	/^typedef unsigned char             u8;$/;"	t
-u8	.\usblibrary\inc\usb_type.h	/^typedef unsigned char            u8;$/;"	t
-u8	.\usblibrary\inc\usb_type.h	/^typedef unsigned char   u8;$/;"	t
-ubxState_t	.\ubx.c	/^} ubxState_t;$/;"	t	typeref:enum:__anon102	file:
-ubx_nav_posllh_t	.\ubx.c	/^} __attribute__((packed)) ubx_nav_posllh_t;$/;"	t	typeref:struct:__anon105	file:
-ubx_nav_sol_t	.\ubx.c	/^} __attribute__((packed)) ubx_nav_sol_t;$/;"	t	typeref:struct:__anon103	file:
-ubx_nav_velned_t	.\ubx.c	/^} __attribute__((packed)) ubx_nav_velned_t;$/;"	t	typeref:struct:__anon104	file:
-uc16	.\usblibrary\inc\usb_type.h	/^typedef unsigned short const uc16;  \/* Read Only *\/$/;"	t
-uc32	.\usblibrary\inc\usb_type.h	/^typedef unsigned long  const uc32;  \/* Read Only *\/$/;"	t
-uc8	.\usblibrary\inc\usb_type.h	/^typedef unsigned char  const uc8;   \/* Read Only *\/$/;"	t
-vSetEPRxStatus	.\usblibrary\src\usb_core.c	40;"	d	file:
-vSetEPTxStatus	.\usblibrary\src\usb_core.c	41;"	d	file:
-vs16	.\libstr91x\include\91x_type.h	/^  typedef volatile signed short    vs16;$/;"	t
-vs16	.\usblibrary\inc\usb_type.h	/^typedef volatile signed short     vs16;$/;"	t
-vs16	.\usblibrary\inc\usb_type.h	/^typedef volatile signed short    vs16;$/;"	t
-vs16	.\usblibrary\inc\usb_type.h	/^typedef volatile signed short  vs16;$/;"	t
-vs32	.\libstr91x\include\91x_type.h	/^  typedef volatile signed long     vs32;$/;"	t
-vs32	.\usblibrary\inc\usb_type.h	/^typedef volatile signed long      vs32;$/;"	t
-vs32	.\usblibrary\inc\usb_type.h	/^typedef volatile signed long     vs32;$/;"	t
-vs32	.\usblibrary\inc\usb_type.h	/^typedef volatile signed long   vs32;$/;"	t
-vs8	.\libstr91x\include\91x_type.h	/^  typedef volatile signed char     vs8;$/;"	t
-vs8	.\usblibrary\inc\usb_type.h	/^typedef volatile signed char      vs8;$/;"	t
-vs8	.\usblibrary\inc\usb_type.h	/^typedef volatile signed char     vs8;$/;"	t
-vs8	.\usblibrary\inc\usb_type.h	/^typedef volatile signed char   vs8;$/;"	t
-vsc16	.\usblibrary\inc\usb_type.h	/^typedef volatile signed short const vsc16;  \/* Read Only *\/$/;"	t
-vsc32	.\usblibrary\inc\usb_type.h	/^typedef volatile signed long  const vsc32;  \/* Read Only *\/$/;"	t
-vsc8	.\usblibrary\inc\usb_type.h	/^typedef volatile signed char  const vsc8;   \/* Read Only *\/$/;"	t
-vu16	.\libstr91x\include\91x_type.h	/^  typedef volatile unsigned short  vu16;$/;"	t
-vu16	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned short   vu16;$/;"	t
-vu16	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned short  vu16;$/;"	t
-vu32	.\libstr91x\include\91x_type.h	/^  typedef volatile unsigned long   vu32;$/;"	t
-vu32	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned long    vu32;$/;"	t
-vu32	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned long   vu32;$/;"	t
-vu8	.\libstr91x\include\91x_type.h	/^  typedef volatile unsigned char   vu8;$/;"	t
-vu8	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned char    vu8;$/;"	t
-vu8	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned char   vu8;$/;"	t
-vuc16	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned short const    vuc16;  \/* Read Only *\/$/;"	t
-vuc16	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned short const vuc16;  \/* Read Only *\/$/;"	t
-vuc32	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned long  const    vuc32;  \/* Read Only *\/$/;"	t
-vuc32	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned long  const vuc32;  \/* Read Only *\/$/;"	t
-vuc8	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned char  const    vuc8;   \/* Read Only *\/$/;"	t
-vuc8	.\usblibrary\inc\usb_type.h	/^typedef volatile unsigned char  const vuc8;   \/* Read Only *\/$/;"	t
-w	.\usblibrary\inc\usb_core.h	/^  u16 w;$/;"	m	union:__anon109	access:public
-wInterrupt_Mask	.\usblibrary\src\usb_init.c	/^u16 wInterrupt_Mask;$/;"	v
-wIstr	.\usb_istr.c	/^volatile u16 wIstr;  \/* ISTR register last read value *\/$/;"	v
-week	.\ubx.c	/^	s16			week;		\/\/ GPS week$/;"	m	struct:__anon103	file:	access:public
-weekday	.\libstr91x\include\91x_rtc.h	/^  u8 weekday;$/;"	m	struct:__anon59	access:public
-year	.\libstr91x\include\91x_rtc.h	/^  u8 year;$/;"	m	struct:__anon59	access:public
+__anon77::User1    .\main.h    /^    u8 User1;$/;"    m    struct:__anon77    access:public
+__anon77::User2    .\main.h    /^    u8 User2;$/;"    m    struct:__anon77    access:public
+__anon77::User3    .\main.h    /^    u8 User3;$/;"    m    struct:__anon77    access:public
+__anon77::User4    .\main.h    /^    u8 User4;$/;"    m    struct:__anon77    access:public
+__anon77::User5    .\main.h    /^    u8 User5;$/;"    m    struct:__anon77    access:public
+__anon77::User6    .\main.h    /^    u8 User6;$/;"    m    struct:__anon77    access:public
+__anon77::User7    .\main.h    /^    u8 User7;$/;"    m    struct:__anon77    access:public
+__anon77::User8    .\main.h    /^    u8 User8;$/;"    m    struct:__anon77    access:public
+__anon78::BAT_Current    .\main.h    /^    u16 BAT_Current;$/;"    m    struct:__anon78    access:public
+__anon78::BAT_UsedCapacity    .\main.h    /^    u16 BAT_UsedCapacity;$/;"    m    struct:__anon78    access:public
+__anon78::BAT_Voltage    .\main.h    /^    u8 BAT_Voltage;$/;"    m    struct:__anon78    access:public
+__anon78::Flags    .\main.h    /^    u8 Flags;$/;"    m    struct:__anon78    access:public
+__anon78::Poti    .\main.h    /^    u8 Poti[8];$/;"    m    struct:__anon78    access:public
+__anon78::Poti5    .\main.h    /^    u8 Poti5;$/;"    m    struct:__anon78    access:public
+__anon78::Poti6    .\main.h    /^    u8 Poti6;$/;"    m    struct:__anon78    access:public
+__anon78::Poti7    .\main.h    /^    u8 Poti7;$/;"    m    struct:__anon78    access:public
+__anon78::Poti8    .\main.h    /^    u8 Poti8;$/;"    m    struct:__anon78    access:public
+__anon78::RC_Quality    .\main.h    /^    u8 RC_Quality;$/;"    m    struct:__anon78    access:public
+__anon78::RC_RSSI    .\main.h    /^    u8 RC_RSSI;$/;"    m    struct:__anon78    access:public
+__anon78::StickGas    .\main.h    /^    s8 StickGas;$/;"    m    struct:__anon78    access:public
+__anon78::StickNick    .\main.h    /^    s8 StickNick;$/;"    m    struct:__anon78    access:public
+__anon78::StickRoll    .\main.h    /^    s8 StickRoll;$/;"    m    struct:__anon78    access:public
+__anon78::StickYaw    .\main.h    /^    s8 StickYaw;$/;"    m    struct:__anon78    access:public
+__anon79::DataBytes    .\mkprotocol.h    /^    u16 DataBytes;$/;"    m    struct:__anon79    access:public
+__anon79::Locked    .\mkprotocol.h    /^    u8  Locked;$/;"    m    struct:__anon79    access:public
+__anon79::Position    .\mkprotocol.h    /^    u16 Position;$/;"    m    struct:__anon79    access:public
+__anon79::Size    .\mkprotocol.h    /^    u16 Size;$/;"    m    struct:__anon79    access:public
+__anon79::pData    .\mkprotocol.h    /^    u8* pData;$/;"    m    struct:__anon79    access:public
+__anon7::FatCopies    .\fat16.c    /^    u8    FatCopies;                \/\/ Numbers of copies of the FAT$/;"    m    struct:__anon7    file:    access:public
+__anon7::FirstDataSector    .\fat16.c    /^    u32 FirstDataSector;        \/\/ sector of the first cluster containing data (cluster2).$/;"    m    struct:__anon7    file:    access:public
+__anon7::FirstFatSector    .\fat16.c    /^    u32 FirstFatSector;            \/\/ sector of the start of the fat$/;"    m    struct:__anon7    file:    access:public
+__anon7::FirstRootDirSector    .\fat16.c    /^    u32 FirstRootDirSector;        \/\/ sector of the rootdirectory$/;"    m    struct:__anon7    file:    access:public
+__anon7::IsValid    .\fat16.c    /^    u8    IsValid;                \/\/ 0 means invalid, else valid$/;"    m    struct:__anon7    file:    access:public
+__anon7::LastDataSector    .\fat16.c    /^    u32 LastDataSector;            \/\/ the last data sector of the partition$/;"    m    struct:__anon7    file:    access:public
+__anon7::MaxRootEntries    .\fat16.c    /^    u16    MaxRootEntries;            \/\/ Possible number of entries in the root directory.$/;"    m    struct:__anon7    file:    access:public
+__anon7::SectorsPerCluster    .\fat16.c    /^    u8    SectorsPerCluster;        \/\/ how many sectors does a cluster contain?$/;"    m    struct:__anon7    file:    access:public
+__anon7::SectorsPerFat    .\fat16.c    /^    u16    SectorsPerFat;            \/\/ how many sectors does a fat16 contain?$/;"    m    struct:__anon7    file:    access:public
+__anon80::Address    .\mkprotocol.h    /^    u8 Address;$/;"    m    struct:__anon80    access:public
+__anon80::CmdID    .\mkprotocol.h    /^    u8 CmdID;$/;"    m    struct:__anon80    access:public
+__anon80::DataLen    .\mkprotocol.h    /^    u16 DataLen; $/;"    m    struct:__anon80    access:public
+__anon80::pData    .\mkprotocol.h    /^     u8* pData;$/;"    m    struct:__anon80    access:public
+__anon82::CID    .\sdc.c    /^  u8 CID[16];            \/\/ CID register$/;"    m    struct:__anon82    file:    access:public
+__anon82::CSD    .\sdc.c    /^  u8 CSD[16];            \/\/ CSD register$/;"    m    struct:__anon82    file:    access:public
+__anon82::Capacity    .\sdc.c    /^  u32 Capacity;            \/\/ Memory capacity  in bytes$/;"    m    struct:__anon82    file:    access:public
+__anon82::Valid    .\sdc.c    /^  u8 Valid;$/;"    m    struct:__anon82    file:    access:public
+__anon82::Version    .\sdc.c    /^  SDVersion_t Version;  \/\/ HW-Version $/;"    m    struct:__anon82    file:    access:public
+__anon84::Default    .\settings.c    /^    u16 Default;$/;"    m    struct:__anon84    file:    access:public
+__anon84::Group    .\settings.c    /^    u8  Group;   \/\/ 0 = reserved  1,2,3,4$/;"    m    struct:__anon84    file:    access:public
+__anon84::Max    .\settings.c    /^    u16 Max;$/;"    m    struct:__anon84    file:    access:public
+__anon84::Min    .\settings.c    /^    u16 Min;$/;"    m    struct:__anon84    file:    access:public
+__anon84::Name    .\settings.c    /^    s8  Name[17]; \/\/ 0 terminator is the last byte$/;"    m    struct:__anon84    file:    access:public
+__anon84::ParamId    .\settings.c    /^    ParamId_t ParamId;$/;"    m    struct:__anon84    file:    access:public
+__anon84::Value    .\settings.c    /^    u16 Value;$/;"    m    struct:__anon84    file:    access:public
+__anon86::AccNick    .\spi_slave.h    /^    s16  AccNick;$/;"    m    struct:__anon86    access:public
+__anon86::AccRoll    .\spi_slave.h    /^    s16  AccRoll;$/;"    m    struct:__anon86    access:public
+__anon86::AngleNick    .\spi_slave.h    /^    s16  AngleNick;     \/\/ NickAngle in 0.1 deg$/;"    m    struct:__anon86    access:public
+__anon86::AngleRoll    .\spi_slave.h    /^    s16  AngleRoll;     \/\/ RollAngle in 0.1 deg$/;"    m    struct:__anon86    access:public
+__anon86::Chksum    .\spi_slave.h    /^    u8 Chksum;$/;"    m    struct:__anon86    access:public
+__anon86::Command    .\spi_slave.h    /^    u8   Command;$/;"    m    struct:__anon86    access:public
+__anon86::GyroHeading    .\spi_slave.h    /^    s16  GyroHeading;     \/\/ Heading in 0.1 deg$/;"    m    struct:__anon86    access:public
+__anon86::GyroNick    .\spi_slave.h    /^    s16  GyroNick;$/;"    m    struct:__anon86    access:public
+__anon86::GyroRoll    .\spi_slave.h    /^    s16  GyroRoll;$/;"    m    struct:__anon86    access:public
+__anon86::GyroYaw    .\spi_slave.h    /^    s16  GyroYaw;$/;"    m    struct:__anon86    access:public
+__anon86::Param    .\spi_slave.h    /^    } Param;$/;"    m    struct:__anon86    typeref:union:__anon86::__anon87    access:public
+__anon86::__anon87::Byte    .\spi_slave.h    /^        u8    Byte[12];$/;"    m    union:__anon86::__anon87    access:public
+__anon86::__anon87::Float    .\spi_slave.h    /^        float Float[3];$/;"    m    union:__anon86::__anon87    access:public
+__anon86::__anon87::Int    .\spi_slave.h    /^        u16   Int[6];$/;"    m    union:__anon86::__anon87    access:public
+__anon86::__anon87::Long    .\spi_slave.h    /^        u32   Long[3];$/;"    m    union:__anon86::__anon87    access:public
+__anon86::__anon87::sByte    .\spi_slave.h    /^        s8      sByte[12];$/;"    m    union:__anon86::__anon87    access:public
+__anon86::__anon87::sInt    .\spi_slave.h    /^        s16   sInt[6];$/;"    m    union:__anon86::__anon87    access:public
+__anon86::__anon87::sLong    .\spi_slave.h    /^        s32   sLong[3];$/;"    m    union:__anon86::__anon87    access:public
+__anon88::BeepTime    .\spi_slave.h    /^    u16 BeepTime;$/;"    m    struct:__anon88    access:public
+__anon88::Chksum    .\spi_slave.h    /^      u8 Chksum;$/;"    m    struct:__anon88    access:public
+__anon88::Command    .\spi_slave.h    /^    u8 Command;$/;"    m    struct:__anon88    access:public
+__anon88::CompassHeading    .\spi_slave.h    /^    s16 CompassHeading;$/;"    m    struct:__anon88    access:public
+__anon88::GPS_Nick    .\spi_slave.h    /^    s16 GPS_Nick;$/;"    m    struct:__anon88    access:public
+__anon88::GPS_Roll    .\spi_slave.h    /^    s16 GPS_Roll;$/;"    m    struct:__anon88    access:public
+__anon88::GPS_Yaw    .\spi_slave.h    /^    s16 GPS_Yaw;$/;"    m    struct:__anon88    access:public
+__anon88::Param    .\spi_slave.h    /^    }Param;$/;"    m    struct:__anon88    typeref:union:__anon88::__anon89    access:public
+__anon88::Status    .\spi_slave.h    /^    s16 Status;$/;"    m    struct:__anon88    access:public
+__anon88::__anon89::Byte    .\spi_slave.h    /^        u8    Byte[12];$/;"    m    union:__anon88::__anon89    access:public
+__anon88::__anon89::Float    .\spi_slave.h    /^        float Float[3];$/;"    m    union:__anon88::__anon89    access:public
+__anon88::__anon89::Int    .\spi_slave.h    /^        u16      Int[6];$/;"    m    union:__anon88::__anon89    access:public
+__anon88::__anon89::Long    .\spi_slave.h    /^        u32   Long[3];$/;"    m    union:__anon88::__anon89    access:public
+__anon88::__anon89::sByte    .\spi_slave.h    /^        s8    sByte[12];$/;"    m    union:__anon88::__anon89    access:public
+__anon88::__anon89::sInt    .\spi_slave.h    /^        s16   sInt[6];$/;"    m    union:__anon88::__anon89    access:public
+__anon88::__anon89::sLong    .\spi_slave.h    /^        s32   sLong[3];$/;"    m    union:__anon88::__anon89    access:public
+__anon8::Attribute    .\fat16.h    /^    u8     Attribute;                    \/\/ The attribute of the file opened.$/;"    m    struct:__anon8    access:public
+__anon8::ByteOfCurrSector    .\fat16.h    /^    u16 ByteOfCurrSector;            \/\/ The byte location within the current sector.$/;"    m    struct:__anon8    access:public
+__anon8::Cache    .\fat16.h    /^    u8  Cache[BYTES_PER_SECTOR];    \/\/ Cache for read and write operation from or to the sd-card.$/;"    m    struct:__anon8    access:public
+__anon8::DirectoryIndex    .\fat16.h    /^    u16    DirectoryIndex;                \/\/ The index to the directoryentry within the specified sector.$/;"    m    struct:__anon8    access:public
+__anon8::DirectorySector    .\fat16.h    /^    u32 DirectorySector;            \/\/ the sectorposition where the directoryentry has been made.$/;"    m    struct:__anon8    access:public
+__anon8::FirstSectorOfCurrCluster    .\fat16.h    /^    u32 FirstSectorOfCurrCluster;    \/\/ First sector of the cluster which is edited at the moment.$/;"    m    struct:__anon8    access:public
+__anon8::FirstSectorOfFirstCluster    .\fat16.h    /^    u32 FirstSectorOfFirstCluster;    \/\/ First sector of the first cluster of the file.$/;"    m    struct:__anon8    access:public
+__anon8::Mode    .\fat16.h    /^    u8    Mode;                        \/\/ Mode of fileoperation (read,write)$/;"    m    struct:__anon8    access:public
+__anon8::Position    .\fat16.h    /^    u32 Position;                    \/\/ Pointer to a character within the file 0 < fileposition < filesize$/;"    m    struct:__anon8    access:public
+__anon8::SectorInCache    .\fat16.h    /^    u32 SectorInCache;                \/\/ The last sector read, which is still in the sector cache.$/;"    m    struct:__anon8    access:public
+__anon8::SectorOfCurrCluster    .\fat16.h    /^    u8    SectorOfCurrCluster;        \/\/ The sector within the current cluster.$/;"    m    struct:__anon8    access:public
+__anon8::Size    .\fat16.h    /^    u32 Size;                        \/\/ The size of the opend file in bytes.$/;"    m    struct:__anon8    access:public
+__anon8::State    .\fat16.h    /^    u8    State;                        \/\/ State of the filepointer (used\/unused\/...) $/;"    m    struct:__anon8    access:public
+__anon90::Compatible    .\spi_slave.h    /^   u8 Compatible;$/;"    m    struct:__anon90    access:public
+__anon90::Hardware    .\spi_slave.h    /^   u8 Hardware;$/;"    m    struct:__anon90    access:public
+__anon90::Major    .\spi_slave.h    /^   u8 Major;$/;"    m    struct:__anon90    access:public
+__anon90::Minor    .\spi_slave.h    /^   u8 Minor;$/;"    m    struct:__anon90    access:public
+__anon90::Patch    .\spi_slave.h    /^   u8 Patch;$/;"    m    struct:__anon90    access:public
+__anon91::Day    .\timer1.h    /^    u8    Day;$/;"    m    struct:__anon91    access:public
+__anon91::Hour    .\timer1.h    /^    u8    Hour;$/;"    m    struct:__anon91    access:public
+__anon91::Min    .\timer1.h    /^    u8    Min;$/;"    m    struct:__anon91    access:public
+__anon91::Month    .\timer1.h    /^    u8    Month;$/;"    m    struct:__anon91    access:public
+__anon91::Sec    .\timer1.h    /^    u8    Sec;$/;"    m    struct:__anon91    access:public
+__anon91::Valid    .\timer1.h    /^    u8  Valid;$/;"    m    struct:__anon91    access:public
+__anon91::Year    .\timer1.h    /^    u16    Year;$/;"    m    struct:__anon91    access:public
+__anon91::mSec    .\timer1.h    /^    u16 mSec;$/;"    m    struct:__anon91    access:public
+__anon92::CompInvert    .\timer2.h    /^    u8 CompInvert; $/;"    m    struct:__anon92    access:public
+__anon92::NickComp    .\timer2.h    /^    u8 NickComp;$/;"    m    struct:__anon92    access:public
+__anon92::NickControl    .\timer2.h    /^    u8 NickControl;$/;"    m    struct:__anon92    access:public
+__anon92::NickMax    .\timer2.h    /^    u8 NickMax;$/;"    m    struct:__anon92    access:public
+__anon92::NickMin    .\timer2.h    /^    u8 NickMin; $/;"    m    struct:__anon92    access:public
+__anon92::Refresh    .\timer2.h    /^    u8 Refresh;$/;"    m    struct:__anon92    access:public
+__anon92::RollComp    .\timer2.h    /^    u8 RollComp;$/;"    m    struct:__anon92    access:public
+__anon92::RollControl    .\timer2.h    /^    u8 RollControl;$/;"    m    struct:__anon92    access:public
+__anon92::RollMax    .\timer2.h    /^    u8 RollMax;          $/;"    m    struct:__anon92    access:public
+__anon92::RollMin    .\timer2.h    /^    u8 RollMin; $/;"    m    struct:__anon92    access:public
+__anon94::ProtoMajor    .\uart0.h    /^    u8 ProtoMajor;$/;"    m    struct:__anon94    access:public
+__anon94::ProtoMinor    .\uart0.h    /^    u8 ProtoMinor;$/;"    m    struct:__anon94    access:public
+__anon94::Reserved    .\uart0.h    /^    u8 Reserved[5];$/;"    m    struct:__anon94    access:public
+__anon94::SWMajor    .\uart0.h    /^    u8 SWMajor;$/;"    m    struct:__anon94    access:public
+__anon94::SWMinor    .\uart0.h    /^    u8 SWMinor;$/;"    m    struct:__anon94    access:public
+__anon94::SWPatch    .\uart0.h    /^    u8 SWPatch;$/;"    m    struct:__anon94    access:public
+__anon95::ProtoMajor    .\uart1.h    /^    u8 ProtoMajor;$/;"    m    struct:__anon95    access:public
+__anon95::ProtoMinor    .\uart1.h    /^    u8 ProtoMinor;$/;"    m    struct:__anon95    access:public
+__anon95::Reserved    .\uart1.h    /^    u8 Reserved[5];$/;"    m    struct:__anon95    access:public
+__anon95::SWMajor    .\uart1.h    /^    u8 SWMajor;$/;"    m    struct:__anon95    access:public
+__anon95::SWMinor    .\uart1.h    /^    u8 SWMinor;$/;"    m    struct:__anon95    access:public
+__anon95::SWPatch    .\uart1.h    /^    u8 SWPatch;$/;"    m    struct:__anon95    access:public
+__anon96::AngleNick    .\uart1.h    /^    s16 AngleNick;    \/\/ in 0.1 deg$/;"    m    struct:__anon96    access:public
+__anon96::AngleRoll    .\uart1.h    /^    s16 AngleRoll;   \/\/ in 0.1 deg$/;"    m    struct:__anon96    access:public
+__anon96::Heading    .\uart1.h    /^    s16 Heading;     \/\/ in 0.1 deg$/;"    m    struct:__anon96    access:public
+__anon96::reserve    .\uart1.h    /^    u8 reserve[8];$/;"    m    struct:__anon96    access:public
+__anon97::Analog    .\uart1.h    /^    u16 Analog[32];    \/\/ Debugwerte$/;"    m    struct:__anon97    access:public
+__anon97::Digital    .\uart1.h    /^    u8 Digital[2];$/;"    m    struct:__anon97    access:public
+__anon98::Config    .\uart1.h    /^    u8    Config;$/;"    m    struct:__anon98    access:public
+__anon98::Digital    .\uart1.h    /^    u8    Digital[2];$/;"    m    struct:__anon98    access:public
+__anon98::Frame    .\uart1.h    /^    u8    Frame;$/;"    m    struct:__anon98    access:public
+__anon98::Gas    .\uart1.h    /^    u8    Gas;$/;"    m    struct:__anon98    access:public
+__anon98::Height    .\uart1.h    /^    s8    Height;$/;"    m    struct:__anon98    access:public
+__anon98::Nick    .\uart1.h    /^    s8    Nick;$/;"    m    struct:__anon98    access:public
+__anon98::RemoteButtons    .\uart1.h    /^    u8    RemoteButtons;$/;"    m    struct:__anon98    access:public
+__anon98::Roll    .\uart1.h    /^    s8    Roll;$/;"    m    struct:__anon98    access:public
+__anon98::Yaw    .\uart1.h    /^    s8    Yaw;$/;"    m    struct:__anon98    access:public
+__anon98::free    .\uart1.h    /^    u8    free;$/;"    m    struct:__anon98    access:public
+__anon99::Compass    .\uart1.h    /^    s16 Compass;                    \/\/ angle between north and head of the MK$/;"    m    struct:__anon99    access:public
+__anon99::Nick    .\uart1.h    /^     s16 Nick;$/;"    m    struct:__anon99    access:public
+__anon99::Roll    .\uart1.h    /^    s16 Roll;$/;"    m    struct:__anon99    access:public
+__anon9::buffer    .\fifo.h    /^    u8 *buffer;                 \/\/ pointer to start of the ringbuffer$/;"    m    struct:__anon9    access:public
+__anon9::count    .\fifo.h    /^    u8 count;                \/\/ number of characters in FIFO$/;"    m    struct:__anon9    access:public
+__anon9::pread    .\fifo.h    /^    u8 *pread;               \/\/ read pointer$/;"    m    struct:__anon9    access:public
+__anon9::pwrite    .\fifo.h    /^    u8 *pwrite;              \/\/ write pointer$/;"    m    struct:__anon9    access:public
+__anon9::size    .\fifo.h    /^    u16 size;                \/\/ buffer size$/;"    m    struct:__anon9    access:public
+__ramfunc    .\ramfunc.h    5;"    d
+_pEPBufAddr    .\usblibrary\inc\usb_regs.h    451;"    d
+_pEPBufCount    .\usblibrary\inc\usb_regs.h    450;"    d
+_pEPRxAddr    .\usblibrary\inc\usb_regs.h    444;"    d
+_pEPRxCount    .\usblibrary\inc\usb_regs.h    445;"    d
+_pEPTxAddr    .\usblibrary\inc\usb_regs.h    442;"    d
+_pEPTxCount    .\usblibrary\inc\usb_regs.h    443;"    d
+_printf_P    .\printf_P.c    /^void _printf_P (pVoidFnctChar pPutchar, char const *fmt0, ...)$/;"    f    signature:(pVoidFnctChar pPutchar, char const *fmt0, ...)
+_printf_P    .\printf_P.h    /^void _printf_P (pVoidFnctChar pPutchar, char const *fmt0, ...);$/;"    p    signature:(pVoidFnctChar pPutchar, char const *fmt0, ...)
+app_entry    .\startup912.s    /^app_entry:$/;"    l
+bDeviceState    .\usb_pwr.c    /^volatile u8 bDeviceState=UNCONNECTED; \/* USB device status *\/$/;"    v
+bESOFcnt    .\usb_pwr.c    /^    volatile u8 bESOFcnt;$/;"    m    struct:__anon121    file:    access:public
+bb0    .\usblibrary\inc\usb_core.h    /^    u8 bb0;$/;"    m    struct:__anon109::BW    access:public
+bb1    .\usblibrary\inc\usb_core.h    /^    u8 bb1;$/;"    m    struct:__anon109::BW    access:public
+bitrate    .\usbinc\usb_prop.h    /^    u32 bitrate;$/;"    m    struct:__anon108    access:public
+bool    .\libstr91x\include\91x_type.h    /^typedef enum { FALSE = 0, TRUE  = !FALSE } bool;$/;"    t    typeref:enum:__anon65
+bool    .\usblibrary\inc\usb_type.h    /^bool;$/;"    t    typeref:enum:__anon117
+bool    .\usblibrary\inc\usb_type.h    /^typedef enum { FALSE = 0, TRUE  = !FALSE } bool;$/;"    t    typeref:enum:__anon113
+bool    .\usblibrary\inc\usb_type.h    /^typedef enum {FALSE = 0, TRUE = !FALSE} bool;$/;"    t    typeref:enum:__anon110
+buffer    .\fifo.h    /^    u8 *buffer;                 \/\/ pointer to start of the ringbuffer$/;"    m    struct:__anon9    access:public
+bw    .\usblibrary\inc\usb_core.h    /^  bw;$/;"    m    union:__anon109    typeref:struct:__anon109::BW    access:public
+canmsg    .\libstr91x\include\91x_can.h    /^} canmsg;$/;"    t    typeref:struct:__anon27
+century    .\libstr91x\include\91x_rtc.h    /^  u8 century;$/;"    m    struct:__anon59    access:public
+count    .\fifo.h    /^    u8 count;                \/\/ number of characters in FIFO$/;"    m    struct:__anon9    access:public
+count_in    .\usb_endp.c    /^u32 count_in = 0;$/;"    v
+crc16tab    .\crc16.c    /^static const u16 crc16tab[256]= $/;"    v    file:
+datatype    .\usbinc\usb_prop.h    /^    u8 datatype;$/;"    m    struct:__anon108    access:public
+day    .\libstr91x\include\91x_rtc.h    /^  u8 day;$/;"    m    struct:__anon59    access:public
+day    .\libstr91x\include\91x_rtc.h    /^  u8 day;$/;"    m    struct:__anon61    access:public
+debug    .\libstr91x\include\91x_lib.h    /^ void debug( void );$/;"    p    signature:( void )
+debug    .\libstr91x\src\91x_lib.c    /^void debug(void)$/;"    f    signature:(void)
+eState    .\usb_pwr.c    /^    volatile RESUME_STATE eState;$/;"    m    struct:__anon121    file:    access:public
+fCellSuspended    .\usb_pwr.c    /^volatile bool fCellSuspended;$/;"    v
+fSuspendEnabled    .\usb_pwr.c    /^volatile bool fSuspendEnabled=TRUE;  \/* true when suspend is possible *\/$/;"    v
+fclose_    .\fat16.c    /^s16 fclose_(File_t *file)$/;"    f    signature:(File_t *file)
+fclose_    .\fat16.h    /^s16     fclose_(File_t *file);$/;"    p    signature:(File_t *file)
+feof_    .\fat16.c    /^u8 feof_(File_t *file)$/;"    f    signature:(File_t *file)
+feof_    .\fat16.h    /^u8         feof_(File_t * const file);$/;"    p    signature:(File_t * const file)
+fexist_    .\fat16.c    /^u8 fexist_(s8 * const filename)$/;"    f    signature:(s8 * const filename)
+fexist_    .\fat16.h    /^u8        fexist_(s8 * const filename);$/;"    p    signature:(s8 * const filename)
+fflush_    .\fat16.c    /^s16    fflush_(File_t *file)$/;"    f    signature:(File_t *file)
+fflush_    .\fat16.h    /^s16        fflush_(File_t * const file);$/;"    p    signature:(File_t * const file)
+fgetc_    .\fat16.c    /^s16 fgetc_(File_t *file)$/;"    f    signature:(File_t *file)
+fgetc_    .\fat16.h    /^s16        fgetc_(File_t * const file);$/;"    p    signature:(File_t * const file)
+fgets_    .\fat16.c    /^s8 * fgets_(s8 * const string, s16 const length, File_t * const file)$/;"    f    signature:(s8 * const string, s16 const length, File_t * const file)
+fgets_    .\fat16.h    /^s8 *      fgets_(s8 * const string, s16 length, File_t * const file);$/;"    p    signature:(s8 * const string, s16 length, File_t * const file)
+fifo_get    .\fifo.c    /^u8 fifo_get (fifo_t *f, u8 *pdata)$/;"    f    signature:(fifo_t *f, u8 *pdata)
+fifo_get    .\fifo.h    /^u8 fifo_get (fifo_t* f, u8* pdata);$/;"    p    signature:(fifo_t* f, u8* pdata)
+fifo_get_wait    .\fifo.c    /^u8 fifo_get_wait (fifo_t *f, u8 *pdata)$/;"    f    signature:(fifo_t *f, u8 *pdata)
+fifo_get_wait    .\fifo.h    /^u8 fifo_get_wait (fifo_t* f, u8* pdata);$/;"    p    signature:(fifo_t* f, u8* pdata)
+fifo_init    .\fifo.c    /^u8 fifo_init (fifo_t *f, u8 *buffer, const u16 size)$/;"    f    signature:(fifo_t *f, u8 *buffer, const u16 size)
+fifo_init    .\fifo.h    /^u8 fifo_init (fifo_t* f, u8* buf, const u16 size);$/;"    p    signature:(fifo_t* f, u8* buf, const u16 size)
+fifo_purge    .\fifo.c    /^void fifo_purge(fifo_t* f)$/;"    f    signature:(fifo_t* f)
+fifo_purge    .\fifo.h    /^void fifo_purge (fifo_t* f);$/;"    p    signature:(fifo_t* f)
+fifo_put    .\fifo.c    /^u8 fifo_put (fifo_t *f, const u8 data)$/;"    f    signature:(fifo_t *f, const u8 data)
+fifo_put    .\fifo.h    /^u8 fifo_put (fifo_t* f, const u8 data);$/;"    p    signature:(fifo_t* f, const u8 data)
+fifo_t    .\fifo.h    /^} fifo_t;$/;"    t    typeref:struct:__anon9
+file    .\gpx.h    /^    File_t *file;                                            \/\/ filepointer to the file where the data should be saved.$/;"    m    struct:gpx_doc    access:public
+file    .\kml.h    /^    File_t *file;                                            \/\/ filepointer to the file where the data should be saved.$/;"    m    struct:kml_doc    access:public
+fopen_    .\fat16.c    /^File_t * fopen_(s8 * const filename, const s8 mode)$/;"    f    signature:(s8 * const filename, const s8 mode)
+fopen_    .\fat16.h    /^File_t *fopen_(s8 * const filename, const s8 mode);$/;"    p    signature:(s8 * const filename, const s8 mode)
+format    .\usbinc\usb_prop.h    /^    u8 format;$/;"    m    struct:__anon108    access:public
+fputc_    .\fat16.c    /^s16 fputc_(const s8 c, File_t *file)$/;"    f    signature:(const s8 c, File_t *file)
+fputc_    .\fat16.h    /^s16        fputc_(s8 c, File_t * const file);$/;"    p    signature:(s8 c, File_t * const file)
+fputs_    .\fat16.c    /^s16 fputs_(s8 * const string, File_t * const file)$/;"    f    signature:(s8 * const string, File_t * const file)
+fputs_    .\fat16.h    /^s16        fputs_(s8 * const string, File_t * const file);$/;"    p    signature:(s8 * const string, File_t * const file)
+frac    .\ubx.c    /^    s32            frac;        \/\/ ns remainder of rounded ms above$/;"    m    struct:__anon103    file:    access:public
+fread_    .\fat16.c    /^u32 fread_(void *buffer, u32 size, u32 count, File_t *file)$/;"    f    signature:(void *buffer, u32 size, u32 count, File_t *file)
+fread_    .\fat16.h    /^u32     fread_(void *buffer, u32 size, u32 count, File_t * const file); $/;"    p    signature:(void *buffer, u32 size, u32 count, File_t * const file)
+free    .\uart1.h    /^    u8    free;$/;"    m    struct:__anon98    access:public
+fseek_    .\fat16.c    /^s16 fseek_(File_t *file, s32 offset, s16 origin)$/;"    f    signature:(File_t *file, s32 offset, s16 origin)
+fseek_    .\fat16.h    /^s16      fseek_(File_t * const file, s32 offset, s16 origin);$/;"    p    signature:(File_t * const file, s32 offset, s16 origin)
+fwrite_    .\fat16.c    /^u32 fwrite_(void *buffer, u32 size, u32 count, File_t *file)$/;"    f    signature:(void *buffer, u32 size, u32 count, File_t *file)
+fwrite_    .\fat16.h    /^u32     fwrite_(void *buffer, u32 size, u32 count, File_t * const file);$/;"    p    signature:(void *buffer, u32 size, u32 count, File_t * const file)
+gps_data_t    .\ubx.h    /^} __attribute__((packed)) gps_data_t;$/;"    t    typeref:struct:__anon107
+gpx_doc    .\gpx.h    /^typedef struct gpx_doc$/;"    s
+gpx_doc::file    .\gpx.h    /^    File_t *file;                                            \/\/ filepointer to the file where the data should be saved.$/;"    m    struct:gpx_doc    access:public
+gpx_doc::state    .\gpx.h    /^    GPX_DocState_t state;                                    \/\/ state of the gpx-document$/;"    m    struct:gpx_doc    access:public
+hours    .\libstr91x\include\91x_rtc.h    /^  u8 hours;$/;"    m    struct:__anon60    access:public
+hours    .\libstr91x\include\91x_rtc.h    /^  u8 hours;$/;"    m    struct:__anon61    access:public
+is_digit    .\printf_P.c    122;"    d    file:
+itow    .\ubx.c    /^    u32            itow;        \/\/ ms GPS Millisecond Time of Week$/;"    m    struct:__anon103    file:    access:public
+itow    .\ubx.c    /^    u32            itow;        \/\/ ms GPS Millisecond Time of Week$/;"    m    struct:__anon105    file:    access:public
+itow    .\ubx.c    /^    u32            itow;          \/\/ ms  GPS Millisecond Time of Week$/;"    m    struct:__anon104    file:    access:public
+kml_doc    .\kml.h    /^typedef struct kml_doc$/;"    s
+kml_doc::file    .\kml.h    /^    File_t *file;                                            \/\/ filepointer to the file where the data should be saved.$/;"    m    struct:kml_doc    access:public
+kml_doc::state    .\kml.h    /^    KML_DocState_t state;                                    \/\/ state of the kml-document$/;"    m    struct:kml_doc    access:public
+linecoding    .\usb_prop.c    /^LINE_CODING linecoding =$/;"    v
+logfilestate_t    .\logging.c    /^} logfilestate_t;$/;"    t    typeref:enum:__anon75    file:
+mSec    .\timer1.h    /^    u16 mSec;$/;"    m    struct:__anon91    access:public
+main    .\main.c    /^int main(void)$/;"    f    signature:(void)
+milliseconds    .\libstr91x\include\91x_rtc.h    /^  u16 milliseconds;$/;"    m    struct:__anon60    access:public
+minutes    .\libstr91x\include\91x_rtc.h    /^  u8 minutes;$/;"    m    struct:__anon60    access:public
+minutes    .\libstr91x\include\91x_rtc.h    /^  u8 minutes;$/;"    m    struct:__anon61    access:public
+month    .\libstr91x\include\91x_rtc.h    /^  u8 month;$/;"    m    struct:__anon59    access:public
+numSV    .\ubx.c    /^    u8            numSV;        \/\/ Number of SVs used in navigation solution$/;"    m    struct:__anon103    file:    access:public
+pData    .\mkprotocol.h    /^    u8* pData;$/;"    m    struct:__anon79    access:public
+pData    .\mkprotocol.h    /^     u8* pData;$/;"    m    struct:__anon80    access:public
+pEpInt_IN    .\usb_istr.c    /^void (*pEpInt_IN[15])(void)={$/;"    v
+pEpInt_OUT    .\usb_istr.c    /^void (*pEpInt_OUT[15])(void)={$/;"    v
+pFunction    .\ramfunc.h    /^typedef  void (*pFunction)(void);$/;"    t
+pInformation    .\usblibrary\src\usb_init.c    /^DEVICE_INFO *pInformation;$/;"    v
+pProperty    .\usblibrary\src\usb_init.c    /^DEVICE_PROP *pProperty;$/;"    v
+pUser_Standard_Requests    .\usblibrary\src\usb_init.c    /^USER_STANDARD_REQUESTS *pUser_Standard_Requests;$/;"    v
+pVoidFnctChar    .\printf_P.h    /^typedef void (*pVoidFnctChar) (char );$/;"    t
+paritytype    .\usbinc\usb_prop.h    /^    u8 paritytype;$/;"    m    struct:__anon108    access:public
+pread    .\fifo.h    /^    u8 *pread;               \/\/ read pointer$/;"    m    struct:__anon9    access:public
+pwrite    .\fifo.h    /^    u8 *pwrite;              \/\/ write pointer$/;"    m    struct:__anon9    access:public
+res1    .\ubx.c    /^    u8            res1;        \/\/ reserved$/;"    m    struct:__anon103    file:    access:public
+res2    .\ubx.c    /^    u32            res2;        \/\/ reserved$/;"    m    struct:__anon103    file:    access:public
+reserve    .\uart1.h    /^    u8 reserve[8];$/;"    m    struct:__anon96    access:public
+reserve    .\waypoints.h    /^    u8  reserve[11];        \/\/ reserve$/;"    m    struct:__anon122    access:public
+s16    .\libstr91x\include\91x_type.h    /^  typedef signed short             s16;$/;"    t
+s16    .\usblibrary\inc\usb_type.h    /^typedef signed short              s16;$/;"    t
+s16    .\usblibrary\inc\usb_type.h    /^typedef signed short             s16;$/;"    t
+s16    .\usblibrary\inc\usb_type.h    /^typedef signed short  s16;$/;"    t
+s32    .\libstr91x\include\91x_type.h    /^  typedef signed long              s32;$/;"    t
+s32    .\usblibrary\inc\usb_type.h    /^typedef signed long               s32;$/;"    t
+s32    .\usblibrary\inc\usb_type.h    /^typedef signed long              s32;$/;"    t
+s32    .\usblibrary\inc\usb_type.h    /^typedef signed long   s32;$/;"    t
+s8    .\libstr91x\include\91x_type.h    /^  typedef signed char              s8;$/;"    t
+s8    .\usblibrary\inc\usb_type.h    /^typedef signed char               s8;$/;"    t
+s8    .\usblibrary\inc\usb_type.h    /^typedef signed char              s8;$/;"    t
+s8    .\usblibrary\inc\usb_type.h    /^typedef signed char   s8;$/;"    t
+sByte    .\spi_slave.h    /^        s8      sByte[12];$/;"    m    union:__anon86::__anon87    access:public
+sByte    .\spi_slave.h    /^        s8    sByte[12];$/;"    m    union:__anon88::__anon89    access:public
+sInt    .\spi_slave.h    /^        s16   sInt[6];$/;"    m    union:__anon86::__anon87    access:public
+sInt    .\spi_slave.h    /^        s16   sInt[6];$/;"    m    union:__anon88::__anon89    access:public
+sLong    .\spi_slave.h    /^        s32   sLong[3];$/;"    m    union:__anon86::__anon87    access:public
+sLong    .\spi_slave.h    /^        s32   sLong[3];$/;"    m    union:__anon88::__anon89    access:public
+sMsgObj    .\libstr91x\include\91x_map.h    /^  CAN_MsgObj_TypeDef sMsgObj[2];$/;"    m    struct:__anon40    access:public
+sc16    .\usblibrary\inc\usb_type.h    /^typedef signed short const sc16;  \/* Read Only *\/$/;"    t
+sc32    .\usblibrary\inc\usb_type.h    /^typedef signed long  const sc32;  \/* Read Only *\/$/;"    t
+sc8    .\usblibrary\inc\usb_type.h    /^typedef signed char  const sc8;   \/* Read Only *\/$/;"    t
+seconds    .\libstr91x\include\91x_rtc.h    /^  u8 seconds;$/;"    m    struct:__anon60    access:public
+seconds    .\libstr91x\include\91x_rtc.h    /^  u8 seconds;$/;"    m    struct:__anon61    access:public
+size    .\fifo.h    /^    u16 size;                \/\/ buffer size$/;"    m    struct:__anon9    access:public
+state    .\gpx.h    /^    GPX_DocState_t state;                                    \/\/ state of the gpx-document$/;"    m    struct:gpx_doc    access:public
+state    .\kml.h    /^    KML_DocState_t state;                                    \/\/ state of the kml-document$/;"    m    struct:kml_doc    access:public
+text    .\uart1.c    /^u8 text[200];$/;"    v
+to_char    .\printf_P.c    123;"    d    file:
+to_digit    .\printf_P.c    121;"    d    file:
+u16    .\libstr91x\include\91x_type.h    /^  typedef unsigned short           u16;$/;"    t
+u16    .\usblibrary\inc\usb_type.h    /^typedef unsigned short            u16;$/;"    t
+u16    .\usblibrary\inc\usb_type.h    /^typedef unsigned short           u16;$/;"    t
+u16    .\usblibrary\inc\usb_type.h    /^typedef unsigned short  u16;$/;"    t
+u16_u8    .\usblibrary\inc\usb_core.h    /^} u16_u8;$/;"    t    typeref:union:__anon109
+u32    .\libstr91x\include\91x_type.h    /^  typedef unsigned long            u32;$/;"    t
+u32    .\usblibrary\inc\usb_type.h    /^typedef unsigned long             u32;$/;"    t
+u32    .\usblibrary\inc\usb_type.h    /^typedef unsigned long            u32;$/;"    t
+u32    .\usblibrary\inc\usb_type.h    /^typedef unsigned long   u32;$/;"    t
+u64    .\libstr91x\include\91x_type.h    /^  typedef long long                u64;$/;"    t
+u64    .\usblibrary\inc\usb_type.h    /^typedef long long                u64;$/;"    t
+u8    .\libstr91x\include\91x_type.h    /^  typedef unsigned char            u8;$/;"    t
+u8    .\usblibrary\inc\usb_type.h    /^typedef unsigned char             u8;$/;"    t
+u8    .\usblibrary\inc\usb_type.h    /^typedef unsigned char            u8;$/;"    t
+u8    .\usblibrary\inc\usb_type.h    /^typedef unsigned char   u8;$/;"    t
+ubxState_t    .\ubx.c    /^} ubxState_t;$/;"    t    typeref:enum:__anon102    file:
+ubx_nav_posllh_t    .\ubx.c    /^} __attribute__((packed)) ubx_nav_posllh_t;$/;"    t    typeref:struct:__anon105    file:
+ubx_nav_sol_t    .\ubx.c    /^} __attribute__((packed)) ubx_nav_sol_t;$/;"    t    typeref:struct:__anon103    file:
+ubx_nav_velned_t    .\ubx.c    /^} __attribute__((packed)) ubx_nav_velned_t;$/;"    t    typeref:struct:__anon104    file:
+uc16    .\usblibrary\inc\usb_type.h    /^typedef unsigned short const uc16;  \/* Read Only *\/$/;"    t
+uc32    .\usblibrary\inc\usb_type.h    /^typedef unsigned long  const uc32;  \/* Read Only *\/$/;"    t
+uc8    .\usblibrary\inc\usb_type.h    /^typedef unsigned char  const uc8;   \/* Read Only *\/$/;"    t
+vSetEPRxStatus    .\usblibrary\src\usb_core.c    40;"    d    file:
+vSetEPTxStatus    .\usblibrary\src\usb_core.c    41;"    d    file:
+vs16    .\libstr91x\include\91x_type.h    /^  typedef volatile signed short    vs16;$/;"    t
+vs16    .\usblibrary\inc\usb_type.h    /^typedef volatile signed short     vs16;$/;"    t
+vs16    .\usblibrary\inc\usb_type.h    /^typedef volatile signed short    vs16;$/;"    t
+vs16    .\usblibrary\inc\usb_type.h    /^typedef volatile signed short  vs16;$/;"    t
+vs32    .\libstr91x\include\91x_type.h    /^  typedef volatile signed long     vs32;$/;"    t
+vs32    .\usblibrary\inc\usb_type.h    /^typedef volatile signed long      vs32;$/;"    t
+vs32    .\usblibrary\inc\usb_type.h    /^typedef volatile signed long     vs32;$/;"    t
+vs32    .\usblibrary\inc\usb_type.h    /^typedef volatile signed long   vs32;$/;"    t
+vs8    .\libstr91x\include\91x_type.h    /^  typedef volatile signed char     vs8;$/;"    t
+vs8    .\usblibrary\inc\usb_type.h    /^typedef volatile signed char      vs8;$/;"    t
+vs8    .\usblibrary\inc\usb_type.h    /^typedef volatile signed char     vs8;$/;"    t
+vs8    .\usblibrary\inc\usb_type.h    /^typedef volatile signed char   vs8;$/;"    t
+vsc16    .\usblibrary\inc\usb_type.h    /^typedef volatile signed short const vsc16;  \/* Read Only *\/$/;"    t
+vsc32    .\usblibrary\inc\usb_type.h    /^typedef volatile signed long  const vsc32;  \/* Read Only *\/$/;"    t
+vsc8    .\usblibrary\inc\usb_type.h    /^typedef volatile signed char  const vsc8;   \/* Read Only *\/$/;"    t
+vu16    .\libstr91x\include\91x_type.h    /^  typedef volatile unsigned short  vu16;$/;"    t
+vu16    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned short   vu16;$/;"    t
+vu16    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned short  vu16;$/;"    t
+vu32    .\libstr91x\include\91x_type.h    /^  typedef volatile unsigned long   vu32;$/;"    t
+vu32    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned long    vu32;$/;"    t
+vu32    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned long   vu32;$/;"    t
+vu8    .\libstr91x\include\91x_type.h    /^  typedef volatile unsigned char   vu8;$/;"    t
+vu8    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned char    vu8;$/;"    t
+vu8    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned char   vu8;$/;"    t
+vuc16    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned short const    vuc16;  \/* Read Only *\/$/;"    t
+vuc16    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned short const vuc16;  \/* Read Only *\/$/;"    t
+vuc32    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned long  const    vuc32;  \/* Read Only *\/$/;"    t
+vuc32    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned long  const vuc32;  \/* Read Only *\/$/;"    t
+vuc8    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned char  const    vuc8;   \/* Read Only *\/$/;"    t
+vuc8    .\usblibrary\inc\usb_type.h    /^typedef volatile unsigned char  const vuc8;   \/* Read Only *\/$/;"    t
+w    .\usblibrary\inc\usb_core.h    /^  u16 w;$/;"    m    union:__anon109    access:public
+wInterrupt_Mask    .\usblibrary\src\usb_init.c    /^u16 wInterrupt_Mask;$/;"    v
+wIstr    .\usb_istr.c    /^volatile u16 wIstr;  \/* ISTR register last read value *\/$/;"    v
+week    .\ubx.c    /^    s16            week;        \/\/ GPS week$/;"    m    struct:__anon103    file:    access:public
+weekday    .\libstr91x\include\91x_rtc.h    /^  u8 weekday;$/;"    m    struct:__anon59    access:public
+year    .\libstr91x\include\91x_rtc.h    /^  u8 year;$/;"    m    struct:__anon59    access:public

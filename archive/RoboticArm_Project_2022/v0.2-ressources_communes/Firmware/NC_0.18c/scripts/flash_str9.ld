@@ -11,12 +11,12 @@ MEMORY
   IntCodeFlash (rx) : ORIGIN = 0x00000000, LENGTH = 512k
   IntCodeFlash1 (rx) : ORIGIN = 0x400000, LENGTH = 32k
   IntDataRAM (rw)   : ORIGIN = 0x4000000, LENGTH = 96k
-  IntDataEth (!rx)  : ORIGIN = 0x7C00000, LENGTH = 0x42F	/* AHB nonbuffered Ethernet RAM */	
+  IntDataEth (!rx)  : ORIGIN = 0x7C00000, LENGTH = 0x42F    /* AHB nonbuffered Ethernet RAM */    
 }
 
 /* this address is used in startup for initilizing stack */
-/* stack is at the end of data range					  */
- 	
+/* stack is at the end of data range                      */
+     
 PROVIDE(_top_stack_ = 0x4018000 -4);
 
 SECTIONS
@@ -27,14 +27,14 @@ SECTIONS
   .text :
   {
 /* here is the path to change and Processor-specific ISR_XXX-file */
-	./obj/startup912.o (.text)  /* Startup code */
+    ./obj/startup912.o (.text)  /* Startup code */
     ./*(.text)           /* remaining code */
     *(.glue_7t) *(.glue_7)
     
 
   } >IntCodeFlash =0
 
-  	__end_of_text__ = .;
+      __end_of_text__ = .;
    
   . = ALIGN(4);
 
@@ -60,7 +60,7 @@ SECTIONS
     PROVIDE (__data_start__ = .) ;
     *(.data)
     SORT(CONSTRUCTORS)
-	*(.ramfunc) 
+    *(.ramfunc) 
   } >IntDataRAM
   . = ALIGN(4);
 

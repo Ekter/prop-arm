@@ -5,8 +5,8 @@
 
 typedef enum
 {
-	PID_KML_LOGGING,
-	PID_GPX_LOGGING
+    PID_KML_LOGGING,
+    PID_GPX_LOGGING
 } ParamId_t;
 
 void Settings_Init(void);

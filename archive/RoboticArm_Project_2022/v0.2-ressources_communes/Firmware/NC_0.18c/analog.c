@@ -1,32 +1,32 @@
 /*#######################################################################################*/
-/* !!! THIS IS NOT FREE SOFTWARE !!!  	                                                 */
+/* !!! THIS IS NOT FREE SOFTWARE !!!                                                       */
 /*#######################################################################################*/
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Copyright (c) 2008 Ingo Busker, Holger Buss
-// + Nur für den privaten Gebrauch / NON-COMMERCIAL USE ONLY
+// + Nur fï¿½r den privaten Gebrauch / NON-COMMERCIAL USE ONLY
 // + FOR NON COMMERCIAL USE ONLY
 // + www.MikroKopter.com
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Es gilt für das gesamte Projekt (Hardware, Software, Binärfiles, Sourcecode und Dokumentation),
-// + dass eine Nutzung (auch auszugsweise) nur für den privaten (nicht-kommerziellen) Gebrauch zulässig ist.
+// + Es gilt fï¿½r das gesamte Projekt (Hardware, Software, Binï¿½rfiles, Sourcecode und Dokumentation),
+// + dass eine Nutzung (auch auszugsweise) nur fï¿½r den privaten (nicht-kommerziellen) Gebrauch zulï¿½ssig ist.
 // + Sollten direkte oder indirekte kommerzielle Absichten verfolgt werden, ist mit uns (info@mikrokopter.de) Kontakt
 // + bzgl. der Nutzungsbedingungen aufzunehmen.
-// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestückung und Verkauf von Platinen oder Bausätzen,
+// + Eine kommerzielle Nutzung ist z.B.Verkauf von MikroKoptern, Bestï¿½ckung und Verkauf von Platinen oder Bausï¿½tzen,
 // + Verkauf von Luftbildaufnahmen, usw.
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder veröffentlicht,
-// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright müssen dann beiliegen
+// + Werden Teile des Quellcodes (mit oder ohne Modifikation) weiterverwendet oder verï¿½ffentlicht,
+// + unterliegen sie auch diesen Nutzungsbedingungen und diese Nutzungsbedingungen incl. Copyright mï¿½ssen dann beiliegen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Sollte die Software (auch auszugesweise) oder sonstige Informationen des MikroKopter-Projekts
-// + auf anderen Webseiten oder sonstigen Medien veröffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
+// + auf anderen Webseiten oder sonstigen Medien verï¿½ffentlicht werden, muss unsere Webseite "http://www.mikrokopter.de"
 // + eindeutig als Ursprung verlinkt werden
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// + Keine Gewähr auf Fehlerfreiheit, Vollständigkeit oder Funktion
+// + Keine Gewï¿½hr auf Fehlerfreiheit, Vollstï¿½ndigkeit oder Funktion
 // + Benutzung auf eigene Gefahr
-// + Wir übernehmen keinerlei Haftung für direkte oder indirekte Personen- oder Sachschäden
+// + Wir ï¿½bernehmen keinerlei Haftung fï¿½r direkte oder indirekte Personen- oder Sachschï¿½den
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Portierung oder Nutzung der Software (oder Teile davon) auf andere Systeme (ausser der Hardware von www.mikrokopter.de) ist nur
-// + mit unserer Zustimmung zulässig
+// + mit unserer Zustimmung zulï¿½ssig
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 // + Die Funktion printf_P() unterliegt ihrer eigenen Lizenz und ist hiervon nicht betroffen
 // ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -64,83 +64,83 @@ AnalogData_t AnalogData;
 
 void ADC_IRQHandler(void)
 {
-	IENABLE;
+    IENABLE;
 
-	if(ADC_GetFlagStatus(ADC_FLAG_ECV) == SET)
-	{
-		ADC_ClearFlag(ADC_FLAG_ECV);
-		AnalogData.Ch1 = ADC_GetConversionValue(ADC_Channel_1);
-		AnalogData.Ch2 = ADC_GetConversionValue(ADC_Channel_2);
-		AnalogData.Ch3 = ADC_GetConversionValue(ADC_Channel_3);
-		AnalogData.Ch4 = ADC_GetConversionValue(ADC_Channel_4);
-		AnalogData.Ch5 = ADC_GetConversionValue(ADC_Channel_5);
-		AnalogData.Ch6 = ADC_GetConversionValue(ADC_Channel_6);
-		AnalogData.Ch7 = ADC_GetConversionValue(ADC_Channel_7);
-		DebugOut.Analog[4] = AnalogData.Ch1;
-	}
+    if(ADC_GetFlagStatus(ADC_FLAG_ECV) == SET)
+    {
+        ADC_ClearFlag(ADC_FLAG_ECV);
+        AnalogData.Ch1 = ADC_GetConversionValue(ADC_Channel_1);
+        AnalogData.Ch2 = ADC_GetConversionValue(ADC_Channel_2);
+        AnalogData.Ch3 = ADC_GetConversionValue(ADC_Channel_3);
+        AnalogData.Ch4 = ADC_GetConversionValue(ADC_Channel_4);
+        AnalogData.Ch5 = ADC_GetConversionValue(ADC_Channel_5);
+        AnalogData.Ch6 = ADC_GetConversionValue(ADC_Channel_6);
+        AnalogData.Ch7 = ADC_GetConversionValue(ADC_Channel_7);
+        DebugOut.Analog[4] = AnalogData.Ch1;
+    }
 
-	IDISABLE;
+    IDISABLE;
 }
 
 void Analog_Init(void)
 {
-	ADC_InitTypeDef   ADC_InitStructure;
+    ADC_InitTypeDef   ADC_InitStructure;
 
-	UART1_PutString("\r\n ADC init...");
+    UART1_PutString("\r\n ADC init...");
 
-	SCU_APBPeriphClockConfig(__GPIO4, ENABLE); // Enable the GPIO4 Clock
+    SCU_APBPeriphClockConfig(__GPIO4, ENABLE); // Enable the GPIO4 Clock
 
-	ADC_DeInit(); // reset register to default values
+    ADC_DeInit(); // reset register to default values
 
-	// configure port 4 pins as analog inputs
-	GPIO_ANAPinConfig(GPIO_ANAChannel1, ENABLE);
-	GPIO_ANAPinConfig(GPIO_ANAChannel2, ENABLE);
-	GPIO_ANAPinConfig(GPIO_ANAChannel3, ENABLE);
-	GPIO_ANAPinConfig(GPIO_ANAChannel4, ENABLE);
-	GPIO_ANAPinConfig(GPIO_ANAChannel5, ENABLE);
-	GPIO_ANAPinConfig(GPIO_ANAChannel6, ENABLE);
-	GPIO_ANAPinConfig(GPIO_ANAChannel7, ENABLE);
+    // configure port 4 pins as analog inputs
+    GPIO_ANAPinConfig(GPIO_ANAChannel1, ENABLE);
+    GPIO_ANAPinConfig(GPIO_ANAChannel2, ENABLE);
+    GPIO_ANAPinConfig(GPIO_ANAChannel3, ENABLE);
+    GPIO_ANAPinConfig(GPIO_ANAChannel4, ENABLE);
+    GPIO_ANAPinConfig(GPIO_ANAChannel5, ENABLE);
+    GPIO_ANAPinConfig(GPIO_ANAChannel6, ENABLE);
+    GPIO_ANAPinConfig(GPIO_ANAChannel7, ENABLE);
 
-	ADC_Cmd(ENABLE); // power on the ADC
-	ADC_StandbyModeCmd(DISABLE); // disable Standby Mode
-	ADC_StructInit(&ADC_InitStructure);
-	ADC_InitStructure.ADC_Channel_1_Mode = ADC_NoThreshold_Conversion;
-	ADC_InitStructure.ADC_Channel_2_Mode = ADC_NoThreshold_Conversion;
-	ADC_InitStructure.ADC_Channel_3_Mode = ADC_NoThreshold_Conversion;
-	ADC_InitStructure.ADC_Channel_4_Mode = ADC_NoThreshold_Conversion;
-	ADC_InitStructure.ADC_Channel_5_Mode = ADC_NoThreshold_Conversion;
-	ADC_InitStructure.ADC_Channel_6_Mode = ADC_NoThreshold_Conversion;
-	ADC_InitStructure.ADC_Channel_7_Mode = ADC_NoThreshold_Conversion;
-	ADC_InitStructure.ADC_Select_Channel = ADC_Channel_1;
-	ADC_InitStructure.ADC_Scan_Mode = ENABLE; // convert all selected channels
-	ADC_InitStructure.ADC_Conversion_Mode = ADC_Single_Mode;
-	ADC_Init(&ADC_InitStructure);
+    ADC_Cmd(ENABLE); // power on the ADC
+    ADC_StandbyModeCmd(DISABLE); // disable Standby Mode
+    ADC_StructInit(&ADC_InitStructure);
+    ADC_InitStructure.ADC_Channel_1_Mode = ADC_NoThreshold_Conversion;
+    ADC_InitStructure.ADC_Channel_2_Mode = ADC_NoThreshold_Conversion;
+    ADC_InitStructure.ADC_Channel_3_Mode = ADC_NoThreshold_Conversion;
+    ADC_InitStructure.ADC_Channel_4_Mode = ADC_NoThreshold_Conversion;
+    ADC_InitStructure.ADC_Channel_5_Mode = ADC_NoThreshold_Conversion;
+    ADC_InitStructure.ADC_Channel_6_Mode = ADC_NoThreshold_Conversion;
+    ADC_InitStructure.ADC_Channel_7_Mode = ADC_NoThreshold_Conversion;
+    ADC_InitStructure.ADC_Select_Channel = ADC_Channel_1;
+    ADC_InitStructure.ADC_Scan_Mode = ENABLE; // convert all selected channels
+    ADC_InitStructure.ADC_Conversion_Mode = ADC_Single_Mode;
+    ADC_Init(&ADC_InitStructure);
 
-	ADC_PrescalerConfig(255);  // PCLK/255  (24MHz/255 = 94.1kHZ )
-	ADC_ITConfig(ADC_IT_ECV, ENABLE); // enable end of conversion IRQ
+    ADC_PrescalerConfig(255);  // PCLK/255  (24MHz/255 = 94.1kHZ )
+    ADC_ITConfig(ADC_IT_ECV, ENABLE); // enable end of conversion IRQ
 
-	VIC_Config(ADC_ITLine, VIC_IRQ, PRIORITY_ADC);
-	VIC_ITCmd(ADC_ITLine, ENABLE);
+    VIC_Config(ADC_ITLine, VIC_IRQ, PRIORITY_ADC);
+    VIC_ITCmd(ADC_ITLine, ENABLE);
 
-	UART1_PutString("ok");
+    UART1_PutString("ok");
 }
 
 void Analog_Deinit(void)
 {
-	VIC_ITCmd(ADC_ITLine, DISABLE);
-	ADC_ConversionCmd(ADC_Conversion_Stop);
-	ADC_ITConfig(ADC_IT_ECV, DISABLE); // disable end of conversion IRQ
-	ADC_Cmd(DISABLE); // power down the ADC
-	ADC_DeInit(); // reset register to default values
+    VIC_ITCmd(ADC_ITLine, DISABLE);
+    ADC_ConversionCmd(ADC_Conversion_Stop);
+    ADC_ITConfig(ADC_IT_ECV, DISABLE); // disable end of conversion IRQ
+    ADC_Cmd(DISABLE); // power down the ADC
+    ADC_DeInit(); // reset register to default values
 }
 
 void Analog_Update(void)
 {
-	static u32 AnalogTimer = 0;
+    static u32 AnalogTimer = 0;
 
-	if(CheckDelay(AnalogTimer))
-	{
-		AnalogTimer = SetDelay(25);
- 		ADC_ConversionCmd(ADC_Conversion_Start);
-	}
+    if(CheckDelay(AnalogTimer))
+    {
+        AnalogTimer = SetDelay(25);
+         ADC_ConversionCmd(ADC_Conversion_Start);
+    }
 }

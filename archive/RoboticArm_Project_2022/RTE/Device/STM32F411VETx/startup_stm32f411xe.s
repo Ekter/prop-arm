@@ -155,13 +155,13 @@ __Vectors       DCD     __initial_sp               ; Top of Stack
                 DCD     0                                 ; Reserved                         
                 DCD     0                                 ; Reserved                                    
                 DCD     0                                 ; Reserved  
-                DCD     0                                 ; Reserved				                              
+                DCD     0                                 ; Reserved                                              
                 DCD     0                                 ; Reserved
                 DCD     FPU_IRQHandler                    ; FPU
                 DCD     0                                 ; Reserved
-		        DCD     0                                 ; Reserved
-		        DCD     SPI4_IRQHandler                   ; SPI4
-				DCD     SPI5_IRQHandler                   ; SPI5
+                DCD     0                                 ; Reserved
+                DCD     SPI4_IRQHandler                   ; SPI4
+                DCD     SPI5_IRQHandler                   ; SPI5
                                          
 __Vectors_End
 
@@ -282,7 +282,7 @@ Default_Handler PROC
                 EXPORT  I2C3_EV_IRQHandler                [WEAK]                                              
                 EXPORT  I2C3_ER_IRQHandler                [WEAK]                                              
                 EXPORT  FPU_IRQHandler                    [WEAK]
-				EXPORT  SPI4_IRQHandler                   [WEAK]
+                EXPORT  SPI4_IRQHandler                   [WEAK]
                 EXPORT  SPI5_IRQHandler                   [WEAK]
 
 WWDG_IRQHandler                                                       

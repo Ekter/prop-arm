@@ -10,11 +10,11 @@
                 .extern FIQ_Handler
 
 
-	.equ	VectorAddress,		0xFFFFF030	/* VIC Vector address register address. */
-	.equ	VectorAddressDaisy,	0xFC000030	/* Daisy VIC Vector address register */
+    .equ    VectorAddress,        0xFFFFF030    /* VIC Vector address register address. */
+    .equ    VectorAddressDaisy,    0xFC000030    /* Daisy VIC Vector address register */
 
 
-#		
+#        
 # Standard definitions of Mode bits and Interrupt (I & F) flags in PSRs
 #
         .equ    Mode_USR,   0x10
@@ -38,70 +38,70 @@
 #*************************************************************************
 # Control Startup Code Operation
 #*************************************************************************
-.equ 	SRAM_SETUP  ,   1     /* Enable setup of SRAM */
-.equ	FMI_SETUP   ,   0     /* Enable FMI Setup */   /* already done by bootloader */
-.equ	CLOCK_SETUP ,   1 	  /* Enable clock setup */
-.equ	ETM_SETUP ,   0 	  /* Enable ETM setup */
+.equ     SRAM_SETUP  ,   1     /* Enable setup of SRAM */
+.equ    FMI_SETUP   ,   0     /* Enable FMI Setup */   /* already done by bootloader */
+.equ    CLOCK_SETUP ,   1       /* Enable clock setup */
+.equ    ETM_SETUP ,   0       /* Enable ETM setup */
 
 #*************************************************************************
 # Hardware Definitions 
 #*************************************************************************
 
 # Flash Memory Interface (FMI) definitions (Flash banks sizes and addresses)
-.equ  	FMI_BASE      	,     0x54000000      /* FMI Base Address (non-buffered) */
-.equ 	FMI_BBSR_OFS  	,     0x00            /* Boot Bank Size Register */
-.equ 	FMI_NBBSR_OFS 	,     0x04            /* Non-boot Bank Size Register	   */
-.equ 	FMI_BBADR_OFS 	,     0x0C            /* Boot Bank Base Address Register       #!!! Documentation page 30,*/
-.equ 	FMI_NBBADR_OFS 	,     0x10            /* Non-boot Bank Base Address Register   #!!! adresseses do not correspond*/
-.equ 	FMI_CR_OFS    	,     0x18            /* Control Register */
-.equ	FMI_SR_OFS		,	  0x1C            /* Status Register */
-			   
+.equ      FMI_BASE          ,     0x54000000      /* FMI Base Address (non-buffered) */
+.equ     FMI_BBSR_OFS      ,     0x00            /* Boot Bank Size Register */
+.equ     FMI_NBBSR_OFS     ,     0x04            /* Non-boot Bank Size Register       */
+.equ     FMI_BBADR_OFS     ,     0x0C            /* Boot Bank Base Address Register       #!!! Documentation page 30,*/
+.equ     FMI_NBBADR_OFS     ,     0x10            /* Non-boot Bank Base Address Register   #!!! adresseses do not correspond*/
+.equ     FMI_CR_OFS        ,     0x18            /* Control Register */
+.equ    FMI_SR_OFS        ,      0x1C            /* Status Register */
+               
 
-.equ	FMI_CR_Val      ,     0x00000018
-.equ	FMI_BBSR_Val    ,     0x00000004  /* 04 */
-.equ	FMI_BBADR_Val   ,     0x00000000  /* 00 */
-.equ	FMI_NBBSR_Val   ,     0x00000002  /* 02 */
-.equ	FMI_NBBADR_Val  ,     0x00080000  /* 80000 */
-.equ	FLASH_CFG_Val   ,     0x00001010
-.equ	FMI_SR_Val      ,     0x00000003      /* Clear status errors (register not in STR912 manual! */
-	
+.equ    FMI_CR_Val      ,     0x00000018
+.equ    FMI_BBSR_Val    ,     0x00000004  /* 04 */
+.equ    FMI_BBADR_Val   ,     0x00000000  /* 00 */
+.equ    FMI_NBBSR_Val   ,     0x00000002  /* 02 */
+.equ    FMI_NBBADR_Val  ,     0x00080000  /* 80000 */
+.equ    FLASH_CFG_Val   ,     0x00001010
+.equ    FMI_SR_Val      ,     0x00000003      /* Clear status errors (register not in STR912 manual! */
+    
 
 # System Control Unit (SCU) definitions
-.equ	SCU_BASE        ,     0x5C002000      /* SCU Base Address (non-buffered)	       */
-.equ	SCU_CLKCNTR_OFS ,     0x00            /* Clock Control register Offset		       */
-.equ	SCU_PLLCONF_OFS ,     0x04            /* PLL Configuration register Offset		   */
-.equ	SCU_SYSTAT_OFS	,	  0x08            /* SCU status register offset                */
-.equ	SCU_PCGR0_OFS   ,     0x14            /* Peripheral Clock Gating Register 0 Offset */
-.equ	SCU_PCGR1_OFS   ,     0x18            /* Peripheral Clock Gating Register 1 Offset */
-.equ	SCU_SCR0_OFS    ,     0x34            /* System Configuration Register 0 Offset	   */
+.equ    SCU_BASE        ,     0x5C002000      /* SCU Base Address (non-buffered)           */
+.equ    SCU_CLKCNTR_OFS ,     0x00            /* Clock Control register Offset               */
+.equ    SCU_PLLCONF_OFS ,     0x04            /* PLL Configuration register Offset           */
+.equ    SCU_SYSTAT_OFS    ,      0x08            /* SCU status register offset                */
+.equ    SCU_PCGR0_OFS   ,     0x14            /* Peripheral Clock Gating Register 0 Offset */
+.equ    SCU_PCGR1_OFS   ,     0x18            /* Peripheral Clock Gating Register 1 Offset */
+.equ    SCU_SCR0_OFS    ,     0x34            /* System Configuration Register 0 Offset       */
 
 
-.equ	SCU_CLKCNTR_Val ,     0x00031004      /* Use PLL, external memory ratio/2 */
-.equ	SCU_PLLCONF_Val ,     0x000BC019
-.equ	SCU_PCGR0_Val   ,     0x00000FFB	  /* Setup ext mem clock, EMI, SRAM, Prefetch Queue/Branch cache, FMI */
-.equ	SCU_PCGR1_Val   ,     0x00FEC801	  /* Setup GPIO8, 9 & 4 										      */
-.equ 	SCU_SCR0_Val 	,     0x00000196      /* Disable Prefetch Queue and Branch cache, SRAM = 96kb */
-.equ	SCU_SYSSTAT_LOCK ,    0x01      	  /* Check for PLL locked 								  */
-.equ	SCU_PRR0_OFS    ,     0x1C            /*; Peripheral Reset Register        0 Offset	*/
-.equ	SCU_PRR1_OFS    ,     0x20            /* Peripheral Reset Register        1 Offset */
+.equ    SCU_CLKCNTR_Val ,     0x00031004      /* Use PLL, external memory ratio/2 */
+.equ    SCU_PLLCONF_Val ,     0x000BC019
+.equ    SCU_PCGR0_Val   ,     0x00000FFB      /* Setup ext mem clock, EMI, SRAM, Prefetch Queue/Branch cache, FMI */
+.equ    SCU_PCGR1_Val   ,     0x00FEC801      /* Setup GPIO8, 9 & 4                                               */
+.equ     SCU_SCR0_Val     ,     0x00000196      /* Disable Prefetch Queue and Branch cache, SRAM = 96kb */
+.equ    SCU_SYSSTAT_LOCK ,    0x01            /* Check for PLL locked                                   */
+.equ    SCU_PRR0_OFS    ,     0x1C            /*; Peripheral Reset Register        0 Offset    */
+.equ    SCU_PRR1_OFS    ,     0x20            /* Peripheral Reset Register        1 Offset */
 
 
-.equ  	P_RESET_SETUP   ,	    1
-.equ	SCU_PRR0_Val    ,		0x00001B73
-.equ 	SCU_PRR1_Val    ,		0x00FEC801
+.equ      P_RESET_SETUP   ,        1
+.equ    SCU_PRR0_Val    ,        0x00001B73
+.equ     SCU_PRR1_Val    ,        0x00FEC801
 
 # APB Bridge 1 & 2 definitions (Peripherals)
-.equ	APB0_BUF_BASE   ,     0x48001802      /* APB Bridge 0 Buffered Base Address		 */
-.equ	APB0_NBUF_BASE  ,     0x58000000      /* APB Bridge 0 Non-buffered Base Address	 */
-.equ	APB1_BUF_BASE   ,     0x4C000000      /* APB Bridge 1 Buffered Base Address		 */
-.equ	APB1_NBUF_BASE  ,     0x5C000000      /* APB Bridge 1 Non-buffered Base Address	 */
+.equ    APB0_BUF_BASE   ,     0x48001802      /* APB Bridge 0 Buffered Base Address         */
+.equ    APB0_NBUF_BASE  ,     0x58000000      /* APB Bridge 0 Non-buffered Base Address     */
+.equ    APB1_BUF_BASE   ,     0x4C000000      /* APB Bridge 1 Buffered Base Address         */
+.equ    APB1_NBUF_BASE  ,     0x5C000000      /* APB Bridge 1 Non-buffered Base Address     */
 
 # ETM Definitions
-.equ	IOPORT2_ETM_ENABLE_BASE ,     0x5C00204C
-.equ	IOPORT6_ETM_ENABLE_BASE ,     0x5C00205C
+.equ    IOPORT2_ETM_ENABLE_BASE ,     0x5C00204C
+.equ    IOPORT6_ETM_ENABLE_BASE ,     0x5C00205C
 
-.equ	IOPORT2_ETM_ENABLE_VAL  ,     0x0000FFFF
-.equ	IOPORT6_ETM_ENABLE_VAL  ,     0x0000FFFF
+.equ    IOPORT2_ETM_ENABLE_VAL  ,     0x0000FFFF
+.equ    IOPORT6_ETM_ENABLE_VAL  ,     0x0000FFFF
 
 #*************************************************************************
 # Stack definitions
@@ -122,11 +122,11 @@
 #*************************************************************************
 
         .text
-		.arm
-		.extern main
-		.global _app_entry
+        .arm
+        .extern main
+        .global _app_entry
         .global start_up
-		
+        
 
         .func   start_up
 #start_up:
@@ -137,36 +137,36 @@ ENTRY:
 # Exception Vectors
 #*************************************************************************
 Vectors:
-        LDR     PC, Reset_Addr 		/* 0x0000 */        
-        LDR     PC, Undef_Addr 		/* 0x0004 */        
-        LDR     PC, SWI_Addr 		/* 0x0008 */        
-        LDR     PC, PAbt_Addr 		/* 0x000C */        
-        LDR     PC, DAbt_Addr 		/* 0x0010 */        
-        NOP 						/* 0x0014 Reserved Vector */
-		LDR     PC, IRQ_Addr  		/* 0x0018 wraps around address space to 0xFFFFFF030. Vector from VicVECAddr */
-        LDR     PC, FIQ_Addr		/* 0x001C FIQ has no VIC vector slot!	*/
+        LDR     PC, Reset_Addr         /* 0x0000 */        
+        LDR     PC, Undef_Addr         /* 0x0004 */        
+        LDR     PC, SWI_Addr         /* 0x0008 */        
+        LDR     PC, PAbt_Addr         /* 0x000C */        
+        LDR     PC, DAbt_Addr         /* 0x0010 */        
+        NOP                         /* 0x0014 Reserved Vector */
+        LDR     PC, IRQ_Addr          /* 0x0018 wraps around address space to 0xFFFFFF030. Vector from VicVECAddr */
+        LDR     PC, FIQ_Addr        /* 0x001C FIQ has no VIC vector slot!    */
 
 #*************************************************************************
 # Interrupt Vectors
 #*************************************************************************
 
-Reset_Addr:     .word   Hard_Reset			  /* CPU reset vector and entry point */
+Reset_Addr:     .word   Hard_Reset              /* CPU reset vector and entry point */
 Undef_Addr:     .word   _Undef_Handler
 SWI_Addr:       .word   _SWI_Handler
 PAbt_Addr:      .word   _PAbt_Handler
 DAbt_Addr:      .word   _DAbt_Handler
                 .word   0                      /* Reserved Address */
-IRQ_Addr:       .word   _IRQ_Handler			   /* Does not get used due to "LDR PC, [PC, #-0xFF0]" above */
-FIQ_Addr:       .word   _FIQ_Handler			   
+IRQ_Addr:       .word   _IRQ_Handler               /* Does not get used due to "LDR PC, [PC, #-0xFF0]" above */
+FIQ_Addr:       .word   _FIQ_Handler               
 
 # Dummy Interrupt Vector Table (real service routines in INTERRUPT.C)
 
-	_Undef_Handler:  B       UndefinedHandler
-	_SWI_Handler:    B       SWIHandler
-	_PAbt_Handler:   B       PrefetchHandler
-	_DAbt_Handler:   B       AbortHandler
-	_IRQ_Handler:	 B		IRQHandler 		
-	_FIQ_Handler:    B       FIQHandler
+    _Undef_Handler:  B       UndefinedHandler
+    _SWI_Handler:    B       SWIHandler
+    _PAbt_Handler:   B       PrefetchHandler
+    _DAbt_Handler:   B       AbortHandler
+    _IRQ_Handler:     B        IRQHandler         
+    _FIQ_Handler:    B       FIQHandler
 
 
 
@@ -182,11 +182,11 @@ FIQ_Addr:       .word   _FIQ_Handler
 * Output         : none
 *******************************************************************************/
 
-.macro	SaveContext reg1 reg2
-		STMFD	sp!,{\reg1-\reg2,lr}	/* Save The workspace plus the current return */
-										/* address lr_ mode into the stack */
-		MRS		r1, spsr				/* Save the spsr_mode into r1 */
-		STMFD	sp!, {r1}				/* Save spsr */
+.macro    SaveContext reg1 reg2
+        STMFD    sp!,{\reg1-\reg2,lr}    /* Save The workspace plus the current return */
+                                        /* address lr_ mode into the stack */
+        MRS        r1, spsr                /* Save the spsr_mode into r1 */
+        STMFD    sp!, {r1}                /* Save spsr */
 .endm
 
 /*******************************************************************************
@@ -197,11 +197,11 @@ FIQ_Addr:       .word   _FIQ_Handler
 * Output         : none
 *******************************************************************************/
 
-.macro	RestoreContext reg1 reg2
-		LDMFD	sp!, {r1}				/* Restore the saved spsr_mode into r1 */
-		MSR		spsr_cxsf, r1			/* Restore spsr_mode */
-		LDMFD	sp!, {\reg1-\reg2,pc}^	/* Return to the instruction following */
-										/* the exception interrupt */
+.macro    RestoreContext reg1 reg2
+        LDMFD    sp!, {r1}                /* Restore the saved spsr_mode into r1 */
+        MSR        spsr_cxsf, r1            /* Restore spsr_mode */
+        LDMFD    sp!, {\reg1-\reg2,pc}^    /* Return to the instruction following */
+                                        /* the exception interrupt */
 .endm
 
 /*******************************************************************************
@@ -211,36 +211,36 @@ FIQ_Addr:       .word   _FIQ_Handler
 * Output         : none
 *******************************************************************************/
 IRQHandler:
-       SUB    lr, lr, #4				/* Update the link register */
-       SaveContext r0, r12				/* Save the workspace plus the current */
-										/* return address lr_irq and spsr_irq */
-		LDR    r0, =VectorAddress
-		LDR    r0, [r0]					/* Read the routine address of VIC0 */
-		LDR    r1, =VectorAddressDaisy
-		LDR    r1, [r1]				    /* Read the routine address of VIC1 */
-		/* Padding between the acknowledge and re-enable of interrupts */
-		/* For more details, please refer to the following URL */
-		/* http://www.arm.com/support/faqip/3682.html */
-		NOP
-		NOP
-#		MSR		cpsr_c, #Mode_SYS		/* Switch to SYS mode and enable IRQ */
-#		STMFD	sp!, {lr}				/* Save the link register. */
-		LDR		lr, =ReturnAddress		/* Read the return address. */
-		CMP		r0, #0					/* Is VIC0 VAR zero? */
-		BEQ		SkipVic0
-		BX		r0						/* Branch to the IRQ handler. */
+       SUB    lr, lr, #4                /* Update the link register */
+       SaveContext r0, r12                /* Save the workspace plus the current */
+                                        /* return address lr_irq and spsr_irq */
+        LDR    r0, =VectorAddress
+        LDR    r0, [r0]                    /* Read the routine address of VIC0 */
+        LDR    r1, =VectorAddressDaisy
+        LDR    r1, [r1]                    /* Read the routine address of VIC1 */
+        /* Padding between the acknowledge and re-enable of interrupts */
+        /* For more details, please refer to the following URL */
+        /* http://www.arm.com/support/faqip/3682.html */
+        NOP
+        NOP
+#        MSR        cpsr_c, #Mode_SYS        /* Switch to SYS mode and enable IRQ */
+#        STMFD    sp!, {lr}                /* Save the link register. */
+        LDR        lr, =ReturnAddress        /* Read the return address. */
+        CMP        r0, #0                    /* Is VIC0 VAR zero? */
+        BEQ        SkipVic0
+        BX        r0                        /* Branch to the IRQ handler. */
 SkipVic0:
-		CMP		r1, #0					/* Is VIC1 VAR zero? */
-		BEQ		ReturnAddress
-		BX		r1						/* Branch to the IRQ handler. */
+        CMP        r1, #0                    /* Is VIC1 VAR zero? */
+        BEQ        ReturnAddress
+        BX        r1                        /* Branch to the IRQ handler. */
 ReturnAddress:
-#		LDMFD	sp!, {lr}				/* Restore the link register. */
-#		MSR		cpsr_c, #Mode_IRQ|I_BIT	/* Switch to IRQ mode and disable IRQ */
-		LDR		r0, =VectorAddress		/* Write to the VectorAddress to clear the */
-		STR		r0, [r0]				/* respective interrupt in the internal interrupt */
-		LDR		r1, =VectorAddressDaisy	/* Write to the VectorAddressDaisy to clear the */
-		STR		r1, [r1]				/* respective interrupt in the internal interrupt */
-		RestoreContext r0, r12			/* Restore the context and return to the program execution. */
+#        LDMFD    sp!, {lr}                /* Restore the link register. */
+#        MSR        cpsr_c, #Mode_IRQ|I_BIT    /* Switch to IRQ mode and disable IRQ */
+        LDR        r0, =VectorAddress        /* Write to the VectorAddress to clear the */
+        STR        r0, [r0]                /* respective interrupt in the internal interrupt */
+        LDR        r1, =VectorAddressDaisy    /* Write to the VectorAddressDaisy to clear the */
+        STR        r1, [r1]                /* respective interrupt in the internal interrupt */
+        RestoreContext r0, r12            /* Restore the context and return to the program execution. */
 
 /*******************************************************************************
 * Function Name  : SWIHandler
@@ -250,10 +250,10 @@ ReturnAddress:
 *******************************************************************************/
 
 SWIHandler:
-		SaveContext r0, r12			/* r0 holds swi number */
-		MOV 	r1, sp				/* load regs */
-		BL		SWI_Handler
-		RestoreContext r0, r12
+        SaveContext r0, r12            /* r0 holds swi number */
+        MOV     r1, sp                /* load regs */
+        BL        SWI_Handler
+        RestoreContext r0, r12
 
 /*******************************************************************************
 * Function Name  : UndefinedHandler
@@ -264,9 +264,9 @@ SWIHandler:
 *******************************************************************************/
 
 UndefinedHandler:
-		SaveContext r0, r12
-		BL		Undefined_Handler
-		RestoreContext r0, r12
+        SaveContext r0, r12
+        BL        Undefined_Handler
+        RestoreContext r0, r12
 
 /*******************************************************************************
 * Function Name  : PrefetchAbortHandler
@@ -277,10 +277,10 @@ UndefinedHandler:
 *******************************************************************************/
 
 PrefetchHandler:
-		SUB		lr, lr, #4			/* Update the link register. */
-		SaveContext r0, r12
-		BL		Prefetch_Handler
-		RestoreContext r0, r12
+        SUB        lr, lr, #4            /* Update the link register. */
+        SaveContext r0, r12
+        BL        Prefetch_Handler
+        RestoreContext r0, r12
 
 /*******************************************************************************
 * Function Name  : DataAbortHandler
@@ -291,10 +291,10 @@ PrefetchHandler:
 *******************************************************************************/
 
 AbortHandler:
-		SUB		lr, lr, #8			/* Update the link register. */
-		SaveContext r0, r12
-		BL		Abort_Handler
-		RestoreContext r0, r12
+        SUB        lr, lr, #8            /* Update the link register. */
+        SaveContext r0, r12
+        BL        Abort_Handler
+        RestoreContext r0, r12
 
 /*******************************************************************************
 * Function Name  : FIQHandler
@@ -305,12 +305,12 @@ AbortHandler:
 *******************************************************************************/
 
 FIQHandler:
-		SUB		lr, lr, #4			/* Update the link register. */
-		SaveContext r0, r7
-		BL		FIQ_Handler
-		RestoreContext r0, r7
+        SUB        lr, lr, #4            /* Update the link register. */
+        SaveContext r0, r7
+        BL        FIQ_Handler
+        RestoreContext r0, r7
 
-	
+    
 
 
 #*************************************************************************
@@ -318,7 +318,7 @@ FIQHandler:
 #*************************************************************************
 Hard_Reset: 
 app_entry:
- 		 StartupDelay 500000
+          StartupDelay 500000
 Start_init_s:
 
 #*************************************************************************
@@ -351,10 +351,10 @@ Start_init_s:
                 LDR     R2, =FMI_CR_Val
                 STR     R2, [R0, #FMI_CR_OFS]
 
-    			LDR     R2, =FMI_SR_Val
+                LDR     R2, =FMI_SR_Val
                 STR     R2, [R0, #FMI_SR_OFS]
 
-	            # Write "Write flash configuration" command (60h)
+                # Write "Write flash configuration" command (60h)
                 MOV     R0, R1, LSL #2
                 MOV     R1, #0x60
                 STRH    R1, [R0, #0]
@@ -398,15 +398,15 @@ Start_init_s:
                 LDR     R1, =SCU_PLLCONF_Val 
                 STR     R1, [R0, #SCU_PLLCONF_OFS]    // Set new PLL values 
 
-				.IF      (SCU_PLLCONF_Val & 0x8000)	  // See if PLL is being used 
+                .IF      (SCU_PLLCONF_Val & 0x8000)      // See if PLL is being used 
 
                 LDR     R1, =SCU_SYSSTAT_LOCK
 PLL_LOCK_LOOP:
-				LDR		R2,[R0, #SCU_SYSTAT_OFS]      // Wait for PLL lock 
-				ANDS	R2, R2, R1
-				BEQ		PLL_LOCK_LOOP
+                LDR        R2,[R0, #SCU_SYSTAT_OFS]      // Wait for PLL lock 
+                ANDS    R2, R2, R1
+                BEQ        PLL_LOCK_LOOP
 
-				.ENDIF
+                .ENDIF
 
                 LDR     R1, =SCU_PLLCONF_Val
                 STR     R1, [R0, #SCU_PLLCONF_OFS]
@@ -441,8 +441,8 @@ PLL_LOCK_LOOP:
 Wait_Loop:      
  
         LDR     R1,[R0, #SCU_SYSTAT_OFS]   /*;Wait until PLL is Locked*/
-		  ANDS    R1, R1, #0x01 
-		  BEQ     Wait_Loop
+          ANDS    R1, R1, #0x01 
+          BEQ     Wait_Loop
         
         
         LDR     R1, = 0x00020080             /*;Set PLL as clock source after pll */
@@ -468,12 +468,12 @@ Wait_Loop:
                 LDR     R1, =IOPORT2_ETM_ENABLE_VAL
                 STR     R1, [R0, #0]  
 
-# Configure IOPORT6 for ETM operation				
+# Configure IOPORT6 for ETM operation                
                 LDR     R0, =IOPORT6_ETM_ENABLE_BASE
                 LDR     R1, =IOPORT6_ETM_ENABLE_VAL
                 STR     R1, [R0, #0]  
-			  
-				.ENDIF
+              
+                .ENDIF
 
 
 #*************************************************************************
@@ -482,48 +482,48 @@ Wait_Loop:
 # Note: R13 = SP
 
 # Setup Stack for each mode
-	   			LDR     R0, =Top_Stack
+                   LDR     R0, =Top_Stack
 
 # Set up Fast Interrupt Mode and set FIQ Mode Stack
-        		MSR     CPSR_c, #Mode_FIQ|I_BIT|F_BIT
-    		    mov     r13, r0                     
-    		    sub     r0, r0, #FIQ_Stack_Size
+                MSR     CPSR_c, #Mode_FIQ|I_BIT|F_BIT
+                mov     r13, r0                     
+                sub     r0, r0, #FIQ_Stack_Size
 
 # Set up Interrupt Mode and set IRQ Mode Stack
-    		    msr     CPSR_c, #Mode_IRQ|I_BIT|F_BIT
-    			mov     r13, r0                     
-     		   	sub     r0, r0, #IRQ_Stack_Size
+                msr     CPSR_c, #Mode_IRQ|I_BIT|F_BIT
+                mov     r13, r0                     
+                    sub     r0, r0, #IRQ_Stack_Size
 
 # Set up Abort Mode and set Abort Mode Stack
-      			msr     CPSR_c, #Mode_ABT|I_BIT|F_BIT
-        		mov     r13, r0                     
-        		sub     r0, r0, #ABT_Stack_Size
+                  msr     CPSR_c, #Mode_ABT|I_BIT|F_BIT
+                mov     r13, r0                     
+                sub     r0, r0, #ABT_Stack_Size
 
 # Set up Undefined Instruction Mode and set Undef Mode Stack
-        		msr     CPSR_c, #Mode_UND|I_BIT|F_BIT
-        		mov     r13, r0                     
-        		sub     r0, r0, #UND_Stack_Size
+                msr     CPSR_c, #Mode_UND|I_BIT|F_BIT
+                mov     r13, r0                     
+                sub     r0, r0, #UND_Stack_Size
 
-# 	Set up Supervisor Mode and set Supervisor Mode Stack
-        		msr     CPSR_c, #Mode_SVC|I_BIT|F_BIT
-        		mov     r13, r0                     
-        		sub     r0, r0, #SVC_Stack_Size
+#     Set up Supervisor Mode and set Supervisor Mode Stack
+                msr     CPSR_c, #Mode_SVC|I_BIT|F_BIT
+                mov     r13, r0                     
+                sub     r0, r0, #SVC_Stack_Size
 
-# 	Set up User Mode and set User Mode Stack
-        		msr     CPSR_c, #Mode_USR /* #Mode_USR */  /* Leave interrupts enabled in user mode                 */
-        		mov     r13, r0             /* Note: interrupts will not happen until VIC is enabled */         
+#     Set up User Mode and set User Mode Stack
+                msr     CPSR_c, #Mode_USR /* #Mode_USR */  /* Leave interrupts enabled in user mode                 */
+                mov     r13, r0             /* Note: interrupts will not happen until VIC is enabled */         
 
 #  Setup a default Stack Limit (when compiled with "-mapcs-stack-check")
-        		SUB     SL, SP, #1<<10         /* 1kB */
+                SUB     SL, SP, #1<<10         /* 1kB */
 
 # Initialise current CPU status to prevent unwanted interrupts
-#				msr		CPSR_c,#0xD3
+#                msr        CPSR_c,#0xD3
 
 #*************************************************************************
 # Initialise RAM For Compiler Variables
 #*************************************************************************
 
-            	copy_section2 data, _etext, __data_start__, _edata
+                copy_section2 data, _etext, __data_start__, _edata
 
 #*************************************************************************
 # Clear .bss section
@@ -537,7 +537,7 @@ Wait_Loop:
 #*************************************************************************
 # Jump to main()
 
-	    B       main
+        B       main
 
 
         .size   _startup, . - _startup
@@ -545,5 +545,5 @@ Wait_Loop:
 
 #*************************************************************************
 # END
-#*************************************************************************	
+#*************************************************************************    
         .end
