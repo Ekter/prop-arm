@@ -81,8 +81,8 @@ Revision History:
 #endif
 
 
-typedef PVOID    FT_HANDLE;
-typedef ULONG    FT_STATUS;
+typedef void    FT_HANDLE;
+typedef unsigned long    FT_STATUS;
 
 //
 // Device status
@@ -194,7 +194,7 @@ enum {
 // Events
 //
 
-typedef void (*PFT_EVENT_HANDLER)(DWORD,DWORD);
+typedef void (*PFT_EVENT_HANDLER)(,DWORD);
 
 #define FT_EVENT_RXCHAR            1
 #define FT_EVENT_MODEM_STATUS    2
@@ -211,7 +211,7 @@ typedef void (*PFT_EVENT_HANDLER)(DWORD,DWORD);
 // Device types
 //
 
-typedef ULONG    FT_DEVICE;
+typedef unsigned long    FT_DEVICE;
 
 enum {
     FT_DEVICE_BM,
@@ -849,7 +849,7 @@ extern "C" {
         );
 
     FTD2XX_API
-        BOOL WINAPI FT_W32_SetCommBreak(
+            BOOL WINAPI; FT_W32_SetCommBreak(
         FT_HANDLE ftHandle
         );
 

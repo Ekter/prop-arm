@@ -7,7 +7,7 @@
 #ifndef COMMUNICATIONDEFINES_H
 #define COMMUNICATIONDEFINES_H
 
-#include <Windows.h>
+//#include <Windows.h>
 #include "../Firmware/FC_0.78f/HILSStructures.h"
 #include "../Firmware/FC_0.78f/CommonCommsDefines.h" //for addresses
 
@@ -59,12 +59,12 @@ namespace serialComms{
     //from QMK groundstation: a structure for PPM data
     struct str_PPMData{
     //the values of the RC sender. Integer values in range {-125,..,125}. See also http://www.mikrokopter.de/ucwiki/MK-Parameter/Channels
-        INT16 Data[26];
+        int16_t Data[26];
     };
 
   struct s_MK_Debug{//Debug data structure, from: QMK Groundstation, MK_Datatypes.h ("s_MK_Debug")
    unsigned char Digital[2];
-   INT16 Analog[NUMBER_DEBUG_DATA];    // Debugwerte
+   int16_t Analog[NUMBER_DEBUG_DATA];    // Debugwerte
      //angles are measured in 0.1 degrees (?maybe?) - from inspection of UART.C
   };
 
@@ -106,14 +106,14 @@ namespace serialComms{
 
     
     struct sResend{//from cSetting.h (probably originally from QMK)
-        UINT8 packet[RXD_BUFFER_LEN];
-        UINT8 size;
+        uint8_t packet[RXD_BUFFER_LEN];
+        uint8_t size;
         bool start;
     };
 
     struct TransmissionDataPacket{
-        UINT8 data[RXD_BUFFER_LEN];
-        UINT8 size;  
+        uint8_t data[RXD_BUFFER_LEN];
+        uint8_t size;
     };
 
     struct RCState{
