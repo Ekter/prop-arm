@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/ekter/Documents/codaj/prop-arm/clean_interface/QT_prop_arm",
-      "program": "/home/ekter/Documents/codaj/prop-arm/clean_interface/QT_prop_arm/build/Debug/outDebug",
+      "cwd": "/home/ekter/Documents/codaj/prop-arm/archive/RoboticArm_Project_2022/MovingArmProject",
+      "program": "/home/ekter/Documents/codaj/prop-arm/archive/RoboticArm_Project_2022/MovingArmProject/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
